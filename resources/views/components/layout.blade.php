@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-
+    @livewireStyles
     @vite(['resources/sass/app.scss'])
     {{$style ?? ''}}
 </head>
@@ -31,11 +31,12 @@
 
 
     <div class="footer">
-        <x-footer/>
+        
     </div>
 
 
     <!-- Scripts -->
+    @livewireScripts
     @vite(['resources/js/app.js'])
 </body>
 </html>
