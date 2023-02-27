@@ -1,3 +1,4 @@
 <x-layout>
-    <h1>Hola</h1>
+    <x-slot name='title'>Ventapop - Homepage</x-slot>
+    <h1>Bienvenido a Ventapop</h1>
 </x-layout>
