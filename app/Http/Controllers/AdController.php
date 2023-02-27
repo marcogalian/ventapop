@@ -15,7 +15,7 @@ class AdController extends Controller
 
     public function create()
     {
-        return dd('ad.create');
+        return view('ad.create');
     }
 
 }
