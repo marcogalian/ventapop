@@ -19,12 +19,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
+Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');
