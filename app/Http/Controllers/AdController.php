@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class AdController extends Controller
 {
-<<<<<<< HEAD
-    //
-=======
+
 
     public function __construct()
     {
@@ -19,5 +17,5 @@ class AdController extends Controller
     {
         return dd('ad.create');
     }
->>>>>>> marco
+
 }
