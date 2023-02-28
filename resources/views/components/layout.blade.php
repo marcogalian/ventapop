@@ -17,7 +17,7 @@
     @vite(['resources/sass/app.scss', 'resources/css/app.css'])
     {{$style ?? ''}}
 </head>
-<body>
+<body class="body">
     <div class="container-fluid p-0">
         <x-navbar/>
     </div>
