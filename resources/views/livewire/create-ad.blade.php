@@ -1,21 +1,50 @@
 <div>
+    @if (session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            {{session('message')}}
+        </div>
+    @endif
     <form wire:submit.prevent="store">
         @csrf
 
 
         <div class="mb-3">
             <label for="title" class="form-label">¡Pon un título a tu anuncio!: </label>
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            <input wire:model="title" type="text" class="form-control" @error('title') is-invalid @enderror>
+            @error('title')
+                {{ $message }}
+            @enderror
         </div>
 
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="image" class="form-label">Sube una imagen del producto: </label>
             <input type="file" class="form-control" name="image">
+        </div> --}}
+
+        <div class="mb-3">
+            <label for="price" class="form-label">¿A que precio quieres venderlo? </label>
+            <input wire:model="price" type="number" class="form-control" @error('title') is-invalid @enderror>
+            @error('title')
+                {{ $message }}
+            @enderror
         </div>
 
         <div class="mb-3">
-            <label for="text" class="form-label">Añade una descripción: </label>
-            <textarea class="form-control" id="text" name="text" cols="30" rows="10">{{old('text')}}</textarea>
+            <label for="category" class="form-label">Añade el producto en una categoría</label>
+            <select wire:model.defer="category" class="form-control">
+                <option value="">Selecciona una categoría</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="body" class="form-label">Añade una descripción: </label>
+            <textarea wire:model="body" class="form-control" cols="30" rows="15" @error('title') is-invalid @enderror></textarea>
+            @error('title')
+                {{ $message }}
+            @enderror
         </div>
 
         <div class="mt-2">
