@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        try {
+            $categories = Category::all();
+            View::Share('categories', $categories);
+        } catch (\Throwable $th) {
+            dump("ALERT: Recuerda lanzar las migraciones cuando acabes el clone");
+        }
     }
 }
