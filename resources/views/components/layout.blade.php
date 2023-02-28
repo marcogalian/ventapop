@@ -14,11 +14,11 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     @livewireStyles
-    @vite(['resources/sass/app.scss','resources/css/app.css'])
+    @vite(['resources/sass/app.scss', 'resources/css/app.css'])
     {{$style ?? ''}}
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <x-navbar/>
     </div>
 
