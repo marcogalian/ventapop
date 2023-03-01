@@ -1,15 +1,16 @@
 <div class="my-card rounded">
     <div>
-        <h3 class="text-center">Titulo</h3>
+        <h1 class="text-center">Titulo</h1>
     </div>
-    <div class="position-relative  shadow">
+    <div class="position-relative card-container rounded">
         <div class="card-img rounded">
             <img src="{{ asset('images/bici.webp')}}" class="img-fluid image rounded">
-            <div class="card-text position-absolute">
+            <div class="card-text position-absolute rounded-top">
                 <h5 class="title">Card title</h5>
-                <p class="text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Ver</a>
+                <p class="text">Some quick example text to build on the card.</p>
+                <div class="d-flex justify-content-center mt-auto">
+                    <a href="#" class="btn card-btn btn-success rounded-1 px-5">Ver</a>
+                </div>
             </div>
         </div>
     </div>
