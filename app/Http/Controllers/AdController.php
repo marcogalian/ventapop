@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
+
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -16,6 +18,11 @@ class AdController extends Controller
     public function create()
     {
         return view('ad.create');
+    }
+
+    public function show(Ad $ad)
+    {
+        return view('ad.show', compact('ad'));
     }
 
 }

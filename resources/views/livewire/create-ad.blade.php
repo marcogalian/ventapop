@@ -49,7 +49,7 @@
 
         <div class="mt-2">
             <button class="btn btn-info text-white" type="submit">Subir articulo</button>
-            <a href="{{ route('welcome') }}" class="btn btn-outline-info">Volver a inicio</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-info">Volver a inicio</a>
         </div>
 
     </form>

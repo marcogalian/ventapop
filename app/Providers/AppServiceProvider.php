@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         } catch (\Throwable $th) {
             dump("ALERT: Recuerda lanzar las migraciones cuando acabes el clone");
         }
+
+        Paginator::useBootstrapFive();
     }
 }

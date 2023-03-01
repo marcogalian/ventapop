@@ -15,8 +15,13 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fs-5" href="#">Artículos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fs-5" href="#">Categorías</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white fs-5" role="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach ($categories as $category)
+                            <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
+                        @endforeach
+                    </ul>
                 </li>
             </ul>
 

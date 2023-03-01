@@ -27,6 +27,10 @@ Route::get('/', [PublicController::class, 'index'])->name('home');
 
 Route::get('/about', [PublicController::class, 'about'])->name('about');
 
+Route::get('/category/{category:name}/ads',[PublicController::class, 'adsByCategory'])->name('category.ads');
+
+Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
+
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');
