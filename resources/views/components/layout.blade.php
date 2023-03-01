@@ -23,7 +23,7 @@
     </div>
 
 
-    <div class="main">
+    <div class="main container">
         <main class="py-4">
             {{ $slot }}
         </main>
