@@ -15,3 +15,12 @@
 .footer {
     height: 200px;
 }
+
+.bg_vpop{
+    background-color: #55a2a1ff;
+}
+
+.bg_vpop_claro{
+    background-color: rgba(85, 162, 161, 0.533);
+    
+}

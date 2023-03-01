@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -21,8 +23,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
+Route::get('/', [PublicController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [PublicController::class, 'about'])->name('about');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');

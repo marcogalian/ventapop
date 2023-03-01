@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('welcome') }}">
-            {{ config('app.name', 'Laravel') }}
+        <img src="{{ asset('images/logo_ventapopnegro.png') }}" alt="logo Ventapop" class="logo_footer  rounded p-2 me-2 border border-white">
+        <a class="navbar-brand text-white fs-3" href="{{ route('home') }}">
+            Ventapop
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -10,8 +11,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
-                
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="#">Artículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="#">Categorías</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -20,19 +26,19 @@
                 @guest                
                 @if (Route::has('login'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link text-white fs-4" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @endif
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link text-white fs-4" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 @endif
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white fs-4" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>

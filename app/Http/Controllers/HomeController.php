@@ -24,10 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
+    }    
 
-    public function welcome()
+    public function about()
     {
-        return view('welcome');
+        return view('about');
     }
 }
