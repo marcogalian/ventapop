@@ -14,9 +14,9 @@
                     magni neque asperiores fugiat consequuntur nihil ullam, accusantium doloribus sed possimus tenetur
                     minus quam exercitationem beatae ipsa.</p>
             </div>
-            <div class="col-12 col-md-6">
-                <p class="fs-5">Hoy se han subido ______ artículos</p>
-                <button class="btn bg_vpop text-white border">¡Echa un ojo!</button>
+            <div class="col-12 col-md-6 text-center">
+                <p class="fs-5">Hay {{ count($total_ads) }} artículos subidos.</p>
+                <button class="btn btn-dark bg_vpop text-white border"><a href="#" class="nav-link">¡Echa un ojo!</a></button>
             </div>
         </div>
     </div>
