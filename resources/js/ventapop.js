@@ -16,7 +16,4 @@ function textView() {
     })
 
 }
-<<<<<<< HEAD
-=======
 textView()
->>>>>>> marco
