@@ -16,7 +16,7 @@
                                 <h6 class="subtitle mb-2 text-muted">{{ $ad->price }} &#8364</h6>
                                 {{-- <p class="text">{{ $ad->body }}</p> --}}
                                 <div class="subtitle mb-2">
-                                    <strong><a class="nav-link"
+                                    <strong><a class="text-decoration-none"
                                             href="{{ route('category.ads', $ad->category) }}">#{{ $ad->category->name }}</a></strong>
                                     <i>{{ $ad->created_at->format('d/m/Y') }}</i>
                                 </div>

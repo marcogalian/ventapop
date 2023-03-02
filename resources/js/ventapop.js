@@ -1,3 +1,4 @@
+// Cards -------------------------------------------------------------------------------####
 function textView() {
     let cardTexts = document.querySelectorAll('.card-text');
     let cardImgs = document.querySelectorAll('.card-img');
@@ -17,3 +18,5 @@ function textView() {
 
 }
 textView()
+
+// Vista show --------------------------------------------------------------------------####

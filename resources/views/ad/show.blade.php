@@ -1,22 +1,45 @@
 <x-layout>
-    <div class="position-relative card-container rounded">
-        <div class="card-img rounded">
-            <img src="{{ asset('images/bici.webp')}}" class="img-fluid image rounded">
-            <div class="card-text position-absolute rounded-top">
-                <h5 class="title">{{ $ad->title }}</h5>
-                <h6 class="subtitle mb-2 text-muted">{{ $ad->price }} €</h6>
-                <p class="text">{{ $ad->body }}</p>
-                <div>
-                    <strong><a href="{{ route('category.ads',$ad->category) }}">{{ $ad->category->name }}</a></strong>
-                        <i>{{ $ad->created_at->format('d/m/Y') }}</i>
-                    <div class="mb-2">
-                        <small>{{ $ad->user->name }}</small>
+    <div class="container">
+        <div class="row my-5 justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="carousel slide" id="adImages" data-bs-ride="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/700/600" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/700/600" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/700/600" class="d-block w-100" alt="...">
+                        </div>
                     </div>
-                    
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class="carousel-contol-prev btn-prev border-0" type="buttom" data-bs-target="#adImages"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-contol-next btn-next border-0" type="buttom" data-bs-target="#adImages"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="d-flex justify-content-center mt-auto">
-                    <a href="{{ route('ads.show', $ad) }}" class="btn card-btn btn-success rounded-1 px-5">Ver</a>
+            </div>
+            <div class="row my-4 justify-content-center">
+                <div class="col-12 col-md-6">
+                    <div><b>Título: </b> {{$ad->title}}</div>
+                    <div><b>Precio: </b> {{$ad->price}}</div>
+                    <div><b>Descripción: </b> {{$ad->body}}</div>
+                    <div><b>Publicado el: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
+                    <div><b>Por: </b> {{ $ad->user->name }}</div>
+                    <div><a class="text-decoration-none" href="{{ route('category.ads', $ad->category) }}">#{{$ad->category->name}}</a></div>
+                    <div><a href="#" class="btn btn-success">Comprar</a></div>
                 </div>
+                
             </div>
         </div>
     </div>
