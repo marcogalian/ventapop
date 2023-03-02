@@ -10,5 +10,3 @@ function textView() {
         cardText.classList.remove('text-view')
     })
 }
-
-textView()
