@@ -17,8 +17,12 @@
 /* Card ----------------------------------------------------------------------------------------------- */
 
 .my-card {
-    width: 18rem;
-    height: 25rem;
+    width: 16rem;
+    height: 26rem;
+}
+
+.card-container {
+    box-shadow: #00000042 0px 4px 12px;
     overflow: hidden;
 }
 
@@ -30,9 +34,9 @@
     transition: all .5s ease-in-out;
     left: 0;
     border: none;
-    width: 18rem;
-    height: 75%;
-    background-color: #ffffffc0;
+    width: 16rem;
+    height: 80%;
+    background-color: #ffffffcc;
     padding: 1rem;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -45,16 +49,26 @@
     opacity: 1;
 }
 
-
 .card-img{
-    width: 18rem;
-    height: 25rem;
+    width: 16rem;
+    height: 22rem;
 }
 
 .image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.btn-success{
+    background-color: #187E80;
+    border-color: transparent;
+}
+
+.btn-success:hover {
+    color: #000;
+    background-color: #98D7C2;
+    border-color: transparent;
 }
 
 /* Footer -------------------------------------------------------------------------------------------- */

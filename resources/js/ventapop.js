@@ -1,12 +1,22 @@
-let cardText = document.querySelector('.card-text');
-let cardImg = document.querySelector('.card-img');
-
 function textView() {
-    cardImg.addEventListener('mouseover', () => {
-        cardText.classList.add('text-view')
+    let cardTexts = document.querySelectorAll('.card-text');
+    let cardImgs = document.querySelectorAll('.card-img');
+
+    cardImgs.forEach((cardImg, index) => {
+
+        let cardText = cardTexts[index];
+
+        cardImg.addEventListener('mouseover', () => {
+            cardText.classList.add('text-view')
+        })
+
+        cardImg.addEventListener('mouseout', () => {
+            cardText.classList.remove('text-view')
+        })
     })
 
-    cardImg.addEventListener('mouseout', () => {
-        cardText.classList.remove('text-view')
-    })
 }
+<<<<<<< HEAD
+=======
+textView()
+>>>>>>> marco
