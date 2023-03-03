@@ -11,7 +11,7 @@ class Ad extends Model
     protected $fillable = [
         'title',
         'body',
-        'price'
+        'price',
     ];
     use HasFactory;
 

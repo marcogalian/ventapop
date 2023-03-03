@@ -33,7 +33,7 @@ class CreateAd extends Component
         $ad = $category->ads()->create([
             'title'=>$this->title,
             'body'=>$this->body,
-            'price'=>$this->price,            
+            'price'=>$this->price,           
         ]);
 
         Auth::user()->ads()->save($ad); 
