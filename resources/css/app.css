@@ -1,3 +1,10 @@
+/* FONTS -------------------------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+/*  ------------------------------------------------------------------------------------------------- */
+
 .body {
     display: flex;
     flex-direction: column;
@@ -26,6 +33,24 @@
 
 .main{
     flex: 1;
+}
+
+/* Welcome -------------------------------------------------------------------------------------------- */
+
+.main_welcome{
+    background-image: url(/public/images/logo_ventapopclaro.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+}
+
+th{
+    width: 30px;    
 }
 
 /* Card ----------------------------------------------------------------------------------------------- */
@@ -111,7 +136,9 @@
     -o-border-radius: 50%;
 }
 
-
+.paginacion{
+    width: 400px;      /* Faltaría ajustarlo para el responsive */
+}
 /* Footer -------------------------------------------------------------------------------------------- */
 
 .border-footer {

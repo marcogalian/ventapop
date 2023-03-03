@@ -41,8 +41,14 @@
             @endforelse
         </div>
     </div>
+
+    <div class="container paginacion">
+        <div>
+            {{$ads->links()}}
+        </div>
     </div>
 
-    {{$ads->links()}}
+
+
 
 </x-layout>
