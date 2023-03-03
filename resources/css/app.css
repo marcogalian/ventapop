@@ -9,10 +9,24 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 1rem;
 }
 
 /* NavBar -------------------------------------------------------------------------------------------- */
 
+.btn-bg {
+    box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
+    background-color: #eece7d; 
+    color: #264653;
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 150px;
+}
+
+.btn-bg:hover{
+    color: #fff !important;
+    background-color: #d9b049;
+}
 
 
 /* Main ---------------------------------------------------------------------------------------------- */
@@ -96,12 +110,35 @@ th{
     border-color: transparent;
 }
 
-/* Paginacion -------------------------------------------------------------------------------------------- */
+/* Carrousel indicadores ----------------------------------------------------------------------------- */
+
+.btn-prev{
+    background-color: #187E80;
+    padding-top: .5em;
+    padding-right: .7em;
+    box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.btn-next{
+    background-color: #187E80;
+    padding-top: .5em;
+    padding-left: .7em;
+    box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 
 .paginacion{
     width: 400px;      /* Faltaría ajustarlo para el responsive */
 }
-
 /* Footer -------------------------------------------------------------------------------------------- */
 
 .border-footer {
