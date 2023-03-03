@@ -18,7 +18,7 @@
     {{$style ?? ''}}
 </head>
 <body class="body">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 position-sticky top-0 navbar-container">
         <x-navbar/>
     </div>
 
