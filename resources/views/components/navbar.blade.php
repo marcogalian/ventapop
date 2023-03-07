@@ -19,9 +19,9 @@
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item me-4">
+                {{-- <li class="nav-item me-4">
                     <a class="nav-link text-white" href="{{ route('revisor.home') }}">Home</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link btn btn-bg rounded-5 px-3" href="{{ route('ad.create') }}">Subir productos</a>
                 </li>
@@ -50,6 +50,13 @@
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        @if(Auth::user()->is_revisor)
+                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisor
+                            <span class="badge rounded-pill bg-danger">
+                                {{ \App\Models\Ad::ToBeRevisionedCount() }}
+                            </span>
+                        </a>
+                        @endif
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

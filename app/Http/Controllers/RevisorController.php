@@ -17,4 +17,18 @@ class RevisorController extends Controller
         
         return view('revisor.home', compact('ad'));
     }
+
+    public function acceptAd (Ad $ad)
+    {
+        $ad->setAccepted(true);
+        
+        return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Anuncio aceptado']);
+    }
+
+    public function rejectAd(Ad $ad)
+    {
+        $ad->setAccepted(false);
+
+        return redirect()->back()->withMessage(['type'=>'danger', 'text'=>'Anuncio rechazado']);
+    }
 }

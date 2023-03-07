@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name='title'> Ventapop - Revisor Home</x-slot>
-
+@if ($ad)
     <div class="container my-5 py-5">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
@@ -83,4 +83,8 @@
             </div>
         </div>
     </div>
+@else
+    <h3 class="text-center">No hay anuncios para revisar, vuelve mas tarde, gracias</h3>
+@endif
+    
 </x-layout>
