@@ -10,22 +10,21 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">¡Pon un título a tu anuncio!: </label>
-            <input wire:model="title" type="text" class="form-control" @error('title') is-invalid @enderror>
+            <input wire:model="title" type="text" class="form-control @error('title') is-invalid @enderror" >
             @error('title')
-                {{ $message }}
+                <span class="invalid-feedback" role="alert">
+                    {{ $message }}
+                </span>
             @enderror
         </div>
 
-        {{-- <div class="mb-3">
-            <label for="image" class="form-label">Sube una imagen del producto: </label>
-            <input type="file" class="form-control" name="image">
-        </div> --}}
-
         <div class="mb-3">
             <label for="price" class="form-label">¿A que precio quieres venderlo? </label>
-            <input wire:model="price" type="number" class="form-control" @error('title') is-invalid @enderror>
-            @error('title')
-                {{ $message }}
+            <input wire:model="price" type="number" class="form-control @error('price') is-invalid @enderror" >
+            @error('price')
+                <span class="invalid-feedback" role="alert">
+                    {{ $message }}
+                </span>
             @enderror
         </div>
 
@@ -41,9 +40,11 @@
 
         <div class="mb-3">
             <label for="body" class="form-label">Añade una descripción: </label>
-            <textarea wire:model="body" class="form-control" cols="30" rows="15" @error('title') is-invalid @enderror></textarea>
-            @error('title')
-                {{ $message }}
+            <textarea wire:model="body" class="form-control @error('body') is-invalid @enderror" cols="30" rows="15" ></textarea>
+            @error('body')
+                <span class="invalid-feedback" role="alert">
+                    {{ $message }}
+                </span>
             @enderror
         </div>
 

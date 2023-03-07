@@ -48,6 +48,20 @@
     flex: 1;
 }
 
+
+/* Formulario ----------------------------------------------------------------------------------------- */
+
+.is-invalid{
+    border-color: red;
+}
+
+.invalid-feedback {
+    display: block;
+    color: red;
+    margin-top: .25rem;
+    font-size: .8rem;
+}
+
 /* Welcome -------------------------------------------------------------------------------------------- */
 
 .main_welcome{

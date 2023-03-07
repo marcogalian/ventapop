@@ -19,8 +19,11 @@
                         @endforeach
                     </ul>
                 </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link text-white" href="{{ route('revisor.home') }}">Home</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-bg" href="{{ route('ad.create') }}">Subir productos</a>
+                    <a class="nav-link btn btn-bg rounded-5 px-3" href="{{ route('ad.create') }}">Subir productos</a>
                 </li>
             </ul>
 
