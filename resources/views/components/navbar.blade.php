@@ -1,8 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-5">
     <div class="container">
-        {{-- <a href="{{ route('home') }}">
-            <img src="{{ asset('images/logo_ventapopnegro.png') }}" alt="logo Ventapop" class="logo_footer rounded p-2 me-3 border border-white">
-        </a> --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -48,11 +45,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-<<<<<<< HEAD
                         <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
-=======
-                        <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">Revisor
->>>>>>> marco
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
