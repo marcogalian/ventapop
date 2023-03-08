@@ -10,7 +10,7 @@
                 <div class="my-card rounded">
                     <div class="position-relative card-container rounded">
                         <div class="card-img rounded">
-                            <img src="{{ asset('images/bici.webp')}}" class="img-fluid image rounded">
+                            <img src="{{ asset('images/movil.jpg')}}" class="img-fluid image rounded">
                             <div class="card-text position-absolute rounded-top">
                                 <h5 class="title">{{ $ad->title }}</h5>
                                 <h6 class="subtitle mb-2 text-muted">{{ $ad->price }} &#8364</h6>

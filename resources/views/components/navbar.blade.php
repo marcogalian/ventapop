@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-5">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-4 position-relative">
     <div class="container">
+        <a class="navbar-brand logo text-primary" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -9,22 +10,25 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-4">
-                    <a class="nav-link dropdown-toggle text-primary fs-5" role="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                    <a class="nav-link dropdown-toggle text-primary fs-5" role="button" href="#"
+                        data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
                     <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
+                        <li><a class="dropdown-item text-primary"
+                                href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-bg rounded-5 px-3 bg-primary text-light" href="{{ route('ad.create') }}">Subir productos</a>
+                    <a class="nav-link btn btn-bg rounded-5 px-3 bg-primary text-light"
+                        href="{{ route('ad.create') }}">Subir productos</a>
                 </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
-                @guest                
+                @guest
                 @if (Route::has('login'))
                 <li class="nav-item">
                     <a class="nav-link text-white fs-5 text-primary" href="{{ route('login') }}">{{ __('Entrar') }}</a>
@@ -33,19 +37,20 @@
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5 text-primary" href="{{ route('register') }}">{{ __('Regístrate') }}</a>
+                    <a class="nav-link text-white fs-5 text-primary"
+                        href="{{ route('register') }}">{{ __('Regístrate') }}</a>
                 </li>
                 @endif
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white fs-5 text-primary" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white fs-5 text-primary" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
+                        <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">Revisión de artículos
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
@@ -62,9 +67,15 @@
                             @csrf
                         </form>
                     </div>
-                </li>                
+                </li>
                 @endguest
             </ul>
         </div>
+    </div>
+    <div class="container-fluid search-bar d-flex justify-content-center position-absolute">
+        <form action="" class="search-container-input d-flex">
+            <input class="form-control search-input me-4 " type="search" placeholder="Buscar">
+            <button class="btn bg-primary search-input btn-search">Buscar</button>
+        </form>
     </div>
 </nav>

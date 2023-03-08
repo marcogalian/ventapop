@@ -1,5 +1,6 @@
 <x-layout>
     <x-slot name='title'>Ventapop - Homepage</x-slot>
+
     <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
             <h1 class="slogan">Vende y compra en un... Pop!</h1>
@@ -7,28 +8,39 @@
                 <h3 class="position-relative">Tu web de compraventa</h3>
             </div>
         </div>
+
         <div class="categories position-absolute">
             <ul class="container d-flex justify-content-around align-items-center list-categories">
                 @foreach ($categories as $category)
-                    <li class="nav-link">
-                        <a class="nav-link text-primary" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a>
-                    </li>
+                <li class="nav-link">
+                    <a class="nav-link text-primary"
+                        href="{{ route('category.ads', $category) }}">{{ $category->name}}
+                    </a>
+                </li>
                 @endforeach
             </ul>
         </div>
     </div>
-    
+
+    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+        <h3 class="m-0">Últimos artículos a la venta</h3>
+    </div>
+    <div class="container line-title">
+    </div>
+
     <div class="container d-flex justify-content-center">
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4 d-flex justify-content-around mt-5">                
+            <div class="col-12 col-md-4 d-flex justify-content-around mt-5">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time->subMinute(15))
-                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }} --}}</span>
-                    @endif 
-                    <div class="position-relative card-container rounded">                        
-                        <div class="card-img rounded">                                                       
-                            <img src="{{ asset('images/bici.webp')}}" class="img-fluid image rounded">
+                    <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
+                            class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
+                        --}}</span>
+                    @endif
+                    <div class="position-relative card-container rounded">
+                        <div class="card-img rounded">
+                            <img src="{{ asset('images/movil.jpg')}}" class="img-fluid image rounded">
                             <div class="card-text position-absolute rounded-top">
                                 <h5 class="title">{{ $ad->title }}</h5>
                                 <h6 class="subtitle mb-2 text-muted">{{ $ad->price }} &#8364</h6>
