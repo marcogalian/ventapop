@@ -28,11 +28,38 @@
     background-color: #d9b049;
 }
 
+.navbar-container{
+    z-index: 100;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+}
+
+
+.shadow-bottom {
+    box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
+}
 
 /* Main ---------------------------------------------------------------------------------------------- */
 
 .main{
     flex: 1;
+}
+
+
+/* Formulario ----------------------------------------------------------------------------------------- */
+
+.is-invalid{
+    border-color: red;
+}
+
+.invalid-feedback {
+    display: block;
+    color: red;
+    margin-top: .25rem;
+    font-size: .8rem;
 }
 
 /* Welcome -------------------------------------------------------------------------------------------- */

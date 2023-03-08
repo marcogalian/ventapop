@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         try {
             $categories = Category::all();
-            View::Share('categories', $categories);
+            View::share('categories', $categories);
         } catch (\Throwable $th) {
             dump("ALERT: Recuerda lanzar las migraciones cuando acabes el clone");
         }

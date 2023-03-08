@@ -16,24 +16,31 @@ class CreateAd extends Component
 
     protected $rules = [
         'title'=>'required|min:4',
-        'body'=>'required|min:8',
+        'category'=>'required',
         'price'=>'required|numeric',
-        'category'=>'required'
+        'body'=>'required|min:8',
     ];
 
     protected $messages = [
-        'required'=>'Field :attribute is required, please fill it',
+        'required'=>'Por favor rellena este campo, es obligatorio',
         'min'=>'Field :attribute should be longer than :min',
         'numeric'=>'Field :attribute must be a number'
     ];
 
     public function store()
     {
+        $validateField = $this->validate([
+            'title'=>'required|min:4',
+            'category'=>'required',
+            'price'=>'required|numeric',
+            'body'=>'required|min:8',
+        ]);
+
         $category = Category::find($this->category);
         $ad = $category->ads()->create([
             'title'=>$this->title,
             'body'=>$this->body,
-            'price'=>$this->price,            
+            'price'=>$this->price,           
         ]);
 
         Auth::user()->ads()->save($ad); 
