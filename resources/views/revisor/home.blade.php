@@ -77,7 +77,7 @@
                     <form action="{{ route('revisor.ad.accept', $ad)}}" method="POST">
                         @method('PATCH')
                         @csrf
-                        <button type="submit" class="btn btn-danger">Aceptar</button>
+                        <button type="submit" class="btn btn-success">Aceptar</button>
                     </form>
                 </div>
             </div>

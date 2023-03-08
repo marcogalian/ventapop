@@ -21,7 +21,10 @@
     <div class="container-fluid p-0 position-sticky top-0 navbar-container">
         <x-navbar/>
     </div>
-
+    
+    @if (session()->has('message'))
+        <x-alert :type="session('message')['type']" :message="session('message')['text']"/>
+    @endif    
 
     <div class="main container">
         <main class="py-4">

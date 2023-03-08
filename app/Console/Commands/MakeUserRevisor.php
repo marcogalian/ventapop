@@ -13,7 +13,7 @@ class MakeUserRevisor extends Command
      *
      * @var string
      */
-    protected $signature = 'ventapop:makeUserRevisor';
+    protected $signature = 'ventapop:makeUserRevisor {email}';
     protected $description = 'Asigna el rol del revisor a un usuario';
 
     public function __construct()
@@ -32,8 +32,9 @@ class MakeUserRevisor extends Command
      */
     public function handle(): void
     {
-        $email = $this->ask('Introducir el correo del usuario');
-        $user = User::where('email', $email)->first();
+        //$email = $this->ask('Introducir el correo del usuario');
+        //$user = User::where('email', $email)->first();
+        $user = User::where('email', $this->argument('email'))->first();
         if (!$user) {
             $this->error('Usuario no encontrado');
             return;

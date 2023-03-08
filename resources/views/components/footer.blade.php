@@ -9,9 +9,9 @@
 
         <ul class="nav col-md-4 justify-content-end pe-5">
             <li class="nav-item"><a href="{{ route('home')}}" class="nav-link px-2 text-muted">Inicio</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre los creadores</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacto</a></li>
+            <li class="nav-item"><a href="{{ route('revisor.become') }}" class="nav-link px-2 text-muted">Trabaja con nosotros</a></li>
         </ul>
     </footer>
 </div>
