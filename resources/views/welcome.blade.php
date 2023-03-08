@@ -58,10 +58,13 @@
     <div class="container d-flex justify-content-center">
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4 d-flex justify-content-around mt-5">
-                <div class="my-card rounded">
-                    <div class="position-relative card-container rounded">
-                        <div class="card-img rounded">
+            <div class="col-12 col-md-4 d-flex justify-content-around mt-5">                
+                <div class="my-card rounded position-relative">
+                    @if ($ad->created_at > $time->subHour(1))
+                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>¡Nuevo!</span>
+                    @endif 
+                    <div class="position-relative card-container rounded">                        
+                        <div class="card-img rounded">                                                       
                             <img src="{{ asset('images/bici.webp')}}" class="img-fluid image rounded">
                             <div class="card-text position-absolute rounded-top">
                                 <h5 class="title">{{ $ad->title }}</h5>

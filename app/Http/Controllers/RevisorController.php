@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('isRevisor')->except('becomeRevisor','makeRevisor');
@@ -42,10 +41,16 @@ class RevisorController extends Controller
         return redirect()->back()->withMessage(['type'=>'danger', 'text'=>'Anuncio rechazado']);
     }
 
-    public function becomeRevisor()
-    {
-        Mail::to('admin@ventapop.com')->send(new BecomeRevisor(Auth::user()));
-        return redirect()->route('home')->withMessage(['type'=>'success','text'=>'Solicitud enviada con éxito, le responderemos lo antes posible, gracias.']);
+    public function becomeRevisor ()
+    {        
+        if(Auth::user()->is_revisor)
+        {
+            return redirect()->route('home')->withMessage(['type'=>'warning','text'=>'Usted ya es revisor, si tiene alguna duda o problema contacte con el administrador.']);
+        }else{
+            Mail::to('admin@ventapop.com')->send(new BecomeRevisor(Auth::user()));
+            return redirect()->route('home')->withMessage(['type'=>'success','text'=>'Solicitud enviada con éxito, le responderemos lo antes posible, gracias.']); 
+        }
+        
     }
 
     public function makeRevisor (User $user)

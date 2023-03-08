@@ -35,6 +35,7 @@
     -moz-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
+    
 }
 
 
@@ -78,6 +79,14 @@
 
 th{
     width: 30px;    
+}
+
+.nuevo_articulo{
+    position: absolute;
+    top: 5%;
+    right: 80%;
+    z-index: 2;
+    
 }
 
 /* Card ----------------------------------------------------------------------------------------------- */
@@ -190,4 +199,16 @@ th{
 .bg_vpop_claro{
     background-color: rgba(85, 162, 161, 0.533);
     
+}
+
+/* About -------------------------------------------------------------------------------------------- */
+
+.nombre_about{
+    font-family: 'Pacifico', cursive;
+}
+
+.fotografia_about{
+    height: 300px;
+    display: flex;
+    justify-self: center;
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -17,11 +18,12 @@ class PublicController extends Controller
 
     public function index()
     {
+        $time = Carbon::now();
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
         $total_ads = Ad::get();
 
         //dd(count($total_ads));
-        return view('welcome', compact('ads','total_ads'));
+        return view('welcome', compact('ads','total_ads', 'time'));
     }    
 
     public function adsByCategory(Category $category)
@@ -30,7 +32,10 @@ class PublicController extends Controller
         return view('ad.by-category', compact('category','ads'));
     }
 
-    
+    public function about()
+    {
+        return view('about');
+    }
 
 
 

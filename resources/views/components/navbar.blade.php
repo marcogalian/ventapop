@@ -51,7 +51,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisor
+                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
