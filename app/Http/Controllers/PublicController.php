@@ -18,7 +18,7 @@ class PublicController extends Controller
 
     public function index()
     {
-        $time = Carbon::now();
+        $time = Carbon::now('CET');
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
         $total_ads = Ad::get();
 

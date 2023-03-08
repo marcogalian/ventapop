@@ -60,8 +60,8 @@
             @forelse ($ads as $ad)
             <div class="col-12 col-md-4 d-flex justify-content-around mt-5">                
                 <div class="my-card rounded position-relative">
-                    @if ($ad->created_at > $time->subHour(1))
-                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>¡Nuevo!</span>
+                    @if ($ad->created_at > $time->subMinute(15))
+                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }} --}}</span>
                     @endif 
                     <div class="position-relative card-container rounded">                        
                         <div class="card-img rounded">                                                       
