@@ -1,11 +1,11 @@
 <x-layout>
     <x-slot name='title'>Ventapop - Homepage</x-slot>
 
-    <div class="container-fluid main-hero m-0 p-0 position-relative">
-        <div class="text-slogan">
-            <h1 class="slogan">Vende y compra en un... Pop!</h1>
-            <div class="slogan-bottom container position-relative">
-                <h3 class="position-relative">Tu web de compraventa</h3>
+    <div class="container-fluid main-hero m-0 p-0 position-relative row">
+        <div class="text-slogan row">
+            <div class="container col-12 col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                <h1 class="slogan container text-end">Vende y compra en un... Pop!</h1>
+                <h3 class="slogan-bottom container text-end">Tu web de compraventa</h3>
             </div>
         </div>
 
@@ -13,7 +13,7 @@
             <ul class="container d-flex justify-content-around align-items-center list-categories">
                 @foreach ($categories as $category)
                 <li class="nav-link">
-                    <a class="nav-link text-primary"
+                    <a class="nav-link text-primary categories-link"
                         href="{{ route('category.ads', $category) }}">{{ $category->name}}
                     </a>
                 </li>
@@ -28,38 +28,22 @@
     <div class="container line-title">
     </div>
 
-    <div class="container d-flex justify-content-center">
-        <div class="row">
+    <div class="container d-flex justify-content-center p-0">
+        <div class="row m-0">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4 d-flex justify-content-around mt-5">
+            <div class="card-xs col-12 col-md-6 mt-5">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time->subMinute(15))
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
                             class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
                         --}}</span>
                     @endif
-                    <div class="position-relative card-container rounded">
-                        <div class="card-img rounded">
-                            <img src="{{ asset('images/movil.jpg')}}" class="img-fluid image rounded">
-                            <div class="card-text position-absolute rounded-top">
-                                <h5 class="title">{{ $ad->title }}</h5>
-                                <h6 class="subtitle mb-2 text-muted">{{ $ad->price }} &#8364</h6>
-                                {{-- <p class="text">{{ $ad->body }}</p> --}}
-                                <div class="subtitle mb-2">
-                                    <strong><a class="text-decoration-none"
-                                            href="{{ route('category.ads', $ad->category) }}">#{{ $ad->category->name }}</a></strong>
-                                    <i>{{ $ad->created_at->format('d/m/Y') }}</i>
-                                </div>
-                                <div class="subtitle mb-2">
-                                    <small>{{ $ad->user->name }}</small>
-                                </div>
-                                <div class="d-flex justify-content-center mt-auto">
-                                    <a href="{{ route('ads.show', $ad )}}"
-                                        class="btn card-btn btn-success rounded-1 px-5">Mostrar Más</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <x-card 
+                        title="{{ $ad->title }}"
+                        price="{{ $ad->price }}"
+                        body="{{ $ad->body }}"
+                        :ad="$ad"
+                    ></x-card>
                 </div>
             </div>
             @empty

@@ -30,67 +30,77 @@
     background-color: #189AB4 !important;
 }
 
+.btn-primary {
+    background-color: #189AB4;
+    border: none;
+    border-radius: 50px !important;
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    -ms-border-radius: 50px !important;
+    -o-border-radius: 50px !important;
+}
+
+.btn-primary:hover {
+    background-color: #05445E !important;
+}
+
 
 /* NavBar -------------------------------------------------------------------------------------------- */
 
-.logo{
+.logo {
     font-family: 'Dancing Script', cursive;
     font-size: 3.5rem;
     padding: 0;
     line-height: 70px;
 }
 
-.my-navbar{
+.my-navbar {
     background-color: #F2F2F2 !important;
 }
 
 
-.links-navbar a{
+.links-navbar a {
     color: #189AB4;
 }
 
 .btn-bg {
+    color: #F2F2F2 !important;
     box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
 }
 
-.btn-bg:hover{
-    color: #F2F2F2 !important;
+.btn-bg:hover {
+    color: #fff !important;
     background-color: #189AB4;
 }
 
-.navbar-container{
+.navbar-container {
     z-index: 100;
     transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
-    
-}
 
+}
 
 .shadow-bottom {
     box-shadow: #32325d40 0px 6px 10px -3px, #0000004d 0px 3px 7px -3px;
 }
 
-.bg_vpop{
-    background-color: #55a2a1ff;
+.search-container {
+    width: 100%;
 }
 
-.bg_vpop_claro{
-    background-color: #55a2a188;
-}
 
-.search-bar{
-    
+.search-bar {
     bottom: -20%;
 }
 
-.search-container-input{
-    width: 60%;
+.search-container-input {
+    width: 70%;
 }
 
-.search-input{
+.search-input {
     border: 4px solid #F2F2F2;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -101,37 +111,41 @@
 
 /* Main ---------------------------------------------------------------------------------------------- */
 
-.main-hero{
+.main-hero {
     width: 100% !important;
     height: 45vh;
-    background-image: linear-gradient(#189ab4f1, #189ab4f1), url('/public/images/secon.png') ;
+    background-image: linear-gradient(#189ab4e9, #189ab4e9), url('/public/images/secon.png');
     background-repeat: no-repeat;
     background-position: top;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.text-slogan {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.slogan{
+
+.slogan {
     font-size: 7rem;
     margin: 0;
     color: #F2F2F2;
     font-family: 'Dancing Script', cursive;
 }
 
-.slogan-bottom{
-    width: 100%;
-    color: #F2F2F2;    
+.slogan-bottom {
+    font-family: 'Dancing Script', cursive;
+    color: #F2F2F2;
+    font-size: 2.2rem;
+
 }
 
 .slogan-bottom h3 {
-    color: #F2F2F2; 
+    color: #F2F2F2;
     font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    text-align: end;
-    top: 0;
-    right: 0;
 }
 
 .categories {
@@ -151,12 +165,12 @@
     height: 100%;
 }
 
-.main{
+.main {
     flex: 1;
     background-color: #F2F2F2 !important;
 }
 
-.title-page{
+.title-page {
     margin-top: 5rem;
     background-color: #189AB4;
     width: 25%;
@@ -168,7 +182,7 @@
     -o-border-radius: 40px 40px 0 0;
 }
 
-.line-title{
+.line-title {
     width: 100%;
     height: 3px;
     background-color: #189AB4;
@@ -177,7 +191,7 @@
 
 /* Formulario ----------------------------------------------------------------------------------------- */
 
-.is-invalid{
+.is-invalid {
     border-color: red;
 }
 
@@ -190,7 +204,7 @@
 
 /* Welcome -------------------------------------------------------------------------------------------- */
 
-.main_welcome{
+.main_welcome {
     background-image: url(/public/images/logo_ventapopclaro.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -202,16 +216,16 @@
     font-family: 'Lobster', cursive;
 }
 
-th{
-    width: 30px;    
+th {
+    width: 30px;
 }
 
-.nuevo_articulo{
+.nuevo_articulo {
     position: absolute;
     top: 5%;
     right: 80%;
     z-index: 2;
-    
+
 }
 
 /* Card ----------------------------------------------------------------------------------------------- */
@@ -244,12 +258,12 @@ th{
     -o-transition: all .5s ease-in-out;
 }
 
-.text-view{
+.text-view {
     bottom: 0;
     opacity: 1;
 }
 
-.card-img{
+.card-img {
     width: 16rem;
     height: 22rem;
 }
@@ -260,20 +274,10 @@ th{
     object-fit: cover;
 }
 
-.btn-success{
-    background-color: #187E80;
-    border-color: transparent;
-}
-
-.btn-success:hover {
-    color: #000;
-    background-color: #98D7C2;
-    border-color: transparent;
-}
 
 /* Carrousel indicadores ----------------------------------------------------------------------------- */
 
-.btn-prev{
+.btn-prev {
     background-color: #187E80;
     padding-top: .5em;
     padding-right: .7em;
@@ -285,7 +289,7 @@ th{
     -o-border-radius: 50%;
 }
 
-.btn-next{
+.btn-next {
     background-color: #187E80;
     padding-top: .5em;
     padding-left: .7em;
@@ -297,9 +301,11 @@ th{
     -o-border-radius: 50%;
 }
 
-.paginacion{
-    width: 400px;      /* Faltaría ajustarlo para el responsive */
+.paginacion {
+    width: 400px;
+    /* Faltaría ajustarlo para el responsive */
 }
+
 /* Footer -------------------------------------------------------------------------------------------- */
 
 .border-footer {
@@ -309,7 +315,7 @@ th{
     background-color: #275677;
 }
 
-.logo_footer{
+.logo_footer {
     max-height: 5em;
 }
 
@@ -318,19 +324,270 @@ th{
 }
 
 
-.bg_vpop_claro{
+.bg_vpop_claro {
     background-color: rgba(85, 162, 161, 0.533);
-    
+
 }
 
 /* About -------------------------------------------------------------------------------------------- */
 
-.nombre_about{
+.nombre_about {
     font-family: 'Pacifico', cursive;
 }
 
-.fotografia_about{
+.fotografia_about {
     height: 300px;
     display: flex;
     justify-self: center;
+}
+
+
+
+/* Responsive web design --------------------------------------------------------------------------- */
+
+
+/* 320 x 568 iphone 5 ------------------------------------*/
+@media (max-width: 320px) {
+    .logo {
+        font-size: 1.5rem;
+        padding: 0;
+        line-height: 70px;
+    }
+
+    .main-hero {
+        height: 35vh;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+
+    }
+
+    .slogan {
+        font-size: 2rem;
+    }
+
+    .slogan-bottom {
+        right: 90px;
+        font-size: .8rem;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .title-page {
+        margin-top: 4rem;
+        width: 80%;
+        height: 35px;
+    }
+
+    .title-page h3 {
+        font-size: 1rem;
+    }
+
+    .btn-up-item {
+        padding: .4rem 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .my-card {
+        width: 8rem;
+        height: 15rem;
+        font-size: .8rem;
+    }
+
+    .card-xs {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .card-text {
+        text-align: center;
+        width: 8rem;
+        height: 100%;
+    }
+
+    .card-img {
+        width: 9rem;
+        height: 16rem;
+    }
+
+    .title-card {
+        font-size: .8rem;
+    }
+
+    .card-btn {
+        font-size: .7rem;
+        padding: .4rem 1rem;
+    }
+
+    .footer-container {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: .65rem;
+    }
+
+    .nav-footer {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+}
+
+
+/* 375 x 667 iphone 6 ---------------------------------------*/
+@media (max-width: 375px) {
+    .logo {
+        font-size: 2rem;
+        padding: 0;
+        line-height: 70px;
+    }
+
+    .main-hero {
+        height: 35vh;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+
+    }
+
+    .slogan {
+        font-size: 2.5rem;
+    }
+
+    .slogan-bottom {
+        right: 90px;
+        font-size: 1rem;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .title-page {
+        margin-top: 4rem;
+        width: 80%;
+        height: 35px;
+    }
+
+    .title-page h3 {
+        font-size: 1rem;
+    }
+
+    .btn-up-item {
+        padding: .4rem 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .my-card {
+        width: 10rem;
+        height: 15rem;
+        font-size: .8rem;
+    }
+
+    .card-xs {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .card-text {
+        text-align: center;
+        width: 10rem;
+        height: 100%;
+    }
+
+    .card-img {
+        width: 10rem;
+        height: 16rem;
+    }
+
+    .title-card {
+        font-size: .8rem;
+    }
+
+    .card-btn {
+        font-size: .7rem;
+        padding: .4rem 1rem;
+    }
+
+    .footer-container {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: .75rem;
+    }
+
+    .nav-footer {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+}
+
+/* 768 x 1024 ipad ---------------------------------------- */
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+        padding: 0;
+        line-height: 70px;
+    }
+
+    .main-hero {
+        height: 25vh;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+
+    }
+
+    .categories{
+        display: none;
+    }
+
+    .slogan {
+        font-size: 4rem;
+    }
+
+    .slogan-bottom {
+        right: 90px;
+        font-size: 1.5rem;
+    }
+
+    .title-page {
+        margin-top: 4rem;
+        width: 40%;
+        height: 35px;
+    }
+
+    .title-page h3 {
+        font-size: 1rem;
+    }
+
+    .btn-up-item {
+        padding: .4rem 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .footer-container {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: .65rem;
+    }
+
+
 }

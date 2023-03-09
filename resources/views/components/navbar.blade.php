@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-4 position-relative">
-    <div class="container">
+    <div class="container-fluid mx-5">
         <a class="navbar-brand logo text-primary" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -9,19 +9,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
-                <li class="nav-item dropdown me-4">
-                    <a class="nav-link dropdown-toggle text-primary fs-5" role="button" href="#"
+                <li class="nav-item ">
+                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light" href="{{ route('ad.create') }}">Subir productos</a>
+                </li>
+                <li class="nav-item dropdown me-4 mb-2">
+                    <a class="nav-link dropdown-toggle text-primary" role="button" href="#"
                         data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
                     <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-primary"
-                                href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
+                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
                         @endforeach
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-bg rounded-5 px-3 bg-primary text-light"
-                        href="{{ route('ad.create') }}">Subir productos</a>
                 </li>
             </ul>
 
@@ -31,13 +29,13 @@
                 @guest
                 @if (Route::has('login'))
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5 text-primary" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                    <a class="nav-link text-white text-primary" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                 </li>
                 @endif
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5 text-primary"
+                    <a class="nav-link text-white text-primary"
                         href="{{ route('register') }}">{{ __('Regístrate') }}</a>
                 </li>
                 @endif
@@ -72,10 +70,13 @@
             </ul>
         </div>
     </div>
-    <div class="container-fluid search-bar d-flex justify-content-center position-absolute">
-        <form action="" class="search-container-input d-flex">
-            <input class="form-control search-input me-4 " type="search" placeholder="Buscar">
-            <button class="btn bg-primary search-input btn-search">Buscar</button>
-        </form>
+    <div class="search-container search-bar position-absolute">
+        <div class="container-fluid d-flex justify-content-center">
+            <form action="" class="search-container-input d-flex">
+                <input class="form-control search-input me-4 " type="search" placeholder="Buscar">
+                <button class="btn bg-primary search-input btn-search">Buscar</button>
+            </form>
+        </div>
     </div>
+
 </nav>
