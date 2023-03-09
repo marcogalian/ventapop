@@ -4,8 +4,8 @@
         <div class="row" style="backdrop-filter: blur(4px); height:320px">
             <div class="col">
                 <h1 style="font-size: 100px;">Ventapop</h1>
-                <h2 style="font-size: 40px;" class="mt-5">Vende y compra en un ... ¡Pop!</h2>
-                <h2> {{ __('messages.welcome') }}</h2>
+                <h2 style="font-size: 40px;" class="mt-5">{{ __('messages.logo') }}</h2>
+                
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="container mb-5">
         <div class="row">
             <div class="col-12 mb-1">
-                <h2>Echa un ojo a nuestras categorías</h2>
+                <h2>{{ __('Echa un ojo a nuestras categorías') }}</h2>
             </div>
             <table class="text-center mt-3" style="table-layout: fixed">
                 <tr>

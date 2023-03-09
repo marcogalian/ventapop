@@ -14,7 +14,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-4">
                     <a class="nav-link dropdown-toggle text-white" role="button" href="#" data-bs-toggle="dropdown"
-                        aria-expanded="false">Categorías</a>
+                        aria-expanded="false">{{ __('Categorías') }}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
                         <li><a class="dropdown-item"
@@ -26,7 +26,7 @@
                     <a class="nav-link text-white" href="{{ route('revisor.home') }}">Home</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-bg rounded-5 px-3" href="{{ route('ad.create') }}">Subir productos</a>
+                    <a class="nav-link btn btn-bg rounded-5 px-3" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
             </ul>
 
@@ -47,13 +47,13 @@
                 @guest
                 @if (Route::has('login'))
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link text-white fs-5" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                 </li>
                 @endif
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link text-white fs-5" href="{{ route('register') }}">{{ __('Registro') }}</a>
                 </li>
                 @endif
 
@@ -65,7 +65,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
+                        <a class="dropdown-item" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos') }}
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
@@ -73,10 +73,10 @@
                         @endif
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            {{ __('Cerrar sesión') }}
                         </a>
 
-                        <a class="dropdown-item" href="{{ route('ad.create') }}">Poner un anuncio</a>
+                        <a class="dropdown-item" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
