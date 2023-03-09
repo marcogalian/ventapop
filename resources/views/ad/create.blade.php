@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">Vende pop - ¿Que quieres vender?</x-slot>
+    <x-slot name="title">Vendepop - ¿Que quieres vender?</x-slot>
     
     <div class="container my-5">
         <div class="row justify-content-center">

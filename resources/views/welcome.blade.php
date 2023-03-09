@@ -18,8 +18,8 @@
                     minus quam exercitationem beatae ipsa.</p>
             </div>
             <div class="col-12 col-md-6 text-center">
-                <p class="fs-5">Hay {{ count($total_ads) }} artículos subidos.</p>
-                <button class="btn btn-dark bg_vpop text-white border"><a href="#" class="nav-link">Ver más</a></button>
+                <p class="fs-5">{{ __('Hay')}} {{ count($total_ads) }} {{ __('artículos subidos')}}.</p>
+                <button class="btn btn-dark bg_vpop text-white border"><a href="#" class="nav-link">{{ __('Ver más')}}</a></button>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     @foreach ($categories as $category)
-                        <th><a class="nav-link" href="{{ route('category.ads', $category->name) }}">{{ $category->name }}</a></th>
+                        <th><a class="nav-link" href="{{ route('category.ads', $category->name) }}">{{ __($category->name) }}</a></th>
                     @endforeach
                 </tr>
             </table>            
@@ -53,7 +53,7 @@
 
     <div class="container d-flex justify-content-center align-items-center">
         <div class="bg_vpop w-75 p-2 fs-3 text-white text-center rounded">
-            <p class="align-bottom m-0">Últimos artículos subidos a la venta. ¡Corre que vuelan!</p>
+            <p class="align-bottom m-0">{{ __('Últimos artículos subidos a la venta. ¡Corre que vuelan!')}}</p>
         </div>
     </div>
     <div class="container d-flex justify-content-center">
@@ -62,7 +62,7 @@
             <div class="col-12 col-md-4 d-flex justify-content-around mt-5">                
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time->subMinute(15))
-                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }} --}}</span>
+                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span class="visually-hidden"></span>{{ __('¡Nuevo!')}} {{-- creado a las {{ $ad->created_at }} ; {{ $time }} --}}</span>
                     @endif 
                     <div class="position-relative card-container rounded">                        
                         <div class="card-img rounded">                                                       
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center mt-auto">
                                     <a href="{{ route('ads.show', $ad )}}"
-                                        class="btn card-btn btn-success rounded-1 px-5">Mostrar Más</a>
+                                        class="btn card-btn btn-success rounded-1 px-5">{{ __('Mostrar Más')}}</a>
                                 </div>
                             </div>
                         </div>

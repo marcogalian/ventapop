@@ -31,12 +31,12 @@
             </div>
             <div class="row my-4 justify-content-center">
                 <div class="col-12 col-md-6">
-                    <div><b>Título: </b> {{$ad->title}}</div>
-                    <div><b>Precio: </b> {{$ad->price}}</div>
-                    <div><b>Descripción: </b> {{$ad->body}}</div>
-                    <div><b>Publicado el: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
-                    <div><b>Por: </b> {{ $ad->user->name }}</div>
-                    <div><a class="text-decoration-none" href="{{ route('category.ads', $ad->category) }}">#{{$ad->category->name}}</a></div>
+                    <div><b>{{ __('Título')}}: </b> {{$ad->title}}</div>
+                    <div><b>{{ __('Precio')}}: </b> {{$ad->price}}</div>
+                    <div><b>{{ __('Descripción')}}: </b> {{$ad->body}}</div>
+                    <div><b>{{ __('Publicado el')}}: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
+                    <div><b>{{ __('Por')}}: </b> {{ $ad->user->name }}</div>
+                    <div><a class="text-decoration-none" href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a></div>
                     <div><a href="#" class="btn btn-success">Comprar</a></div>
                 </div>
                 
