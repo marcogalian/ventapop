@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop">
     <div class="container">
         <a href="{{ route('home') }}">
-            <img src="{{ asset('images/logo_ventapopnegro.png') }}" alt="logo Ventapop" class="logo_footer rounded p-2 me-3 border border-white">
+            <img src="{{ asset('images/logo_ventapopnegro.png') }}" alt="logo Ventapop"
+                class="logo_footer rounded p-2 me-3 border border-white">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -12,10 +13,12 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown me-4">
-                    <a class="nav-link dropdown-toggle text-white" role="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                    <a class="nav-link dropdown-toggle text-white" role="button" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">Categorías</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
+                        <li><a class="dropdown-item"
+                                href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -29,8 +32,19 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
+                <li class="nav-link">
+                    <x-locale lang="en" country="gb"/>
+                </li>
+                <li class="nav-link">
+                    <x-locale lang="it" country="it"/>
+                </li>
+                <li class="nav-link">
+                    <x-locale lang="es" country="es"/>
+                </li>
+
+
                 <!-- Authentication Links -->
-                @guest                
+                @guest
                 @if (Route::has('login'))
                 <li class="nav-item">
                     <a class="nav-link text-white fs-5" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -68,7 +82,7 @@
                             @csrf
                         </form>
                     </div>
-                </li>                
+                </li>
                 @endguest
             </ul>
         </div>

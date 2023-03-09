@@ -5,6 +5,7 @@
             <div class="col">
                 <h1 style="font-size: 100px;">Ventapop</h1>
                 <h2 style="font-size: 40px;" class="mt-5">Vende y compra en un ... ¡Pop!</h2>
+                <h2> {{ __('messages.welcome') }}</h2>
             </div>
         </div>
     </div>
