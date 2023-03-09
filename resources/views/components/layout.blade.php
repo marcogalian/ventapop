@@ -18,22 +18,22 @@
     {{$style ?? ''}}
 </head>
 <body class="body">
-    <div class="container-fluid p-0 position-sticky top-0 navbar-container">
+    <div class="container-fluid p-0 position-sticky top-0 navbar-container ">
         <x-navbar/>
     </div>
     
     @if (session()->has('message'))
         <x-alert :type="session('message')['type']" :message="session('message')['text']"/>
     @endif    
-
-    <div class="main container">
-        <main class="py-4">
-            {{ $slot }}
+    
+    <div class="main container-fluid p-0">
+        <main>
+            {{ $slot }}   
         </main>
     </div>
 
 
-    <div class="footer">
+    <div class="footer bg-primary">
         <x-footer/>
     </div>
 
