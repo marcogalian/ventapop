@@ -1,9 +1,25 @@
 <x-layout>
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4 main_welcome mt-5">
+                <div class="blur">
+                    <h1 class="text-center m-3"> {{ __('Inicia sesión para')}}:</h1>
+                    <ul>
+                        <li class="mb-3 fs-3">{{ __('Vender y comprar productos')}}</li>
+                        <li class="mb-3 fs-3">{{ __('Contactar con los vendedores')}}</li>
+                        <li class="mb-3 fs-3">{{ __('Trabajar como revisor')}}</li>
+                        <li class="mb-3 fs-3">... {{ __('¡Y mucho mas!')}}</li>
+                    </ul>
+                    <h4 class="text-center mt-5 mb-3"> {{ __('¿Aun no estás registrado?')}} {{ __('¡Únete a nuestra comunidad!')}}</h4>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-warning text-center"><a class="text-center nav-link text-primary fs-3" href="{{ route('register') }}">{{ __('Regístrate') }}</a></button>
+                    </div>
+                    
+                </div>
+            </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg_vpop text-white">{{ __('Iniciar sesión') }}</div>
+                    <div class="card-header bg-primary text-white">{{ __('Iniciar sesión') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

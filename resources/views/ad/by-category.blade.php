@@ -2,7 +2,7 @@
     <x-slot name="title">Ventapop - {{ $category->name }}</x-slot>
     <div class="container">
         <div class="">
-            <p class="text-primary my-4 text-center fs-3">Ventapop -  {{ $category->name }}</p>
+            <p class="text-primary my-4 text-center fs-3">Ventapop -  {{ __($category->name) }}</p>
         </div>
         <div class="row">
             @forelse ($ads as $ad)

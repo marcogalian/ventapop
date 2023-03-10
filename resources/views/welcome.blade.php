@@ -4,8 +4,8 @@
     <div class="container-fluid main-hero m-0 p-0 position-relative row">
         <div class="text-slogan row">
             <div class="container col-12 col-lg-12 d-flex flex-column justify-content-center align-items-center">
-                <h1 class="slogan container text-end">Vende y compra en un... Pop!</h1>
-                <h3 class="slogan-bottom container text-end">Tu web de compraventa</h3>
+                <h1 class="slogan container text-end">{{ __('messages.logo')}}</h1>
+                <h3 class="slogan-bottom container text-end">{{ __('Tu web de compraventa')}}</h3>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
                 @foreach ($categories as $category)
                 <li class="nav-link">
                     <a class="nav-link text-primary categories-link"
-                        href="{{ route('category.ads', $category) }}">{{ $category->name}}
+                        href="{{ route('category.ads', $category) }}">{{ __($category->name)}}
                     </a>
                 </li>
                 @endforeach
@@ -23,7 +23,7 @@
     </div>
 
     <div class="container title-page d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">Últimos artículos a la venta</h3>
+        <h3 class="m-0">{{ __('Últimos artículos a la venta')}}</h3>
     </div>
     <div class="container line-title">
     </div>
@@ -31,11 +31,11 @@
     <div class="container d-flex justify-content-center p-0">
         <div class="row m-0">
             @forelse ($ads as $ad)
-            <div class="card-xs col-12 col-md-6 mt-5">
+            <div class="card-xs col-12 col-md-4 mt-5">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time->subMinute(15))
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
-                            class="visually-hidden"></span>¡Nuevo! {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
+                            class="visually-hidden"></span>{{ __('¡Nuevo!')}} {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
                         --}}</span>
                     @endif
                     <x-card 
@@ -48,7 +48,7 @@
             </div>
             @empty
             <div class="col-12">
-                <h2>Parece que no hay nada más de esta categoría...</h2>
+                <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
                 <a href="{{ route('ad.create') }}"><button class="btn btn-success">Vende tu primer artículo</button></a>
                 <a href="{{ route('home') }}"><button class="btn btn-success">Volver al inicio</button></a>
             </div>
