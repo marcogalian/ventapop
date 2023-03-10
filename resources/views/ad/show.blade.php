@@ -15,12 +15,12 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
-                        <button class="carousel-contol-prev btn-prev border-0" type="buttom" data-bs-target="#adImages"
+                        <button class="carousel-contol-prev bg-primary btn-prev border-0" type="buttom" data-bs-target="#adImages"
                             data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-contol-next btn-next border-0" type="buttom" data-bs-target="#adImages"
+                        <button class="carousel-contol-next bg-primary btn-next border-0" type="buttom" data-bs-target="#adImages"
                             data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
@@ -37,7 +37,7 @@
                     <div><b>{{ __('Publicado el')}}: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
                     <div><b>{{ __('Por')}}: </b> {{ $ad->user->name }}</div>
                     <div><a class="text-decoration-none" href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a></div>
-                    <div><a href="#" class="btn btn-success">Comprar</a></div>
+                    <div><a href="#" class="btn btn-primary text-light">Comprar</a></div>
                 </div>
                 
             </div>

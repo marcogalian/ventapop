@@ -1,4 +1,3 @@
-
 @import '~flag-icon-css/css/flag-icons';
 
 /* FONTS -------------------------------------------------------------------------------------------- */
@@ -57,7 +56,7 @@
     line-height: 70px;
 }
 
-.logo-login{
+.logo-login {
     font-size: 6rem;
 }
 
@@ -118,7 +117,7 @@
 
 /* Main ---------------------------------------------------------------------------------------------- */
 
-.login-register{
+.login-register {
     margin-top: 120px;
 }
 
@@ -182,6 +181,7 @@
 }
 
 .title-page {
+    font-size: 1.5rem;
     margin-top: 5rem;
     background-color: #189AB4;
     width: 25%;
@@ -243,7 +243,7 @@ th {
 
 .my-card {
     width: 16rem;
-    height: 26rem;
+    height: 25rem;
 }
 
 .card-container {
@@ -276,7 +276,7 @@ th {
 
 .card-img {
     width: 16rem;
-    height: 22rem;
+    height: 21rem;
 }
 
 .image {
@@ -319,6 +319,7 @@ th {
 
 /* Footer -------------------------------------------------------------------------------------------- */
 
+
 .border-footer {
     width: 100%;
     height: 2px;
@@ -356,85 +357,52 @@ th {
 
 /* Responsive web design --------------------------------------------------------------------------- */
 
+/* 768 x 1024 ipad ---------------------------------------- */
 
-/* 320 x 568 iphone 5 ------------------------------------*/
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 0;
         line-height: 70px;
     }
 
     .main-hero {
-        height: 35vh;
+        height: 25vh;
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
 
     }
 
-    .slogan {
-        font-size: 2rem;
-    }
-
-    .slogan-bottom {
-        right: 90px;
-        font-size: .8rem;
+    .card-xs {
+        display: flex;
+        justify-content: center;
+        width: 45%;
     }
 
     .categories {
         display: none;
     }
 
-    .search-container {
-        display: none;
+    .slogan {
+        font-size: 4rem;
+    }
+
+    .slogan-bottom {
+        right: 90px;
+        font-size: 1.5rem;
     }
 
     .title-page {
         margin-top: 4rem;
-        width: 80%;
+        width: 40%;
         height: 35px;
-    }
-
-    .title-page h3 {
         font-size: 1rem;
     }
 
     .btn-up-item {
         padding: .4rem 1.2rem;
         margin: 1rem 0;
-    }
-
-    .my-card {
-        width: 8rem;
-        height: 15rem;
-        font-size: .8rem;
-    }
-
-    .card-xs {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-    }
-
-    .card-text {
-        text-align: center;
-        width: 8rem;
-        height: 100%;
-    }
-
-    .card-img {
-        width: 9rem;
-        height: 16rem;
-    }
-
-    .title-card {
-        font-size: .8rem;
-    }
-
-    .card-btn {
-        font-size: .7rem;
-        padding: .4rem 1rem;
     }
 
     .footer-container {
@@ -444,13 +412,9 @@ th {
         font-size: .65rem;
     }
 
-    .nav-footer {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-    }
 
 }
+
 
 
 /* 375 x 667 iphone 6 ---------------------------------------*/
@@ -492,7 +456,7 @@ th {
         height: 35px;
     }
 
-    .title-page h3 {
+    .title-page {
         font-size: 1rem;
     }
 
@@ -548,43 +512,42 @@ th {
 
 }
 
-/* 768 x 1024 ipad ---------------------------------------- */
-
-@media (max-width: 768px) {
+/* 320 x 568 iphone 5 ------------------------------------*/
+@media (max-width: 320px) {
     .logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 0;
         line-height: 70px;
     }
 
     .main-hero {
-        height: 25vh;
+        height: 35vh;
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
-
-    }
-
-    .categories{
-        display: none;
     }
 
     .slogan {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .slogan-bottom {
         right: 90px;
-        font-size: 1.5rem;
+        font-size: .8rem;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .search-container {
+        display: none;
     }
 
     .title-page {
         margin-top: 4rem;
-        width: 40%;
+        width: 80%;
         height: 35px;
-    }
-
-    .title-page h3 {
         font-size: 1rem;
     }
 
@@ -593,12 +556,50 @@ th {
         margin: 1rem 0;
     }
 
+    .my-card {
+        width: 8rem;
+        height: 13rem;
+        font-size: .8rem;
+    }
+
+    .card-xs {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .card-text {
+        text-align: center;
+        width: 8rem;
+        height: 100%;
+    }
+
+    .card-img {
+        width: 9rem;
+        height: 14rem;
+    }
+
+    .title-card {
+        font-size: .8rem;
+    }
+
+    .card-btn {
+        font-size: .7rem;
+        padding: .4rem 1rem;
+    }
+
     .footer-container {
         text-align: center;
         display: flex;
+        flex-direction: column;
         align-items: center;
         font-size: .65rem;
     }
 
+    .nav-footer {
+        display: flex;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
 
 }

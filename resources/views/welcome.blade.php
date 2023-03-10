@@ -23,15 +23,15 @@
     </div>
 
     <div class="container title-page d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">Últimos artículos a la venta</h3>
+        <p class="m-0">Últimos artículos a la venta</p>
     </div>
     <div class="container line-title">
     </div>
 
-    <div class="container d-flex justify-content-center p-0">
-        <div class="row m-0">
+    <div class="container p-0">
+        <div class="row m-0 justify-content-center">
             @forelse ($ads as $ad)
-            <div class="card-xs col-12 col-md-6 mt-5">
+            <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time->subMinute(15))
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
@@ -41,7 +41,7 @@
                     <x-card 
                         title="{{ $ad->title }}"
                         price="{{ $ad->price }}"
-                        body="{{ $ad->body }}"
+                        body=""
                         :ad="$ad"
                     ></x-card>
                 </div>
