@@ -212,11 +212,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Lobster', cursive;
+}
+
+.blur{
+    backdrop-filter: blur(2px);
 }
 
 th {
