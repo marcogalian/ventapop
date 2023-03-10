@@ -10,14 +10,14 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light me-4" href="{{ route('ad.create') }}">Subir productos</a>
+                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light me-4" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown me-4 mb-2">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#"
-                        data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                        data-bs-toggle="dropdown" aria-expanded="false">{{ __('Categorías')}}</a>
                     <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ $category->name}}</a></li>
+                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -59,7 +59,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
+                        <a class="dropdown-item" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
@@ -70,7 +70,7 @@
                             {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item" href="{{ route('ad.create') }}">Poner un anuncio</a>
+                        <a class="dropdown-item" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -84,8 +84,8 @@
     <div class="search-container search-bar position-absolute">
         <div class="container-fluid d-flex justify-content-center">
             <form action="" class="search-container-input d-flex">
-                <input class="form-control search-input me-4" type="search" placeholder="Buscar">
-                <button class="btn bg-primary search-input btn-search">Buscar</button>
+                <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
+                <button class="btn bg-primary search-input btn-search">{{ __('Buscar')}}</button>
             </form>
         </div>
     </div>
