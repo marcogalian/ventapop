@@ -37,7 +37,7 @@
                     <div><b>{{ __('Publicado el')}}: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
                     <div><b>{{ __('Por')}}: </b> {{ $ad->user->name }}</div>
                     <div><a class="text-decoration-none" href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a></div>
-                    <div><a href="#" class="btn btn-success">Comprar</a></div>
+                    <div><a href="#" class="btn btn-success">{{ __('Comprar')}}</a></div>
                 </div>
                 
             </div>

@@ -6,6 +6,11 @@
     "Cerrar sesión": "Logout",
     "Revisión de artículos": "Ad Revisor",
     "Bienvenido a rapido.es": "Welcome to rapido.es",
+    "Restablecer contraseña": "Password restoration",
+    "Restaurar contraseña": "Password restoration",
+    "Enviar enlace para restaurar contraseña": "Send mail to password restoration",
+    "¡Compra y vende entre millones de usuarios de todo el mundo!": "Buy and sell among millions of users from all over the world!",
+    "Correo electrónico": "Email",
     "coches": "cars",
     "motos": "motorbikes",
     "hogar": "home",
@@ -13,6 +18,7 @@
     "móviles": "smartphones",
     "ordenadores": "computers",
     "Mostrar Más": "Show More",
+    "Mostrar": "Show",
     "Uyy.. parece que no hay nada": "Whoops.. seems no objects here",
     "Vende tu primer objeto": "Sell your first item",
     "o": "or",
@@ -92,5 +98,6 @@
     "Regístrate": "Sign Up",
     "Buscar": "Search",
     "Fecha de creación": "Date release",
-    "No hay anuncios para revisar, vuelve mas tarde, gracias": "No ads to revise, come back later"
+    "No hay anuncios para revisar, vuelve mas tarde, gracias": "No ads to revise, come back later",
+    "Les presentamos a...¡Los creadores de Ventapop!": "We present to you... The developers of Ventapop!"
 }

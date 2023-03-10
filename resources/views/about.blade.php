@@ -3,7 +3,7 @@
         <div class="row">
 
             <div class="col-12">
-                <h1 class="text-center nombre_about mb-5"> Les presentamos a...¡Los creadores de Ventapop!</h1>
+                <h1 class="text-center nombre_about mb-5"> {{ __('Les presentamos a...¡Los creadores de Ventapop!')}}</h1>
             </div>
 
             <div class="col-12 col-md-6 mt-2">                
