@@ -57,6 +57,10 @@
     line-height: 70px;
 }
 
+.logo-login{
+    font-size: 6rem;
+}
+
 .my-navbar {
     background-color: #F2F2F2 !important;
 }
@@ -113,6 +117,10 @@
 }
 
 /* Main ---------------------------------------------------------------------------------------------- */
+
+.login-register{
+    margin-top: 120px;
+}
 
 .main-hero {
     width: 100% !important;

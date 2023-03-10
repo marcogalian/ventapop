@@ -1,9 +1,12 @@
 <x-layout>
-    <div class="container">
+    <div class="container login-register">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4 col-4 d-flex justify-content-center align-items-end flex-column me-3">
+                <p class="logo logo-login text-primary">VentaPop!</p>
+            </div>
+            <div class="col-md-7">
                 <div class="card">
-                    <div class="card-header bg_vpop text-white">{{ __('Iniciar sesión') }}</div>
+                    <div class="card-header bg-primary text-light">{{ __('Iniciar sesión') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -51,7 +54,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-dark border bg_vpop text-white">
+                                    <button type="submit" class="btn btn-primary text-white">
                                         {{ __('Iniciar sesión') }}
                                     </button>
 

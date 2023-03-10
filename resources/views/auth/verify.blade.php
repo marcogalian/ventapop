@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container login-register">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Verifica tu correo electrónico') }}</div>
+                    <div class="card-header bg-primary text-white">{{ __('Verifica tu correo electrónico') }}</div>
 
                     <div class="card-body">
                         @if (session('resent'))
@@ -16,7 +16,7 @@
                         {{ __('If you did not receive the email') }},
                         <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                             @csrf
-                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                            <button type="submit" class="btn btn-primary p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
                         </form>
                     </div>
                 </div>
