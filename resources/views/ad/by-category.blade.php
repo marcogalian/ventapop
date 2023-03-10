@@ -16,9 +16,9 @@
             </div>
             @empty
             <div class="col-12">
-                <h2>Parece que no hay nada más de esta categoría...</h2>
-                <a href="{{ route('ad.create') }}"><button class="btn btn-success">Vende tu primer artículo</button></a>
-                <a href="{{ route('home') }}"><button class="btn btn-success">Volver al inicio</button></a>
+                <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
+                <a href="{{ route('ad.create') }}"><button class="btn btn-success">{{ __('Vende tu primer artículo')}}</button></a>
+                <a href="{{ route('home') }}"><button class="btn btn-success">{{ __('Volver a inicio')}}</button></a>
             </div>
             @endforelse
         </div>

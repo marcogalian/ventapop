@@ -9,7 +9,7 @@
 
 
         <div class="mb-3">
-            <label for="title" class="form-label">¡Pon un título a tu anuncio!: </label>
+            <label for="title" class="form-label">{{ __('¡Pon un título a tu anuncio!')}}: </label>
             <input wire:model="title" type="text" class="form-control @error('title') is-invalid @enderror" >
             @error('title')
                 <span class="invalid-feedback" role="alert">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">¿A que precio quieres venderlo? </label>
+            <label for="price" class="form-label">{{ __('¿A que precio quieres venderlo?')}} </label>
             <input wire:model="price" type="number" class="form-control @error('price') is-invalid @enderror" >
             @error('price')
                 <span class="invalid-feedback" role="alert">
@@ -29,17 +29,17 @@
         </div>
 
         <div class="mb-3">
-            <label for="category" class="form-label">Añade el producto en una categoría</label>
+            <label for="category" class="form-label">{{ __('Añade el producto en una categoría')}}</label>
             <select wire:model.defer="category" class="form-control">
-                <option value="">Selecciona una categoría</option>
+                <option value="">{{ __('Selecciona una categoría')}}</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}">{{ __($category->name) }}</option>
                 @endforeach
             </select>
         </div>
 
         <div class="mb-3">
-            <label for="body" class="form-label">Añade una descripción: </label>
+            <label for="body" class="form-label">{{ __('Añade una descripción')}}: </label>
             <textarea wire:model="body" class="form-control @error('body') is-invalid @enderror" cols="30" rows="15" ></textarea>
             @error('body')
                 <span class="invalid-feedback" role="alert">
@@ -49,8 +49,8 @@
         </div>
 
         <div class="mt-2">
-            <button class="btn btn-info text-white" type="submit">Subir articulo</button>
-            <a href="{{ route('home') }}" class="btn btn-outline-info">Volver a inicio</a>
+            <button class="btn btn-info text-white" type="submit">{{ __('Subir artículo')}}</button>
+            <a href="{{ route('home') }}" class="btn btn-outline-info">{{ __('Volver a inicio')}}</a>
         </div>
 
     </form>

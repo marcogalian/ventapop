@@ -37,7 +37,11 @@ class PublicController extends Controller
         return view('about');
     }
 
-
+    public function setLocale($locale)
+    {
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
 
 
 }

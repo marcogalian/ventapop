@@ -25,6 +25,17 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
+                <li class="nav-link">
+                    <x-locale lang="en" country="gb"/>
+                </li>
+                <li class="nav-link">
+                    <x-locale lang="it" country="it"/>
+                </li>
+                <li class="nav-link">
+                    <x-locale lang="es" country="es"/>
+                </li>
+
+
                 <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))
@@ -48,7 +59,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">Revisión de artículos
+                        <a class="dropdown-item" href="{{ route('revisor.home')}}">Revisión de artículos
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
@@ -56,10 +67,10 @@
                         @endif
                         <a class="dropdown-item text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Salir') }}
+                            {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item text-primary" href="{{ route('ad.create') }}">Poner un anuncio</a>
+                        <a class="dropdown-item" href="{{ route('ad.create') }}">Poner un anuncio</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
