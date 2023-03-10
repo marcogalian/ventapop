@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container login-register">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg_vpop text-white">{{ __('Restaurar contraseña') }}</div>
+                    <div class="card-header bg-primary text-white">{{ __('Restaurar contraseña') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -31,7 +31,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-link">
                                         {{ __('Enviar enlace para restaurar contraseña') }}
                                     </button>
                                 </div>

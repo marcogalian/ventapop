@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container login-register">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Restablecer contraseña') }}</div>
+                    <div class="card-header bg-primary text-white">{{ __('Restablecer contraseña') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('password.update') }}">
@@ -49,7 +49,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-link">
                                         {{ __('Restablecer contraseña') }}
                                     </button>
                                 </div>
