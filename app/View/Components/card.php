@@ -17,14 +17,16 @@ class card extends Component
     public $title;
     public $price;
     public $body;
+    public $img;
     public $ad;
 
 
-    public function __construct($title, $price, $body, $ad)
+    public function __construct($title, $price, $body, $img, $ad)
     {
         $this->title = $title;
         $this->price = $price;
         $this->body = $body;
+        $this->img = $img;
         $this->ad = $ad;
         
 

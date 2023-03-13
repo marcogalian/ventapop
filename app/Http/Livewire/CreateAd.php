@@ -27,7 +27,7 @@ class CreateAd extends Component
         'title'=>'required|min:4',
         'category'=>'required',
         'price'=>'required|numeric',
-        'body'=>'required|min:8',
+        'body'=>'required|min:8|max:250',
     ];
 
     protected $messages = [
@@ -52,12 +52,6 @@ class CreateAd extends Component
 
         // Creo el anuncio a partir de la categoria usando la relacion y pasando los datos validados
         $ad = $category->ads()->create($validateData);
-
-        // $ad = $category->ads()->create([
-        //     'title'=>$this->title,
-        //     'body'=>$this->body,
-        //     'price'=>$this->price,           
-        // ]);
         
         // Vuelvo a guardar el anuncio "pasando" por la relacion del usuario
         Auth::user()->ads()->save($ad); 
@@ -70,7 +64,7 @@ class CreateAd extends Component
                     ]);
             }
         }
-        
+
         session()->flash('message','Anuncio creado con éxito');
         $this->cleanForm();
     }
