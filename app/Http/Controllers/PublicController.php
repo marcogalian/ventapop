@@ -18,12 +18,12 @@ class PublicController extends Controller
 
     public function index()
     {
-        $time = Carbon::now('CET');
+        $time = Carbon::now('CET')->subMinute(15);
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
         $total_ads = Ad::get();
-
+        $locale = session()->pull('locale');
         //dd(count($total_ads));
-        return view('welcome', compact('ads','total_ads', 'time'));
+        return view('welcome', compact('ads','total_ads', 'time', 'locale'));
     }    
 
     public function adsByCategory(Category $category)
@@ -40,7 +40,9 @@ class PublicController extends Controller
     public function setLocale($locale)
     {
         session()->put('locale', $locale);
+        /* dd($locale); */
         return redirect()->back();
+        
     }
 
 

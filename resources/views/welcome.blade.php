@@ -12,10 +12,48 @@
         <div class="categories position-absolute">
             <ul class="container d-flex justify-content-around align-items-center list-categories">
                 @foreach ($categories as $category)
-                <li class="nav-link">
-                    <a class="nav-link text-primary categories-link"
-                        href="{{ route('category.ads', $category) }}">{{ __($category->name)}}
+                <li class="nav-link categories-link mx-2 p-2">
+                    <a class="nav-link text-primary text-center"
+                        href="{{ route('category.ads', $category) }}">
+                        <p class="m-0">{{ __($category->name)}}</p>
+                        @switch( __($category->name))
+                            @case( __('Motor'))
+                                <i class="bi bi-car-front-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Electrónica e informática'))
+                                <i class="bi bi-cpu-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Decoración'))
+                                <i class="bi bi-image-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Juguetes'))
+                                <i class="bi bi-joystick mb-2 fs-2"></i>
+                            @break
+                            @case( __('Deporte'))
+                                <i class="bi bi-bicycle mb-2 fs-2"></i>
+                            @break
+                            @case( __('Herramientas'))
+                                <i class="bi bi-tools mb-2 fs-2"></i>
+                            @break
+                            @case( __('Mascotas'))
+                                <span class="material-symbols-outlined fs-2 mt-2">
+                                pets
+                                </span>
+                            @break
+                            @case( __('Muebles'))
+                                <i class="bi bi-house-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Música y libros'))
+                                <i class="bi bi-book mb-2 fs-2"></i>
+                            @break
+                            @case( __('Otros'))
+                                <i class="bi bi-box-fill mb-2 fs-2"></i>
+                            @break
+
+                        @default                            
+                        @endswitch
                     </a>
+                    
                 </li>
                 @endforeach
             </ul>
@@ -33,7 +71,7 @@
             @forelse ($ads as $ad)
             <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <div class="my-card rounded position-relative">
-                    @if ($ad->created_at > $time->subMinute(15))
+                    @if ($ad->created_at > $time)
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
                             class="visually-hidden"></span>{{ __('¡Nuevo!')}} {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
                         --}}</span>

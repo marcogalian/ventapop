@@ -10,29 +10,61 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light me-4" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
+                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light me-4"
+                        href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown me-4 mb-2">
-                    <a class="nav-link dropdown-toggle text-primary" role="button" href="#"
-                        data-bs-toggle="dropdown" aria-expanded="false">{{ __('Categorías')}}</a>
+                    <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">{{ __('Categorías')}}</a>
                     <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
+                        <li><a class="dropdown-item text-primary"
+                                href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
                         @endforeach
                     </ul>
                 </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
+
             <ul class="navbar-nav ms-auto">
-                <li class="nav-link">
-                    <x-locale lang="en" country="gb"/>
-                </li>
-                <li class="nav-link">
-                    <x-locale lang="it" country="it"/>
-                </li>
-                <li class="nav-link">
-                    <x-locale lang="es" country="es"/>
+                <li class="dropdown me-3">
+                    <button class="dropdown-toggle boton_idioma me-1" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{ __('Idioma')}} 
+                        @switch(App::currentLocale())
+                            @case('en')
+                            <span class="flag-icon flag-icon-gb ms-2"></span>                                
+                                @break
+                            @case('it')
+                            <span class="flag-icon flag-icon-it ms-2"></span>                                
+                                @break
+                            @case('es')
+                            <span class="flag-icon flag-icon-es ms-2"></span>                                
+                                @break
+                            @default                                
+                        @endswitch
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul p-0 m-0">
+                        <li class="menu_idioma_li">
+                            <div class="dropdown-item d-flex">                               
+                                <x-locale lang="en" country="gb"/>
+                                {{-- <p class="mt-2 ms-3"> - EN - </p> --}} 
+                            </div>                            
+                        </li>
+                        <li class="menu_idioma">
+                            <div class="dropdown-item d-flex">                               
+                                <x-locale lang="it" country="it"/>
+                                {{-- <p class="mt-2 ms-3"> - IT - </p> --}} 
+                            </div>                            
+                        </li>
+                        <li class="menu_idioma">
+                            <div class="dropdown-item d-flex">                               
+                                <x-locale lang="es" country="es"/>
+                                {{-- <p class="mt-2 ms-3"> - ES - </p> --}} 
+                            </div>                            
+                        </li>                        
+                    </ul>
                 </li>
 
 

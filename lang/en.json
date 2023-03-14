@@ -8,6 +8,7 @@
     "Bienvenido a rapido.es": "Welcome to rapido.es",
     "Restablecer contraseña": "Password restoration",
     "Restaurar contraseña": "Password restoration",
+    "Nombre": "Name",
     "Enviar enlace para restaurar contraseña": "Send mail to password restoration",
     "¡Compra y vende entre millones de usuarios de todo el mundo!": "Buy and sell among millions of users from all over the world!",
     "Correo electrónico": "Email",
@@ -44,8 +45,9 @@
     "Donde estamos": "where we are",
     "Dirección de correo": "Email",
     "Tu correo": "Your email",
-    "Tu contraseña": "Your Passoword",
-    "Contraseña": "Passoword",
+    "Tu contraseña": "Your Password",
+    "Contraseña": "Password",
+    "Repite contraseña": "Repeat password",
     "Recordar usuario": "Remember me",
     "¿Has olvidado la contraseña?": "Forgot password?",
     "¿Aún no eres de los nuestros?": "Your're still not a member?",
@@ -99,5 +101,6 @@
     "Buscar": "Search",
     "Fecha de creación": "Date release",
     "No hay anuncios para revisar, vuelve mas tarde, gracias": "No ads to revise, come back later",
-    "Les presentamos a...¡Los creadores de Ventapop!": "We present to you... The developers of Ventapop!"
+    "Les presentamos a...¡Los creadores de Ventapop!": "We present to you... The developers of Ventapop!",
+    "Idioma": "Language"
 }
