@@ -31,39 +31,39 @@
                 <li class="dropdown me-3">
                     <button class="dropdown-toggle boton_idioma me-1" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        {{ __('Idioma')}} 
+                        {{ __('Idioma')}}
                         @switch(App::currentLocale())
-                            @case('en')
-                            <span class="flag-icon flag-icon-gb ms-2"></span>                                
-                                @break
-                            @case('it')
-                            <span class="flag-icon flag-icon-it ms-2"></span>                                
-                                @break
-                            @case('es')
-                            <span class="flag-icon flag-icon-es ms-2"></span>                                
-                                @break
-                            @default                                
+                        @case('en')
+                        <span class="flag-icon flag-icon-gb ms-2"></span>
+                        @break
+                        @case('it')
+                        <span class="flag-icon flag-icon-it ms-2"></span>
+                        @break
+                        @case('es')
+                        <span class="flag-icon flag-icon-es ms-2"></span>
+                        @break
+                        @default
                         @endswitch
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul p-0 m-0">
                         <li class="menu_idioma_li">
-                            <div class="dropdown-item d-flex">                               
-                                <x-locale lang="en" country="gb"/>
-                                {{-- <p class="mt-2 ms-3"> - EN - </p> --}} 
-                            </div>                            
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="en" country="gb" />
+                                {{-- <p class="mt-2 ms-3"> - EN - </p> --}}
+                            </div>
                         </li>
                         <li class="menu_idioma">
-                            <div class="dropdown-item d-flex">                               
-                                <x-locale lang="it" country="it"/>
-                                {{-- <p class="mt-2 ms-3"> - IT - </p> --}} 
-                            </div>                            
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="it" country="it" />
+                                {{-- <p class="mt-2 ms-3"> - IT - </p> --}}
+                            </div>
                         </li>
                         <li class="menu_idioma">
-                            <div class="dropdown-item d-flex">                               
-                                <x-locale lang="es" country="es"/>
-                                {{-- <p class="mt-2 ms-3"> - ES - </p> --}} 
-                            </div>                            
-                        </li>                        
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="es" country="es" />
+                                {{-- <p class="mt-2 ms-3"> - ES - </p> --}}
+                            </div>
+                        </li>
                     </ul>
                 </li>
 
