@@ -73,8 +73,7 @@
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time)
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
-                            class="visually-hidden"></span>{{ __('¡Nuevo!')}} {{-- creado a las {{ $ad->created_at }} ; {{ $time }}
-                        --}}</span>
+                            class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
                     @endif
                     <x-card 
                         title="{{ $ad->title }}"
