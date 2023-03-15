@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Http\Livewire;
+
+use App\Jobs\ResizeImage;
 use App\Models\Ad;
 use App\Models\Category;
 use App\Models\Image;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+
+
 
 
 class CreateAd extends Component
@@ -58,11 +63,14 @@ class CreateAd extends Component
 
         // Guardo cada imagen en el db y en el storage
         if (count($this->images)) {
+            $newFileName = "ads/$ad->id";
             foreach($this->images as $image){
-                $ad->images()->create([
-                        'path'=>$image->store("images/$ad->id", 'public')
+                $newImage = $ad->images()->create([
+                        'path'=>$image->store($newFileName, 'public')
                     ]);
+                dispatch(new ResizeImage($newImage->path,400,300));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
         session()->flash('message','Anuncio creado con éxito');

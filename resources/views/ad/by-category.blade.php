@@ -7,8 +7,8 @@
         <div class="row">
             @forelse ($ads as $ad)
             <div class="container col-12 d-flex justify-content-center">
-                <x-card 
-                    img="{{ !$ad->images()->get()->isEmpty() ? Storage::url($ad->images()->first()->path) : 'https://via.placeholder.com/150'}}"
+                <x-card                     
+                    
                     title="{{ $ad->title }}" 
                     price="{{ $ad->price }}" 
                     body="{{ $ad->body }}" 

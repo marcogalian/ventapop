@@ -76,8 +76,9 @@
                             class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
                     @endif
                     <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? Storage::url($ad->images()->first()->path) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad"></x-card>
+                        img="{{ !$ad->images()->get()->isEmpty() ? url($ad->images()->first()->getUrl) : 'https://via.placeholder.com/150'}}"
+                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    </x-card>
                 </div>
             </div>
             @empty
