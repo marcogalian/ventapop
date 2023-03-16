@@ -26,7 +26,7 @@ class CreateAd extends Component
     public $category;
     public $images = [];
     public $temporary_images;
-    public $image;
+    //public $image;
 
     protected $rules = [
         'title'=>'required|min:4',
@@ -106,7 +106,8 @@ class CreateAd extends Component
         $this->title = "";
         $this->body = "";
         $this->category = "";
-        $this->price = "";        
+        $this->price = "";
+        $this->images = [];   
     }
 
     public function render()
