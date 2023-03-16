@@ -22,7 +22,7 @@ class PublicController extends Controller
         $time = Carbon::now('CET')->subMinute(15);
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
         $total_ads = Ad::get();
-        $locale = session()->pull('locale');
+        // $locale = session()->pull('locale');
         $min = 1;
         $max = 10;
         $random = rand(1,10);
@@ -64,7 +64,7 @@ class PublicController extends Controller
         }
 
         $ads_category_random = Ad::where('is_accepted', true)->where('category_id', $random)->orderBy('created_at','desc')->take(3)->get();
-        return view('welcome', compact('ads','total_ads', 'time', 'locale','ads_category_random','category_random'));
+        return view('welcome', compact('ads','total_ads', 'time', 'ads_category_random','category_random'));
     }    
 
     public function adsByCategory(Category $category)

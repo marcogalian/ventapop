@@ -47,8 +47,9 @@ window.addEventListener('scroll', navShadow);
 // Mensaje trabaja con nosotros ----------------------------------------------------------####
 
 let trabajaNosotros = document.querySelector('.trabaja-nosotros');
-trabajaNosotros.style.display = 'block';
 
-setTimeout(() => {
-    trabajaNosotros.style.display = 'none';
-}, 5000)
+if (trabajaNosotros) {
+    setTimeout(() => {
+        trabajaNosotros.style.display = 'none';
+    }, 5000)
+}
