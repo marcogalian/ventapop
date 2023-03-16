@@ -47,6 +47,8 @@
 "Tu contraseña":"La tua password",
 "Contraseña":"Parola d'ordine",
 "Recordar usuario":"Ricorda utente",
+"Repite contraseña": "Ripetere parola d'ordine",
+"Nombre": "Nome",
 "¿Has olvidado la contraseña?":"Hai dimenticato la password?",
 "¿Aún no eres de los nuestros?":"Non sei ancora uno di noi?",
 "¡Registrate!":"Iscrizione!",
@@ -98,6 +100,7 @@
 "Regístrate":"Iscrizione",
 "Buscar":"Cercare",
 "Fecha de creación":"Data di creazione",
-"No hay anuncios para revisar, vuelve mas tarde, gracias":"Non ci sono annunci da rivedere, torna più tardi, grazie"
+"No hay anuncios para revisar, vuelve mas tarde, gracias":"Non ci sono annunci da rivedere, torna più tardi, grazie",
+"Idioma": "Lingua"
 }   
     

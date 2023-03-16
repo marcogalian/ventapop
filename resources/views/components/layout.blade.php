@@ -9,9 +9,10 @@
 
     <title>{{ $title ?? 'Ventapop.es'}}</title>
 
-    <!-- Fonts -->
+    <!-- Fonts & icons -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     @livewireStyles
     @vite(['resources/sass/app.scss', 'resources/css/app.css'])
