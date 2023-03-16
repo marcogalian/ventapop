@@ -55,7 +55,7 @@
                         @foreach ($images as $key=>$image)
                             <div class="col-12 col-md-4">
                                 <img src="{{ $image->temporaryUrl()}}" alt="" class="img-fluid">
-                                <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">Eliminar</button>
+                                <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">{{ __('Eliminar')}}</button>
                             </div>                        
                         @endforeach
                     </div>

@@ -277,14 +277,16 @@ th {
 .carousel_welcome{
    height: 50vh;
    overflow: hidden;
+   
 }
 
 .imagen_carousel{
     height: 400px;
     background-clip: content-box;
-    border-top: #189AB4 solid 5px;
-    border-left: #189AB4 solid 5px;
-    border-top-left-radius: 200px;   
+    padding: 10px;
+    /* border-top: #189AB4 solid 20px; */
+    /* border-left: #189AB4 solid 20px; */
+       
 }
 
 .carousel_container_text{

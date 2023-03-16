@@ -91,6 +91,8 @@
         </div>
     </div>
 
+    {{-- Carrusel y banner --------------------}}
+
     <article class="container p-0">
         <div class="row">
             <div class="d-flex justify-content-center align-items-center col-12 col-md-6">
@@ -171,6 +173,7 @@
         </div>
     </article>
 
+    {{-- Categoría random ---------------------------------}}
 
     <div class="container title-page-bottom d-flex justify-content-center align-items-center text-light">
         <h3 class="m-0">{{ __('Echa un ojo a los últimos artículos de la categoría')}} {{ __($category_random) }}</h3>
@@ -178,7 +181,7 @@
     <div class="container line-title">
     </div>
 
-    {{-- <div class="container p-0">
+    <div class="container p-0">
         <div class="row m-0 justify-content-center">
             @forelse ($ads_category_random as $ad)
             <div
@@ -189,19 +192,21 @@
                             class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
                     @endif
                     <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? Storage::url($ad->images()->first()->path) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad"></x-card>
+                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    </x-card>
                 </div>
             </div>
             @empty
             <div class="col-12">
                 <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
-                <a href="{{ route('ad.create') }}"><button class="btn btn-success">{{ __('Vende tu primer artículo')}}</button></a>
+                <a href="{{ route('ad.create') }}"><button
+                        class="btn btn-success">{{ __('Vende tu primer artículo')}}</button></a>
                 <a href="{{ route('home') }}"><button class="btn btn-success">{{ __('Volver al inicio')}}</button></a>
             </div>
             @endforelse
         </div>
-    </div> --}}
+    </div>
 
 
 </x-layout>
