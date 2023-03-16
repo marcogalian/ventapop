@@ -12,11 +12,12 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 
+
+
 class ResizeImage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-        private $path, $fileName, $w, $h;
+    private $path, $fileName, $w, $h;
     /**
      * Create a new job instance.
      */
