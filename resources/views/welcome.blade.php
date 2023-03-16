@@ -76,7 +76,7 @@
                             class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
                     @endif
                     <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? url($ad->images()->first()->getUrl) : 'https://via.placeholder.com/150'}}"
+                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
                     </x-card>
                 </div>
@@ -178,7 +178,7 @@
     <div class="container line-title">
     </div>
 
-    <div class="container p-0">
+    {{-- <div class="container p-0">
         <div class="row m-0 justify-content-center">
             @forelse ($ads_category_random as $ad)
             <div
@@ -201,7 +201,7 @@
             </div>
             @endforelse
         </div>
-    </div>
+    </div> --}}
 
 
 </x-layout>

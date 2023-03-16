@@ -2,7 +2,7 @@
     <div class="position-relative card-container rounded">
         <div class="card-img rounded">
             {{-- <img src="{{ $img }}" class="img-fluid image rounded"> --}}
-            <img src="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}" class="card-img-top" alt="...">
+            <img src="{{ $img }}" class="card-img-top" alt="...">
             <div class="card-text position-absolute">
                 <h5 class="title title-card">{{ $title }}</h5>
                 <h6 class="subtitle mb-2 text-muted">{{ $price }} &#8364</h6>
