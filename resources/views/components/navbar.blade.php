@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-4 position-relative">
+
     <div class="container-fluid mx-5">
-        <a class="navbar-brand logo text-primary me-4" href="{{ route('home')}}">VentaPop!</a>
+        <a class="navbar-brand logo text-primary me-5" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn-up-item btn btn-bg rounded-5 bg-primary text-bg-light me-4"
+                    <a class="btn btn-bg rounded-5 me-4"
                         href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown me-4 mb-2">
@@ -28,8 +29,8 @@
             <!-- Right Side Of Navbar -->
 
             <ul class="navbar-nav ms-auto">
-                <li class="dropdown">
-                    <button class="dropdown-toggle boton_idioma me-1 p-0" type="button" data-bs-toggle="dropdown"
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle boton_idioma me-1 p-0 fs-5" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{ __('Idioma')}}
                         @switch(App::currentLocale())
@@ -85,24 +86,24 @@
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white fs-5 text-primary" href="#"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary" href="#"
                         role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
+                        <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
                         </a>
                         @endif
-                        <a class="dropdown-item text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a class="dropdown-item text-primary text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
+                        <a class="dropdown-item text-primary" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
