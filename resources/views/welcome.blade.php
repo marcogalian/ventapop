@@ -195,15 +195,6 @@
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
                     </x-card>
                 </div>
-                @empty
-                <div class="col-12">
-                    <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
-                    <a href="{{ route('ad.create') }}"><button
-                            class="btn btn-success">{{ __('Vende tu primer artículo')}}</button></a>
-                    <a href="{{ route('home') }}"><button
-                            class="btn btn-success">{{ __('Volver al inicio')}}</button></a>
-                </div>
-                @endforelse
             </div>
             @empty
             <div class="col-12">
