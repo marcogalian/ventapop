@@ -298,6 +298,14 @@ th {
     backdrop-filter: blur(20px);    
 }
 
+/* Show ----------------------------------------------------------------------------------------------- */
+
+.related_ads_show{
+    color: #189AB4;
+    border-left: #189AB4 solid 2px;
+}
+
+
 
 
 /* Card ----------------------------------------------------------------------------------------------- */
@@ -326,7 +334,7 @@ th {
     border: none;
     width: 16rem;
     height: 80%;
-    background-color: #ffffffe5;
+    background-color: #ffffffcc;
     padding: 1rem;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;

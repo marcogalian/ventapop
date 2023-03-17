@@ -163,7 +163,7 @@
                     <h2 class="logo fs-1">{{ __(Auth::user()->name)}} {{ __(' tienes')}} {{ count(Auth::user()->ads)}}
                         {{ __('artículos subidos en VentaPop!')}}</h2>
                     <button class="btn btn-primary"><a class="nav-link"
-                            href="#">{{ __('Revisar tus artículos a la venta')}}</a></button>
+                            href="{{ route('user.ads', $user) }}">{{ __('Revisar tus artículos a la venta')}}</a></button>
                     <h3 class="logo fs-1 mt-5">{{ __('¿Hay algo mas que desées vender?')}}</h3>
                     <button class="btn btn-primary"><a class="nav-link"
                             href="{{ route('ad.create') }}">{{ __('¡Crear un nuevo anuncio!')}}</a></button>

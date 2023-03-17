@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Category;
+use App\Models\User;
 use Attribute;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
@@ -17,7 +17,7 @@ class PublicController extends Controller
         return view('home');
     } */
 
-    public function index(Category $category)
+    public function index(Category $category, User $user)
     {
         $time = Carbon::now('CET')->subMinute(15);
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
@@ -63,9 +63,10 @@ class PublicController extends Controller
                 # code...
                 break;
         }
-
+        $user = Auth::user();
         $ads_category_random = Ad::where('is_accepted', true)->where('category_id', $random)->orderBy('created_at','desc')->take(3)->get();
-        return view('welcome', compact('ads','total_ads', 'time', 'ads_category_random','category_random'));
+        
+        return view('welcome', compact('ads','total_ads', 'time', 'ads_category_random','category_random', 'user'));
     }    
 
     public function adsByCategory(Category $category)
