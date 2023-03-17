@@ -16,36 +16,36 @@
                     <a class="nav-link text-primary text-center" href="{{ route('category.ads', $category) }}">
                         @switch( __($category->name))
                             @case( __('Motor'))
-                            <i class="bi bi-car-front-fill mb-2 fs-2"></i>
+                            <i class="bi bi-car-front-fill mb-2 fs-4"></i>
                             @break
                             @case( __('Electrónica e informática'))
-                            <i class="bi bi-cpu-fill mb-2 fs-2"></i>
+                            <i class="bi bi-cpu-fill mb-2 fs-4"></i>
                             @break
                             @case( __('Decoración'))
-                            <i class="bi bi-image-fill mb-2 fs-2"></i>
+                            <i class="bi bi-image-fill mb-2 fs-4"></i>
                             @break
                             @case( __('Juguetes'))
-                            <i class="bi bi-joystick mb-2 fs-2"></i>
+                            <i class="bi bi-joystick mb-2 fs-4"></i>
                             @break
                             @case( __('Deporte'))
-                            <i class="bi bi-bicycle mb-2 fs-2"></i>
+                            <i class="bi bi-bicycle mb-2 fs-4"></i>
                             @break
                             @case( __('Herramientas'))
-                            <i class="bi bi-tools mb-2 fs-2"></i>
+                            <i class="bi bi-tools mb-2 fs-4"></i>
                             @break
                             @case( __('Mascotas'))
-                            <span class="material-symbols-outlined fs-2 mt-2">
+                            <span class="material-symbols-outlined fs-4 mt-2">
                                 pets
                             </span>
                             @break
                             @case( __('Muebles'))
-                            <i class="bi bi-house-fill mb-2 fs-2"></i>
+                            <i class="bi bi-house-fill mb-2 fs-4"></i>
                             @break
                             @case( __('Música y libros'))
-                            <i class="bi bi-book mb-2 fs-2"></i>
+                            <i class="bi bi-book mb-2 fs-4"></i>
                             @break
                             @case( __('Otros'))
-                            <i class="bi bi-box-fill mb-2 fs-2"></i>
+                            <i class="bi bi-box-fill mb-2 fs-4"></i>
                             @break
                             @default
                         @endswitch
