@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name='title'>Ventapop - Homepage</x-slot>
 
-    <div class="container-fluid main-hero m-0 p-0 position-relative row">
+    <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
             <div class="container row">
                 <h1 class="slogan container text-end col-12">{{ __('messages.logo')}}</h1>
