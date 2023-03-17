@@ -58,34 +58,36 @@
         </div>
     </div>
     
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">{{ __('Últimos artículos a la venta')}}</h3>
-    </div>
-    <div class="container-fluid line-title">
-    </div>
-
-    <div class="container-fluid p-0 bg-light mb-5 d-flex justify-content-center">
-        <div class="container row m-0 justify-content-center">
-            @forelse ($ads as $ad)
-            <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
-                <div class="my-card rounded position-relative">
-                    @if ($ad->created_at > $time)
-                    <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
-                            class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
-                    @endif
-                    <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
-                    </x-card>
+    <div >
+        <div class="container title-page d-flex justify-content-center align-items-center text-light">
+            <h3 class="m-0">{{ __('Últimos artículos a la venta')}}</h3>
+        </div>
+        <div class="container-fluid line-title">
+        </div>
+    
+        <div class="container-fluid p-0 mb-5 d-flex justify-content-center bg-light">
+            <div class="container row m-0 justify-content-center">
+                @forelse ($ads as $ad)
+                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
+                    <div class="my-card rounded position-relative">
+                        @if ($ad->created_at > $time)
+                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
+                                class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
+                        @endif
+                        <x-card
+                            img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                            title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                        </x-card>
+                    </div>
                 </div>
+                @empty
+                <div class="col-12">
+                    <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
+                    <a href="{{ route('ad.create') }}"><button class="btn btn-success">Vende tu primer artículo</button></a>
+                    <a href="{{ route('home') }}"><button class="btn btn-success">Volver al inicio</button></a>
+                </div>
+                @endforelse
             </div>
-            @empty
-            <div class="col-12">
-                <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
-                <a href="{{ route('ad.create') }}"><button class="btn btn-success">Vende tu primer artículo</button></a>
-                <a href="{{ route('home') }}"><button class="btn btn-success">Volver al inicio</button></a>
-            </div>
-            @endforelse
         </div>
     </div>
 
