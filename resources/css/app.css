@@ -32,6 +32,10 @@
     background-color: #189AB4 !important;
 }
 
+.bg-warning {
+    background-color: #E1C340 !important;
+}
+
 .btn-primary {
     background-color: #189AB4;
     border: none;
@@ -406,7 +410,7 @@ th {
 }
 
 .footer {
-    height: 200px;
+    height: 150px;
 }
 
 
