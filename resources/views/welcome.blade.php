@@ -57,18 +57,17 @@
             </ul>
         </div>
     </div>
-
+    
     <div class="container title-page d-flex justify-content-center align-items-center text-light">
         <h3 class="m-0">{{ __('Últimos artículos a la venta')}}</h3>
     </div>
     <div class="container-fluid line-title">
     </div>
 
-    <div class="container-fluid p-0 bg-light my-5 d-flex justify-content-center">
+    <div class="container-fluid p-0 bg-light mb-5 d-flex justify-content-center">
         <div class="container row m-0 justify-content-center">
             @forelse ($ads as $ad)
-            <div
-                class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
+            <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time)
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
@@ -180,7 +179,7 @@
     <div class="container-fluid line-title">
     </div>
 
-    <div class="container-fluid p-0 bg-light my-5">
+    <div class="container-fluid p-0 bg-light card-random">
         <div class="row m-0 justify-content-center">
             @forelse ($ads_category_random as $ad)
             <div

@@ -234,7 +234,9 @@
     -o-border-radius: 40px 40px 0 0;
 }
 
-
+.card-random {
+    margin-bottom: 10rem !important;
+}
 /* Formulario ----------------------------------------------------------------------------------------- */
 
 .is-invalid {
