@@ -177,10 +177,10 @@
     <div class="container title-page-bottom d-flex justify-content-center align-items-center text-light">
         <h3 class="m-0">{{ __('Echa un ojo a los últimos artículos de la categoría')}} {{ __($category_random) }}</h3>
     </div>
-    <div class="container line-title">
+    <div class="container-fluid line-title">
     </div>
 
-    <div class="container p-0">
+    <div class="container-fluid p-0 bg-light my-5">
         <div class="row m-0 justify-content-center">
             @forelse ($ads_category_random as $ad)
             <div
