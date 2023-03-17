@@ -19,10 +19,9 @@ class Image extends Model
 
     public static function getUrlByFilePath($filePath, $w = null, $h = null)
     {
-        if (!$w && !$h ) {
+        if( !$w && !$h ){
             return Storage::url($filePath);
         }
-
         $path = dirname($filePath);
         $filename = basename($filePath);
         $file = "{$path}/crop_{$w}x{$h}_{$filename}";
@@ -33,4 +32,5 @@ class Image extends Model
     {
         return self::getUrlByFilePath($this->path, $w, $h);
     }
+
 }

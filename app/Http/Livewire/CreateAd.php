@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\File;
 
 
 
+
+
 class CreateAd extends Component
 {
 
@@ -22,8 +24,7 @@ class CreateAd extends Component
     public $category;
     public $images = [];
     public $temporary_images;
-    // public $image;
-
+    //public $image;
 
     protected $rules = [
         'title'=>'required|min:4',
@@ -61,10 +62,9 @@ class CreateAd extends Component
             $newFileName = "ads/$ad->id";
             foreach($this->images as $image){
                 $newImage = $ad->images()->create([
-                    'path'=>$image->store($newFileName,'public')
-                ]);
+                        'path'=>$image->store($newFileName, 'public')
+                    ]);
                 dispatch(new ResizeImage($newImage->path,400,300));
-
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
@@ -101,7 +101,7 @@ class CreateAd extends Component
         $this->body = "";
         $this->category = "";
         $this->price = "";
-        $this->images = [];
+        $this->images = [];   
     }
 
     public function render()

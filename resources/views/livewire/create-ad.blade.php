@@ -31,7 +31,7 @@
         <div class="mb-3">
             <label for="category" class="form-label">{{ __('Añade el producto en una categoría')}}</label>
             <select wire:model.defer="category" class="form-control">
-                <option value=">{{ __('Selecciona una categoría')}}</option>
+                <option value="">{{ __('Selecciona una categoría')}}</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ __($category->name) }}</option>
                 @endforeach
@@ -55,7 +55,7 @@
                         @foreach ($images as $key=>$image)
                             <div class="col-12 col-md-4">
                                 <img src="{{ $image->temporaryUrl()}}" alt="" class="img-fluid">
-                                <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">Eliminar</button>
+                                <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">{{ __('Eliminar')}}</button>
                             </div>                        
                         @endforeach
                     </div>

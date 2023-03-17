@@ -49,7 +49,7 @@ window.addEventListener('scroll', navShadow);
 let trabajaNosotros = document.querySelector('.trabaja-nosotros');
 
 if (trabajaNosotros) {
-    setTimeout(() => {
+        setTimeout(() => {
         trabajaNosotros.style.display = 'none';
     }, 5000)
 }

@@ -21,11 +21,12 @@ class PublicController extends Controller
     {
         $time = Carbon::now('CET')->subMinute(15);
         $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
-        $total_ads = Ad::get();
-        // $locale = session()->pull('locale');
-        $min = 1;
-        $max = 10;
-        $random = rand(1,10);
+        $total_ads = Ad::get();                
+        do {
+            $random = rand(1,10);
+            $ads_category_random = Ad::where('is_accepted', true)->where('category_id', $random)->orderBy('created_at','desc')->take(3)->get();
+        } while (!count($ads_category_random) > 0);
+
         switch ($random) {
             case '1': 
                 $category_random = 'Motor';
@@ -69,7 +70,7 @@ class PublicController extends Controller
 
     public function adsByCategory(Category $category)
     {
-        $ads = $category->ads()->where('is_accepted', true)->latest()->paginate(2);
+        $ads = $category->ads()->where('is_accepted', true)->latest()->paginate(6);
         /* dd($category->name); */
         return view('ad.by-category', compact('category','ads'));
     }
@@ -86,6 +87,5 @@ class PublicController extends Controller
         return redirect()->back();
         
     }
-
 
 }

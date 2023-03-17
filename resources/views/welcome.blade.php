@@ -15,40 +15,39 @@
                 <li class="nav-link categories-link mx-2 px-2">
                     <a class="nav-link text-primary text-center" href="{{ route('category.ads', $category) }}">
                         @switch( __($category->name))
-                        @case( __('Motor'))
-                        <i class="bi bi-car-front-fill fs-4"></i>
-                        @break
-                        @case( __('Electrónica e informática'))
-                        <i class="bi bi-cpu-fill fs-4"></i>
-                        @break
-                        @case( __('Decoración'))
-                        <i class="bi bi-image-fill fs-4"></i>
-                        @break
-                        @case( __('Juguetes'))
-                        <i class="bi bi-joystick fs-4"></i>
-                        @break
-                        @case( __('Deporte'))
-                        <i class="bi bi-bicycle fs-4"></i>
-                        @break
-                        @case( __('Herramientas'))
-                        <i class="bi bi-tools fs-4"></i>
-                        @break
-                        @case( __('Mascotas'))
-                        <span class="material-symbols-outlined fs-4 mt-2">
-                            pets
-                        </span>
-                        @break
-                        @case( __('Muebles'))
-                        <i class="bi bi-house-fill fs-4"></i>
-                        @break
-                        @case( __('Música y libros'))
-                        <i class="bi bi-book fs-4"></i>
-                        @break
-                        @case( __('Otros'))
-                        <i class="bi bi-box-fill fs-4"></i>
-                        @break
-
-                        @default
+                            @case( __('Motor'))
+                            <i class="bi bi-car-front-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Electrónica e informática'))
+                            <i class="bi bi-cpu-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Decoración'))
+                            <i class="bi bi-image-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Juguetes'))
+                            <i class="bi bi-joystick mb-2 fs-2"></i>
+                            @break
+                            @case( __('Deporte'))
+                            <i class="bi bi-bicycle mb-2 fs-2"></i>
+                            @break
+                            @case( __('Herramientas'))
+                            <i class="bi bi-tools mb-2 fs-2"></i>
+                            @break
+                            @case( __('Mascotas'))
+                            <span class="material-symbols-outlined fs-2 mt-2">
+                                pets
+                            </span>
+                            @break
+                            @case( __('Muebles'))
+                            <i class="bi bi-house-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Música y libros'))
+                            <i class="bi bi-book mb-2 fs-2"></i>
+                            @break
+                            @case( __('Otros'))
+                            <i class="bi bi-box-fill mb-2 fs-2"></i>
+                            @break
+                            @default
                         @endswitch
                         <p class="p-category-name m-0">{{ __($category->name)}}</p>
                     </a>
@@ -91,7 +90,9 @@
         </div>
     </div>
 
-    <article class="container p-0 mb-5">
+    {{-- Carrusel y banner --------------------}}
+
+    <article class="container p-0">
         <div class="row">
             <div class="d-flex justify-content-center align-items-center col-12 col-md-6">
                 <div id="carouselExampleCaptions" class="carousel slide carousel_welcome">
@@ -107,27 +108,27 @@
                         <div class="carousel-item active">
                             <img src="{{ asset('images/trastero.jpg')}}" class="d-block imagen_carousel"
                                 alt="Vende tus productos">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('¡Vende todo aquello que no uses!')}}</h5>
-                                <p>{{ __('Haz limpieza en casa y de paso gana algún dinero extra haciendo')}} <a
+                                <p class="m-0 p-0">{{ __('Haz limpieza en casa y de paso gana algún dinero extra haciendo')}} <a
                                         class="text-white" href="{{ route('ad.create')}}"> {{ __('click aquí') }}.</a>
                                 </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('images/correos.jpg')}}" class="d-block imagen_carousel" alt="Correos">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('Envía tus productos por Correos')}}</h5>
-                                <p>{{ __('VentaPop y Correos aunan fuerzas para que tus productos lleguen rápido y fácilmente.')}}
+                                <p class="m-0 p-0">{{ __('VentaPop y Correos aunan fuerzas para que tus productos lleguen rápido y fácilmente.')}}
                                 </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('images/banner_deporte.jpg')}}" class="d-block imagen_carousel"
                                 alt="Deportes">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('¡Ponte en forma con el buen tiempo!')}}</h5>
-                                <p>{{ __('Llega la primavera y es tiempo de coger la bici, salir a correr y echar unas canastas. Visita nuestra')}}
+                                <p class="m-0 p-0">{{ __('Llega la primavera y es tiempo de coger la bici, salir a correr y echar unas canastas. Visita nuestra')}}
                                     <a class="text-white"
                                         href="{{ route('category.ads','deporte')}}">{{ __('sección de deporte')}}.</a>
                                 </p>
@@ -171,28 +172,28 @@
         </div>
     </article>
 
-    <div>
-        <div class="container title-page-bottom d-flex justify-content-center align-items-center text-light">
-            <h3 class="m-0">{{ __('Echa un ojo a los últimos artículos de la categoría')}} {{ __($category_random) }}
-            </h3>
-        </div>
-        <div class="container-fluid line-title">
-        </div>
+    {{-- Categoría random ---------------------------------}}
 
-        <div class="container-fluid p-0 bg-light my-5">
-            <div class="row m-0 justify-content-center">
-                @forelse ($ads_category_random as $ad)
-                <div
-                    class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
-                    <div class="my-card rounded position-relative">
-                        @if ($ad->created_at > $time)
-                        <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
-                                class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
-                        @endif
-                        <x-card
-                            img="{{ !$ad->images()->get()->isEmpty() ? Storage::url($ad->images()->first()->path) : 'https://via.placeholder.com/150'}}"
-                            title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad"></x-card>
-                    </div>
+    <div class="container title-page-bottom d-flex justify-content-center align-items-center text-light">
+        <h3 class="m-0">{{ __('Echa un ojo a los últimos artículos de la categoría')}} {{ __($category_random) }}</h3>
+    </div>
+    <div class="container line-title">
+    </div>
+
+    <div class="container p-0">
+        <div class="row m-0 justify-content-center">
+            @forelse ($ads_category_random as $ad)
+            <div
+                class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
+                <div class="my-card rounded position-relative">
+                    @if ($ad->created_at > $time)
+                    <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
+                            class="visually-hidden"></span>{{ __('¡Nuevo!')}}</span>
+                    @endif
+                    <x-card
+                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    </x-card>
                 </div>
                 @empty
                 <div class="col-12">
@@ -204,6 +205,14 @@
                 </div>
                 @endforelse
             </div>
+            @empty
+            <div class="col-12">
+                <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
+                <a href="{{ route('ad.create') }}"><button
+                        class="btn btn-success">{{ __('Vende tu primer artículo')}}</button></a>
+                <a href="{{ route('home') }}"><button class="btn btn-success">{{ __('Volver al inicio')}}</button></a>
+            </div>
+            @endforelse
         </div>
     </div>
 
