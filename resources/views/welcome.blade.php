@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="categories position-absolute bg-white">
+        <div class="categories position-absolute">
             <ul class="container d-flex justify-content-around align-items-center list-categories">
                 @foreach ($categories as $category)
                 <li class="nav-link categories-link mx-2 px-2">

@@ -1,8 +1,11 @@
 <div class="my-card rounded">
-    <div class="position-relative card-container rounded">
+    <div class="position-relative card-container rounded card-container">
+        <div class="p-1 text-center bg-light text-primary">
+            <small>{{ $title}}</small>
+        </div>
         <div class="card-img rounded">
             {{-- <img src="{{ $img }}" class="img-fluid image rounded"> --}}
-            <img src="{{ $img }}" class="image img-fluid rounded" alt="...">
+            <img src="{{ $img }}" class="image img-fluid" alt="...">
             <div class="card-text position-absolute">
                 <h5 class="title title-card">{{ $title }}</h5>
                 <h6 class="subtitle mb-2 text-muted">{{ $price }} &#8364</h6>

@@ -90,7 +90,7 @@
                         role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
                             <span class="badge rounded-pill bg-danger">
