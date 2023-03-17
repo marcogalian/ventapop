@@ -70,13 +70,14 @@
 }
 
 .btn-bg {
-    color: #F2F2F2 !important;
+    color: #05445E;
+    background-color: #E1C340;
     box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
 }
 
 .btn-bg:hover {
     color: #fff !important;
-    background-color: #189AB4;
+    background-color: #d2af15;
 }
 
 .navbar-container {
@@ -120,8 +121,7 @@
     background-color:rgba(242, 242, 242, 0);
     color: #189AB4;
     border: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: .5rem !important;
 }
 
 .menu_idioma_ul {
