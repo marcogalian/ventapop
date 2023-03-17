@@ -16,40 +16,39 @@
                     <a class="nav-link text-primary text-center" href="{{ route('category.ads', $category) }}">
                         <p class="m-0">{{ __($category->name)}}</p>
                         @switch( __($category->name))
-                        @case( __('Motor'))
-                        <i class="bi bi-car-front-fill mb-2 fs-2"></i>
-                        @break
-                        @case( __('Electrónica e informática'))
-                        <i class="bi bi-cpu-fill mb-2 fs-2"></i>
-                        @break
-                        @case( __('Decoración'))
-                        <i class="bi bi-image-fill mb-2 fs-2"></i>
-                        @break
-                        @case( __('Juguetes'))
-                        <i class="bi bi-joystick mb-2 fs-2"></i>
-                        @break
-                        @case( __('Deporte'))
-                        <i class="bi bi-bicycle mb-2 fs-2"></i>
-                        @break
-                        @case( __('Herramientas'))
-                        <i class="bi bi-tools mb-2 fs-2"></i>
-                        @break
-                        @case( __('Mascotas'))
-                        <span class="material-symbols-outlined fs-2 mt-2">
-                            pets
-                        </span>
-                        @break
-                        @case( __('Muebles'))
-                        <i class="bi bi-house-fill mb-2 fs-2"></i>
-                        @break
-                        @case( __('Música y libros'))
-                        <i class="bi bi-book mb-2 fs-2"></i>
-                        @break
-                        @case( __('Otros'))
-                        <i class="bi bi-box-fill mb-2 fs-2"></i>
-                        @break
-
-                        @default
+                            @case( __('Motor'))
+                            <i class="bi bi-car-front-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Electrónica e informática'))
+                            <i class="bi bi-cpu-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Decoración'))
+                            <i class="bi bi-image-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Juguetes'))
+                            <i class="bi bi-joystick mb-2 fs-2"></i>
+                            @break
+                            @case( __('Deporte'))
+                            <i class="bi bi-bicycle mb-2 fs-2"></i>
+                            @break
+                            @case( __('Herramientas'))
+                            <i class="bi bi-tools mb-2 fs-2"></i>
+                            @break
+                            @case( __('Mascotas'))
+                            <span class="material-symbols-outlined fs-2 mt-2">
+                                pets
+                            </span>
+                            @break
+                            @case( __('Muebles'))
+                            <i class="bi bi-house-fill mb-2 fs-2"></i>
+                            @break
+                            @case( __('Música y libros'))
+                            <i class="bi bi-book mb-2 fs-2"></i>
+                            @break
+                            @case( __('Otros'))
+                            <i class="bi bi-box-fill mb-2 fs-2"></i>
+                            @break
+                            @default
                         @endswitch
                     </a>
 
@@ -109,27 +108,27 @@
                         <div class="carousel-item active">
                             <img src="{{ asset('images/trastero.jpg')}}" class="d-block imagen_carousel"
                                 alt="Vende tus productos">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('¡Vende todo aquello que no uses!')}}</h5>
-                                <p>{{ __('Haz limpieza en casa y de paso gana algún dinero extra haciendo')}} <a
+                                <p class="m-0 p-0">{{ __('Haz limpieza en casa y de paso gana algún dinero extra haciendo')}} <a
                                         class="text-white" href="{{ route('ad.create')}}"> {{ __('click aquí') }}.</a>
                                 </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('images/correos.jpg')}}" class="d-block imagen_carousel" alt="Correos">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('Envía tus productos por Correos')}}</h5>
-                                <p>{{ __('VentaPop y Correos aunan fuerzas para que tus productos lleguen rápido y fácilmente.')}}
+                                <p class="m-0 p-0">{{ __('VentaPop y Correos aunan fuerzas para que tus productos lleguen rápido y fácilmente.')}}
                                 </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('images/banner_deporte.jpg')}}" class="d-block imagen_carousel"
                                 alt="Deportes">
-                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded">
+                            <div class="carousel-caption d-none d-md-block carousel_container_text rounded m-0 p-2">
                                 <h5>{{ __('¡Ponte en forma con el buen tiempo!')}}</h5>
-                                <p>{{ __('Llega la primavera y es tiempo de coger la bici, salir a correr y echar unas canastas. Visita nuestra')}}
+                                <p class="m-0 p-0">{{ __('Llega la primavera y es tiempo de coger la bici, salir a correr y echar unas canastas. Visita nuestra')}}
                                     <a class="text-white"
                                         href="{{ route('category.ads','deporte')}}">{{ __('sección de deporte')}}.</a>
                                 </p>

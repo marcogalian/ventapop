@@ -28,8 +28,8 @@
             <!-- Right Side Of Navbar -->
 
             <ul class="navbar-nav ms-auto">
-                <li class="dropdown me-3">
-                    <button class="dropdown-toggle boton_idioma me-1" type="button" data-bs-toggle="dropdown"
+                <li class="dropdown">
+                    <button class="dropdown-toggle boton_idioma me-1 p-0" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{ __('Idioma')}}
                         @switch(App::currentLocale())

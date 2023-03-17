@@ -1,12 +1,17 @@
 <x-layout>
     <x-slot name="title">Ventapop - {{ $category->name }}</x-slot>
+
+    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+        <h3 class="m-0">Ventapop - {{ __('Categoría')}} : {{ __($category->name) }}</h3>
+    </div>
+    <div class="container line-title">
+    </div>
+
     <div class="container">
-        <div class="">
-            <p class="text-primary my-4 text-center fs-3">Ventapop -  {{ __($category->name) }}</p>
-        </div>
-        <div class="row">
+        
+        <div class="row mt-5">
             @forelse ($ads as $ad)
-            <div class="container col-4 d-flex justify-content-center">
+            <div class="container col-12 col-md-4 d-flex justify-content-center">
                 <x-card
                         img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
