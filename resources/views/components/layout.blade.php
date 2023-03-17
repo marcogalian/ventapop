@@ -27,8 +27,8 @@
         <x-alert :type="session('message')['type']" :message="session('message')['text']"/>
     @endif    
     
-    <div class="main container-fluid p-0">
-        <main>
+    <div class="main container-fluid p-0 bg-white">
+        <main class="">
             {{ $slot }}   
         </main>
     </div>

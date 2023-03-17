@@ -6,7 +6,7 @@
                 <p class="d-block text-primary mt-3 text-end">{{ __('¡Compra y vende entre millones de usuarios de todo el mundo!')}}</p>
             </div>
             <div class="col-md-7">
-                <div class="card">
+                <div class="card bg-light">
                     <div class="card-header bg-primary text-light">{{ __('Registro') }}</div>
 
                     <div class="card-body">
