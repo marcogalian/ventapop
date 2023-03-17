@@ -31,6 +31,8 @@ Route::get('/about', [PublicController::class, 'about'])->name('about');
 
 Route::get('/category/{category:name}/ads',[PublicController::class, 'adsByCategory'])->name('category.ads');
 
+Route::get('/user/{user:name}/ads', [AdController::class, 'adsByUser'])->name('user.ads');
+
 Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

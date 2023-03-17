@@ -29,7 +29,7 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="dropdown">
-                    <button class="dropdown-toggle boton_idioma me-1 p-0" type="button" data-bs-toggle="dropdown"
+                    <button class="dropdown-toggle boton_idioma me-1 mt-2 p-0" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{ __('Idioma')}}
                         @switch(App::currentLocale())
