@@ -1,10 +1,14 @@
 <x-layout>
     <x-slot name='title'>Ventapop - Homepage</x-slot>
 
+
+    {{-- Slogan ---------------------------------------------------------}}
     <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
             <div class="container row">
-                <h1 class="slogan container text-end col-12">{{ __('messages.logo')}}</h1>
+                <div class="m-0 p-0 text-center">
+                    <h1 class="slogan container text-end">{{ __('messages.logo')}}</h1>
+                </div>
                 <h3 class="slogan-bottom container text-end col-12">{{ __('Tu web de compraventa')}}</h3>
             </div>
         </div>
@@ -58,17 +62,18 @@
         </div>
     </div>
     
+    {{-- Espacio Card Superior ------------------------------------------}}
     <div >
         <div class="container title-page d-flex justify-content-center align-items-center text-light">
-            <h3 class="m-0">{{ __('Últimos artículos a la venta')}}</h3>
+            <p class="m-0">{{ __('Últimos artículos a la venta')}}</p>
         </div>
         <div class="container-fluid line-title">
         </div>
     
         <div class="container-fluid p-0 mb-5 d-flex justify-content-center bg-light">
-            <div class="container row m-0 justify-content-center">
+            <div class="container row m-0 justify-content-center container-cards">
                 @forelse ($ads as $ad)
-                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
+                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-4 mb-4 d-flex justify-content-center align-items-center">
                     <div class="my-card rounded position-relative">
                         @if ($ad->created_at > $time)
                         <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
@@ -83,20 +88,20 @@
                 @empty
                 <div class="col-12">
                     <h2>{{ __('Parece que no hay nada más de esta categoría...')}}</h2>
-                    <a href="{{ route('ad.create') }}"><button class="btn btn-success">Vende tu primer artículo</button></a>
-                    <a href="{{ route('home') }}"><button class="btn btn-success">Volver al inicio</button></a>
+                    <a href="{{ route('ad.create') }}"><button class="btn btn-primary">Vende tu primer artículo</button></a>
+                    <a href="{{ route('home') }}"><button class="btn btn-primary">Volver al inicio</button></a>
                 </div>
                 @endforelse
             </div>
         </div>
     </div>
 
-    {{-- Carrusel y banner --------------------}}
+    {{-- Carrusel y banner -------------------------------}}
 
     <article class="container p-0">
         <div class="row">
             <div class="d-flex justify-content-center align-items-center col-12 col-md-6">
-                <div id="carouselExampleCaptions" class="carousel slide carousel_welcome">
+                <div id="carouselExampleCaptions" class="carousel slide carousel_welcome carrusel-welcome">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                             class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
@@ -176,7 +181,7 @@
     {{-- Categoría random ---------------------------------}}
 
     <div class="container title-page-bottom d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">{{ __('Echa un ojo a los últimos artículos de la categoría')}} {{ __($category_random) }}</h3>
+        <p class="m-0">{{ __('Últimos artículos en: ')}} {{ __($category_random) }}</p>
     </div>
     <div class="container-fluid line-title">
     </div>

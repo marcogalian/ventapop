@@ -120,12 +120,11 @@
     -o-border-radius: 20px;
 }
 
-.boton_idioma{
-    min-width: 100px;
-    background-color:rgba(242, 242, 242, 0);
+.boton_idioma {
+    background-color: rgba(242, 242, 242, 0);
     color: #189AB4;
     border: none;
-    padding: .5rem !important;
+    padding: 0 !important;
 }
 
 .menu_idioma_ul {
@@ -220,9 +219,9 @@
     background-color: #189AB4;
 }
 
-.categories-link:hover{
+.categories-link:hover {
     background-color: #189ab455;
-    border-radius: 5px;    
+    border-radius: 5px;
 }
 
 .title-page-bottom {
@@ -259,7 +258,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
+
     height: 300px;
     display: flex;
     align-items: center;
@@ -267,7 +266,7 @@
     font-family: 'Lobster', cursive;
 }
 
-.blur{
+.blur {
     backdrop-filter: blur(2px);
 }
 
@@ -282,29 +281,29 @@ th {
     z-index: 2;
 }
 
-.carousel_welcome{
-   height: 50vh;
-   overflow: hidden;
-   
+.carousel_welcome {
+    height: 50vh;
+    overflow: hidden;
+
 }
 
-.imagen_carousel{
+.imagen_carousel {
     height: 400px;
     background-clip: content-box;
     padding: 10px;
     /* border-top: #189AB4 solid 20px; */
     /* border-left: #189AB4 solid 20px; */
-       
+
 }
 
-.carousel_container_text{
+.carousel_container_text {
     background-color: #189ab480;
-    backdrop-filter: blur(20px);    
+    backdrop-filter: blur(20px);
 }
 
 /* Show ----------------------------------------------------------------------------------------------- */
 
-.related_ads_show{
+.related_ads_show {
     color: #189AB4;
     border-left: #189AB4 solid 2px;
 }
@@ -314,13 +313,13 @@ th {
 
 /* Card ----------------------------------------------------------------------------------------------- */
 
-.card-container{
+.card-container {
     border: solid 1px #00000035;
 }
 
 .my-card {
     width: 16rem;
-    height: 25rem;
+    height: 100%;
 }
 
 .card-container {
@@ -360,7 +359,8 @@ th {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-top: solid 1px #00000035;;
+    border-top: solid 1px #00000035;
+    ;
 }
 
 
@@ -592,17 +592,30 @@ th {
 
 /* 320 x 568 iphone 5 ------------------------------------*/
 @media (max-width: 320px) {
+    
     .logo {
-        font-size: 1.5rem;
-        padding: 0;
-        line-height: 70px;
+        font-size: 1.6rem;
+    }
+
+    .nav-container{
+        margin: 0 .5rem !important;
+    }
+
+    .btn-bg {
+        margin: .6rem 0 .8rem;
     }
 
     .main-hero {
-        height: 35vh;
+        height: 30vh;
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
+    }
+
+    .text-slogan {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 15px;
     }
 
     .slogan {
@@ -618,15 +631,26 @@ th {
         display: none;
     }
 
-    .search-container {
-        display: none;
+    .nav-categories{
+        margin-bottom: .5rem !important;
+    }
+
+    .boton_idioma {
+        margin-bottom: 1.5rem !important;
     }
 
     .title-page {
         margin-top: 4rem;
         width: 80%;
         height: 35px;
-        font-size: 1rem;
+        font-size: .8rem;
+    }
+
+    .title-page-bottom {
+        margin-top: 4rem;
+        width: 90%;
+        height: 35px;
+        font-size: .7rem;
     }
 
     .btn-up-item {
@@ -635,9 +659,14 @@ th {
     }
 
     .my-card {
-        width: 8rem;
-        height: 13rem;
+        width: 9rem;
+        height: 100%;
         font-size: .8rem;
+    }
+
+    .title-card p {
+        font-size: .7rem;
+        font-weight: 700;
     }
 
     .card-xs {
@@ -648,7 +677,7 @@ th {
 
     .card-text {
         text-align: center;
-        width: 8rem;
+        width: 9rem;
         height: 100%;
     }
 
@@ -665,6 +694,9 @@ th {
         font-size: .7rem;
         padding: .4rem 1rem;
     }
+    .footer {
+        height: 220px;
+    }
 
     .footer-container {
         text-align: center;
@@ -675,9 +707,21 @@ th {
     }
 
     .nav-footer {
+        font-size: .8rem;
         display: flex;
         justify-content: center !important;
         padding: 0 !important;
+    }
+
+    .footer-copyright{
+        font-size: .8rem;
+    }
+    .carrusel-welcome {
+        display: none;
+    }
+
+    .container-cards {
+        padding: .4rem;
     }
 
 }

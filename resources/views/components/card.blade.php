@@ -1,6 +1,6 @@
 <div class="my-card rounded">
     <div class="position-relative card-container rounded">
-        <div class="p-1 text-center bg-light text-primary">
+        <div class="p-1 text-center bg-light text-primary title-card">
             <p class="m-0">{{ $title}}</p>
         </div>
         <div class="card-img rounded">

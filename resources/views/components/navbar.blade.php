@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm bg_vpop my-navbar pt-4 pb-4 position-relative">
+<nav class="navbar navbar-expand-md navbar-light my-navbar position-relative ">
 
-    <div class="container-fluid mx-5">
+    <div class="container-fluid mx-5 nav-container">
         <a class="navbar-brand logo text-primary me-5" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -14,10 +14,10 @@
                     <a class="btn btn-bg rounded-5 me-4"
                         href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
-                <li class="nav-item dropdown me-4 mb-2">
+                <li class="nav-item dropdown me-4 nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">{{ __('Categorías')}}</a>
-                    <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu bg-light m-0" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
                         <li><a class="dropdown-item text-primary"
                                 href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
@@ -30,23 +30,23 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <button class="dropdown-toggle boton_idioma me-1 p-0 fs-5" type="button" data-bs-toggle="dropdown"
+                    <button class="dropdown-toggle boton_idioma fs-5" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        {{ __('Idioma')}}
+                        {{-- {{ __('Idioma')}} --}}
                         @switch(App::currentLocale())
                         @case('en')
-                        <span class="flag-icon flag-icon-gb ms-2"></span>
+                        <span class="flag-icon flag-icon-gb"></span>
                         @break
                         @case('it')
-                        <span class="flag-icon flag-icon-it ms-2"></span>
+                        <span class="flag-icon flag-icon-it"></span>
                         @break
                         @case('es')
-                        <span class="flag-icon flag-icon-es ms-2"></span>
+                        <span class="flag-icon flag-icon-es"></span>
                         @break
                         @default
                         @endswitch
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul p-0 m-0">
+                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul">
                         <li class="menu_idioma_li">
                             <div class="dropdown-item d-flex">
                                 <x-locale lang="en" country="gb" />
