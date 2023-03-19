@@ -11,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn btn-bg rounded-5 me-4"
+                    <a class="btn btn-bg rounded-5 me-4 mt-1"
                         href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown me-4 nav-categories">
@@ -30,7 +30,7 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <button class="dropdown-toggle boton_idioma fs-5" type="button" data-bs-toggle="dropdown"
+                    <button class="dropdown-toggle boton_idioma fs-5 me-4" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{-- {{ __('Idioma')}} --}}
                         @switch(App::currentLocale())
@@ -73,13 +73,13 @@
                 @guest
                 @if (Route::has('login'))
                 <li class="nav-item">
-                    <a class="nav-link text-white text-primary" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                    <a class="nav-link text-white text-primary py-0" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                 </li>
                 @endif
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-white text-primary"
+                    <a class="nav-link text-white text-primary py-0"
                         href="{{ route('register') }}">{{ __('Regístrate') }}</a>
                 </li>
                 @endif
@@ -114,11 +114,13 @@
             </ul>
         </div>
     </div>
+
+    {{-- Search -------------------------------------------------------------------------------------------}}
     <div class="search-container search-bar position-absolute">
         <div class="container-fluid d-flex justify-content-center">
             <form action="" class="search-container-input d-flex">
                 <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
-                <button class="btn bg-primary search-input btn-search">{{ __('Buscar')}}</button>
+                <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
             </form>
         </div>
     </div>

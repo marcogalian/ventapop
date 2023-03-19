@@ -6,18 +6,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
 /* ICONOS -------------------------------------------------------------------------------------------- */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
-/*  ------------------------------------------------------------------------------------------------- */
+
+/* Variables ---------------------------------------------------------------------------------------- */
+:root{
+    --text-primary: #189AB4 !important;
+    --text-secondary: #05445E !important;
+    --text-light: #F2F2F2 !important;
+    --bg-primary: #189AB4 !important;
+    --bg-secondary: #05445E !important;
+    --bg-warning: #E1C340 !important;
+    --bg-light: #F2F2F2 !important;
+
+}
+
+
+
+/* Body y reemplazo de clases de bootstrap --------------------------------------------------- */
 
 .body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Oswald', sans-serif;
 }
 
 .text-light {
@@ -28,16 +45,28 @@
     color: #189AB4 !important;
 }
 
+.text-secondary {
+    color: #05445E !important;
+}
+
 .bg-primary {
     background-color: #189AB4 !important;
+}
+
+.bg-secondary {
+    background-color: #05445E !important;
 }
 
 .bg-warning {
     background-color: #E1C340 !important;
 }
 
+.bg-light {
+    background-color: #F2F2F2 !important;
+}
+
 .btn-primary {
-    background-color: #189AB4;
+    background-color: var(--bg-primary);
     border: none;
     border-radius: 50px !important;
     -webkit-border-radius: 50px !important;
@@ -47,7 +76,7 @@
 }
 
 .btn-primary:hover {
-    background-color: #05445E !important;
+    background-color: var(--bg-secondary);
 }
 
 
@@ -65,30 +94,29 @@
 }
 
 .my-navbar {
-    background-color: #F2F2F2 !important;
+    background-color: var(--bg-light);
     padding-bottom: 2rem !important;
 }
 
 
 .links-navbar a {
-    color: #189AB4;
+    color: var(--text-primary);
 }
 
 .btn-bg {
-    color: #05445E;
-    background-color: #E1C340;
+    color: var(--text-light);
+    background-color: var(--bg-secondary);
     box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
 }
 
 .btn-bg:hover {
-    color: #fff !important;
-    background-color: #d2af15;
+    color: var(--text-light);
+    background-color: var(--bg-primary);
 }
 
 .navbar-container {
     z-index: 100;
     transition: all .4s ease-in-out;
-    
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
@@ -104,7 +132,6 @@
     width: 100%;
 }
 
-
 .search-bar {
     bottom: -20%;
 }
@@ -114,7 +141,7 @@
 }
 
 .search-input {
-    border: 4px solid #F2F2F2;
+    border: 4px solid var(--bg-light);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -124,7 +151,7 @@
 
 .boton_idioma {
     background-color: rgba(242, 242, 242, 0);
-    color: #189AB4;
+    color: var(--text-primary);
     border: none;
     padding: 0 !important;
 }
@@ -142,9 +169,10 @@
 .main-hero {
     width: 100% !important;
     height: 50vh;
-    background-image: linear-gradient(#189ab4e9, #189ab4e9), url('/public/images/secon.png');
+    /* background-image: linear-gradient(#189ab4e9, #189ab4e9), url('/public/images/secon.png'); */
+    background-image: radial-gradient(circle at left, #00435d2a, #189ab4e9), url('/public/images/courier2.png');
     background-repeat: no-repeat;
-    background-position: top;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,39 +187,39 @@
 
 
 .slogan {
-    font-size: 7rem;
+    font-size: 6.5rem;
     margin: 0;
-    color: #F2F2F2;
+    color: var(--text-light);
     font-family: 'Dancing Script', cursive;
 }
 
 .slogan-bottom {
     font-family: 'Dancing Script', cursive;
-    color: #F2F2F2;
+    color: var(--text-light);
     font-size: 2.2rem;
 
 }
 
 .slogan-bottom h3 {
-    color: #F2F2F2;
+    color: var(--text-light);
     font-family: 'Dancing Script', cursive;
 }
 
 .categories {
     width: 100%;
     height: 65px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-light);
     bottom: 0;
     border-radius: 40px 40px 0 0;
     -webkit-border-radius: 40px 40px 0 0;
     -moz-border-radius: 40px 40px 0 0;
     -ms-border-radius: 40px 40px 0 0;
     -o-border-radius: 40px 40px 0 0;
-    border-bottom: 2px solid #189AB4;
+    border-bottom: 2px solid var(--bg-primary);
 }
 
 .p-category-name {
-    font-size: .7rem;
+    font-size: .8rem;
 }
 
 .list-categories {
@@ -205,7 +233,7 @@
 .title-page {
     font-size: 1.5rem;
     margin-top: 5rem;
-    background-color: #189AB4;
+    background-color: var(--bg-secondary);
     width: 25%;
     height: 40px;
     border-radius: 40px 40px 0 0;
@@ -218,7 +246,7 @@
 .line-title {
     width: 100%;
     height: 3px;
-    background-color: #189AB4;
+    background-color: var(--bg-secondary);
 }
 
 .categories-link:hover {
@@ -229,7 +257,7 @@
 .title-page-bottom {
     font-size: 1.5rem;
     margin-top: 5rem;
-    background-color: #189AB4;
+    background-color: var(--bg-secondary);
     width: 50%;
     height: 40px;
     border-radius: 40px 40px 0 0;
