@@ -66,6 +66,7 @@
 
 .my-navbar {
     background-color: #F2F2F2 !important;
+    padding-bottom: 2rem !important;
 }
 
 
@@ -87,6 +88,7 @@
 .navbar-container {
     z-index: 100;
     transition: all .4s ease-in-out;
+    
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
