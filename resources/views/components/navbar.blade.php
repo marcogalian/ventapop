@@ -119,7 +119,7 @@
             <div class="search-container">
                 <div class="container-fluid search-bar mt-4 p-0 ">
                     <form action="{{ route('search')}}" method="GET" role="search" class="search-container-input d-flex">
-                        <input class="form-control search-input" type="search" placeholder="{{ __('Buscar')}}">
+                        <input class="form-control search-input" type="search" name="q" placeholder="{{ __('Buscar')}}">
                         <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
                     </form>
                 </div>
