@@ -33,12 +33,12 @@
                 </div>
                 <div class="row my-4 justify-content-center">
                     <div class="col-12">
-                        <div><b>{{ __('Título')}}: </b> {{$ad->title}}</div>
-                        <div><b>{{ __('Precio')}}: </b> {{$ad->price}}</div>
-                        <div><b>{{ __('Descripción')}}: </b> {{$ad->body}}</div>
-                        <div><b>{{ __('Publicado el')}}: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
-                        <div><b>{{ __('Por')}}: </b> {{ $ad->user->name }}</div>
-                        <div><a class="text-decoration-none"
+                        <div class="mb-1"><b>{{ __('Título')}}: </b> {{$ad->title}}</div>
+                        <div class="mb-1"><b>{{ __('Precio')}}: </b> {{$ad->price}}</div>
+                        <div class="mb-1"><b>{{ __('Descripción')}}: </b> {{$ad->body}}</div>
+                        <div class="mb-1"><b>{{ __('Publicado el')}}: </b> {{ $ad->created_at->format('d/m/Y') }}</div>
+                        <div class="mb-1"><b>{{ __('Por')}}: </b> {{ $ad->user->name }}</div>
+                        <div class="mb-3"><a class="text-decoration-none"
                                 href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a>
                         </div>
                         <div><a href="#" class="btn bg-primary rounded-5 text-light">{{ __('Comprar')}}</a></div>
@@ -49,7 +49,7 @@
 
             <div class="col-3 mt-5 related_ads_show p-5">
                 <h5 class="text-center mb-5">{{ __('Otros articulos relacionados por categoría')}}</h5>
-                
+
                 @forelse ($ads_category_random as $ad)
                 <div class="container col-12 col-md-4 d-flex justify-content-center">
                     <x-minicard
@@ -58,7 +58,7 @@
                     </x-minicard>
                 </div>
                 @empty
-                    <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>                    
+                <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
                 @endforelse
             </div>
 

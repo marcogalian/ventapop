@@ -1,12 +1,14 @@
 <x-layout>
     <div class="container login-register">
         <div class="row justify-content-center">
-            <div class="col-md-4 col-4 d-flex justify-content-center align-items-end flex-column me-3">
-                <p class="logo logo-login text-primary">VentaPop!</p>
-                <p class="d-block text-primary mt-3 text-end">{{ __('¡Compra y vende entre millones de usuarios de todo el mundo!')}}</p>
+            <div class="col-12 col-md-4 col-4 d-flex container-logo-login me-3">
+                <div class="d-flex container-text-register">
+                    <p class="logo logo-login text-primary">VentaPop!</p>
+                    <p class="d-block text-primary mt-3 text-end">{{ __('¡Compra y vende entre millones de usuarios de todo el mundo!')}}</p>
+                </div>
             </div>
             <div class="col-md-7">
-                <div class="card bg-light">
+                <div class="card bg-light text-center">
                     <div class="card-header bg-primary text-light">{{ __('Registro') }}</div>
 
                     <div class="card-body">

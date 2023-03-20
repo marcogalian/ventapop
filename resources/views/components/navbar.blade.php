@@ -9,12 +9,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
+            {{-- Desplegable categories ---------------------------------------------------}}
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn btn-bg rounded-5 me-4 mt-1"
+                    <a class="btn btn-bg rounded-5 w-100"
                         href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
-                <li class="nav-item dropdown me-4 nav-categories">
+                <li class="nav-item dropdown nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">{{ __('Categorías')}}</a>
                     <ul class="dropdown-menu bg-light m-0" aria-labelledby="navbarDropdown">
@@ -27,7 +28,6 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <button class="dropdown-toggle boton_idioma fs-5 me-4" type="button" data-bs-toggle="dropdown"
@@ -86,13 +86,14 @@
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary" href="#"
-                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
-                        <a class="dropdown-item text-primary" href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
@@ -103,7 +104,8 @@
                             {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item text-primary" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -112,17 +114,27 @@
                 </li>
                 @endguest
             </ul>
+
+            {{-- Search ------------------------------------------------------------------------------------------}}
+            <div class="search-container">
+                <div class="container-fluid search-bar mt-4 p-0 ">
+                    <form action="" class="search-container-input d-flex">
+                        <input class="form-control search-input" type="search" placeholder="{{ __('Buscar')}}">
+                        <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
     {{-- Search -------------------------------------------------------------------------------------------}}
-    <div class="search-container search-bar position-absolute">
+    {{-- <div class="search-container search-bar position-absolute">
         <div class="container-fluid d-flex justify-content-center">
             <form action="" class="search-container-input d-flex">
                 <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
-                <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
-            </form>
-        </div>
+    <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
+    </form>
     </div>
+    </div> --}}
 
 </nav>

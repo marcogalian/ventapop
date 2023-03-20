@@ -5,11 +5,14 @@
     {{-- Slogan ---------------------------------------------------------}}
     <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
-            <div class="container row">
-                <div class="m-0 p-0 text-center">
-                    <h1 class="slogan container text-end">{{ __('messages.logo')}}</h1>
+            <div class="container-fluid row content-hero">
+                <div class="container-img-hero col-3">
+                    <img class="img-fluid courier-hero" src=" {{ Vite::asset('public/images/courier2.png') }}" alt="">
                 </div>
-                <h3 class="slogan-bottom container text-end col-12">{{ __('Tu web de compraventa')}}</h3>
+                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-8">
+                    <h1 class="slogan ">{{ __('messages.logo')}}</h1>
+                    <h3 class="slogan-bottom">{{ __('Tu web de compraventa')}}</h3>
+                </div>
             </div>
         </div>
 
@@ -189,8 +192,7 @@
     <div class="container-fluid p-0 bg-light card-random">
         <div class="row m-0 justify-content-center">
             @forelse ($ads_category_random as $ad)
-            <div
-                class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
+            <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <div class="my-card rounded position-relative">
                     @if ($ad->created_at > $time)
                     <span class="nuevo_articulo rounded text-white bg-danger p-2"><span

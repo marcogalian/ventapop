@@ -13,7 +13,7 @@
 
 
 /* Variables ---------------------------------------------------------------------------------------- */
-:root{
+:root {
     --text-primary: #189AB4 !important;
     --text-secondary: #05445E !important;
     --text-light: #F2F2F2 !important;
@@ -129,11 +129,14 @@
 }
 
 .search-container {
+    display: flex;
+
     width: 100%;
+    bottom: -20%;
 }
 
 .search-bar {
-    bottom: -20%;
+    justify-content: end;
 }
 
 .search-container-input {
@@ -170,12 +173,22 @@
     width: 100% !important;
     height: 50vh;
     /* background-image: linear-gradient(#189ab4e9, #189ab4e9), url('/public/images/secon.png'); */
-    background-image: radial-gradient(circle at left, #00435d2a, #189ab4e9), url('/public/images/courier2.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    /* background-image: radial-gradient(circle at left, #00435d2a, #189ab4e9), url('/public/images/courier2.png'); */
+    background-image: radial-gradient(circle at left, #189ab400 20%, #189ab4 20%);
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.content-hero {
+    justify-content: end;
+    height: 500px;
+}
+
+.courier-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .text-slogan {
@@ -620,26 +633,77 @@ th {
 
 }
 
-/* 320 x 568 iphone 5 ------------------------------------*/
+/* 320 x 568 iphone 5 ###################################################################################*/
+
 @media (max-width: 320px) {
-    
+
+    /* navbar ----------------------------------------------------------------------*/
+    .search-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .search-container-input {
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+
+    .search-input {
+        border: none;
+    }
+
+    .btn-search {
+        border: none;
+        margin-right: .5rem;
+    }
+
+    .search-bar {
+        width: 100% !important;
+        display: flex;
+        justify-content: start;
+        margin-left: 0 !important;
+    }
+
     .logo {
         font-size: 1.6rem;
     }
 
-    .nav-container{
+    .nav-container {
         margin: 0 .5rem !important;
     }
 
     .btn-bg {
-        margin: .6rem 0 .8rem;
+        margin: 2rem 0 1rem 0;
+    }
+
+    .boton_idioma {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .btn-up-item {
+        padding: .4rem 1.2rem;
+        margin: 1rem 0;
+    }
+
+    /* Fin--------------------------------------------------------------------------------------- */
+
+    /* Hero --------------------------------------------------------------------------------------*/
+    .container-img-hero {
+        display: none;
     }
 
     .main-hero {
+        overflow: hidden;
         height: 30vh;
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
+        background: #189ab4;
+    }
+
+    .content-hero {
+        justify-content: center;
+        height: 200px;
     }
 
     .text-slogan {
@@ -650,23 +714,20 @@ th {
 
     .slogan {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .slogan-bottom {
         right: 90px;
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
     .categories {
         display: none;
     }
 
-    .nav-categories{
+    .nav-categories {
         margin-bottom: .5rem !important;
-    }
-
-    .boton_idioma {
-        margin-bottom: 1.5rem !important;
     }
 
     .title-page {
@@ -683,10 +744,9 @@ th {
         font-size: .7rem;
     }
 
-    .btn-up-item {
-        padding: .4rem 1.2rem;
-        margin: 1rem 0;
-    }
+    /* Fin--------------------------------------------------------------------------------- */
+
+    /* Main ------------------------------------------------------------------------------- */
 
     .my-card {
         width: 9rem;
@@ -724,8 +784,20 @@ th {
         font-size: .7rem;
         padding: .4rem 1rem;
     }
+
+    .carrusel-welcome {
+        display: none;
+    }
+
+    .container-cards {
+        padding: .4rem;
+    }
+
+    /* Fin----------------------------------------------------------------------------- */
+
+    /* footer -------------------------------------------------------------------------*/
     .footer {
-        height: 220px;
+        height: 200px;
     }
 
     .footer-container {
@@ -743,15 +815,42 @@ th {
         padding: 0 !important;
     }
 
-    .footer-copyright{
+    .footer-copyright {
         font-size: .8rem;
     }
-    .carrusel-welcome {
-        display: none;
+    /* Fin ----------------------------------------------------------------*/
+
+    /* Vista show ---------------------------------------------------------*/
+
+    .related_ads_show {
+        border-top: #189AB4 solid 2px;
+        border-left: none;
+        width: 90%;
+    }
+    /* Fin ----------------------------------------------------------------*/
+
+    /* Register and login --------------------------------------------------*/
+
+    .container-logo-login{
+        justify-content: center;
     }
 
-    .container-cards {
-        padding: .4rem;
+    .logo-login{
+        font-size: 3rem;
     }
+
+    .login-register{
+        margin: 2rem 0 4rem 0;
+    }
+
+    .container-text-register{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-text-register :nth-child(2){
+        text-align: center !important;
+    }
+
 
 }

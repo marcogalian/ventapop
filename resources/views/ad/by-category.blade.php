@@ -2,7 +2,7 @@
     <x-slot name="title">Ventapop - {{ $category->name }}</x-slot>
 
     <div class="container title-page d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">Ventapop - {{ __('Categoría')}} : {{ __($category->name) }}</h3>
+        <p class="m-0">Ventapop - {{ __('Categoría')}} : {{ __($category->name) }}</p>
     </div>
     <div class="container line-title">
     </div>
@@ -11,7 +11,7 @@
         
         <div class="row mt-5">
             @forelse ($ads as $ad)
-            <div class="container col-12 col-md-4 d-flex justify-content-center">
+            <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <x-card
                         img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container login-register ">
         <div class="row justify-content-center">
-            <div class="col-md-4 col-4 d-flex justify-content-center align-items-end flex-column me-3">
+            <div class="col-12 col-md-4 col-4 d-flex container-logo-login me-3">
                 <p class="logo logo-login text-primary">VentaPop!</p>
             </div>
             <div class="col-md-7">
