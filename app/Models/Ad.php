@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Scout\Searchable;
 
 class Ad extends Model
 {
@@ -13,7 +13,7 @@ class Ad extends Model
         'body',
         'price',
     ];
-    use HasFactory;
+    use HasFactory, Searchable;
 
     public function category()
     {
@@ -39,5 +39,13 @@ class Ad extends Model
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'title'=> $this->title,
+            'body'=> $this->body
+        ];
     }
 }

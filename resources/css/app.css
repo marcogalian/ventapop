@@ -350,7 +350,31 @@ th {
     border-left: #189AB4 solid 2px;
 }
 
+/* Revisor ----------------------------------------------------------------------------------------------- */
 
+.UNKNOWN {
+    color: grey;
+}
+
+.VERY_UNLIKELY{
+    color: greenyellow ;
+}
+
+.UNLIKELY{
+    color: green ;
+}
+
+.POSSIBLE{
+    color: orange ;
+}
+
+.LIKELY{
+    color: orangered ;
+}
+
+.VERY_LIKELY{
+    color: red;
+}
 
 
 /* Card ----------------------------------------------------------------------------------------------- */

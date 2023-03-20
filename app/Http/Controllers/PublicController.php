@@ -72,7 +72,7 @@ class PublicController extends Controller
     public function adsByCategory(Category $category)
     {
         $ads = $category->ads()->where('is_accepted', true)->latest()->paginate(6);
-        /* dd($category->name); */
+        /* dd($ads); */
         return view('ad.by-category', compact('category','ads'));
     }
 
@@ -88,5 +88,14 @@ class PublicController extends Controller
         return redirect()->back();
         
     }
+    
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+        $ads = Ad::search($q)->where('is_accepted', true)->get();                
+        /* dd($ads); */
+        return view('ad.search-results', compact('q','ads'));
+    }
 
+    
 }
