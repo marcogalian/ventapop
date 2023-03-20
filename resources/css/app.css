@@ -158,8 +158,13 @@
     padding: 0 !important;
 }
 
-.menu_idioma_ul {
-    min-width: 50px;
+.menu_idioma_ul{
+    margin-top: 0 !important;
+    width: fit-content;
+}
+
+.dropdown-categories {
+    max-width: 30%;
 }
 
 /* Main ---------------------------------------------------------------------------------------------- */
@@ -355,7 +360,7 @@ th {
 
 /* Card ----------------------------------------------------------------------------------------------- */
 
-.container-cards{
+.container-cards {
     width: 100%;
     height: 100%;
 }
@@ -498,19 +503,20 @@ th {
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .nav-container {
-        margin: 0 .5rem !important;
+        margin: 0 1rem !important;
     }
 
     .btn-bg {
+        width: 30%;
         margin: 2rem 0 1rem 0;
     }
 
     .boton_idioma {
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1rem !important;
     }
 
     /* Fin--------------------------------------------------------------------------------------- */
@@ -522,7 +528,7 @@ th {
 
     .main-hero {
         overflow: hidden;
-        height: 30vh;
+        height: 40vh;
         background: #189ab4;
     }
 
@@ -538,13 +544,13 @@ th {
     }
 
     .slogan {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
     }
 
     .slogan-bottom {
         right: 90px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .categories {
@@ -557,48 +563,48 @@ th {
 
     .title-page {
         margin-top: 4rem;
-        width: 80%;
+        width: 60%;
         height: 35px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .title-page-bottom {
         margin-top: 4rem;
-        width: 90%;
+        width: 60%;
         height: 35px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     /* Fin--------------------------------------------------------------------------------- */
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
-        margin: 2rem .4rem;
+    .card-xs {
+        margin: 2rem .8rem;
         padding: 0;
         width: 45%;
     }
 
     .my-card {
-        width: 100%;
+        width: 14rem;
         height: 100%;
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .9rem !important;
         font-weight: 700;
     }
 
     .card-text {
         text-align: center;
-        width: 100%;
+        width: 14rem;
         height: 100%;
     }
 
     .card-img {
-        width: 100%;
-        height: 17rem;
+        width: 14rem;
+        height: 18rem;
     }
 
     .card-btn {
@@ -630,15 +636,16 @@ th {
     }
 
     .nav-footer {
-        font-size: .8rem;
+        font-size: 1rem;
         display: flex;
         justify-content: center !important;
         padding: 0 !important;
     }
 
     .footer-copyright {
-        font-size: .8rem;
+        font-size: 1rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -648,29 +655,30 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
@@ -704,6 +712,7 @@ th {
     }
 
     .btn-bg {
+        width: 40%;
         margin: 2rem 0 1rem 0;
     }
 
@@ -771,7 +780,7 @@ th {
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
+    .card-xs {
         margin: 2rem .4rem;
         padding: 0;
         width: 45%;
@@ -783,7 +792,7 @@ th {
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .9rem !important;
         font-weight: 700;
     }
@@ -837,6 +846,7 @@ th {
     .footer-copyright {
         font-size: .8rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -846,29 +856,30 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
@@ -909,6 +920,7 @@ th {
     }
 
     .btn-bg {
+        width: 100%;
         margin: 2rem 0 1rem 0;
     }
 
@@ -977,7 +989,7 @@ th {
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
+    .card-xs {
         margin-top: 2rem;
         margin-bottom: 0rem;
         padding: 0;
@@ -990,7 +1002,7 @@ th {
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .7rem !important;
         font-weight: 700;
     }
@@ -1019,7 +1031,7 @@ th {
     .container-cards {
         padding: 0;
     }
-    
+
 
     /* Fin----------------------------------------------------------------------------- */
 
@@ -1046,6 +1058,7 @@ th {
     .footer-copyright {
         font-size: .8rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -1055,30 +1068,29 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin: 2rem 0 4rem 0;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
-
-

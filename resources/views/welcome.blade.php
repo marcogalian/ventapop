@@ -9,7 +9,7 @@
                 <div class="container-img-hero col-3">
                     <img class="img-fluid courier-hero" src=" {{ Vite::asset('public/images/courier2.png') }}" alt="">
                 </div>
-                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-8">
+                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-12 col-sm-9">
                     <h1 class="slogan ">{{ __('messages.logo')}}</h1>
                     <h3 class="slogan-bottom">{{ __('Tu web de compraventa')}}</h3>
                 </div>
@@ -74,9 +74,9 @@
         </div>
     
         <div class="container-fluid p-0 mb-5 d-flex justify-content-center bg-light">
-            <div class="container row m-0 justify-content-center container-cards mb-4">
+            <div class="container-fluid row m-0 justify-content-center container-cards mb-4">
                 @forelse ($ads as $ad)
-                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 d-flex justify-content-center">
+                <div class="card-xs col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center">
                     <div class="my-card rounded position-relative">
                         @if ($ad->created_at > $time)
                         <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
