@@ -1,12 +1,12 @@
 <x-layout>
-    <div class="container login-register ">
+    <div class="container login-register">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-4 col-4 d-flex container-logo-login me-3">
+            <div class="col-12 col-md-4 col-4 d-flex container-logo-login">
                 <p class="logo logo-login text-primary">VentaPop!</p>
             </div>
-            <div class="col-md-7">
-                <div class="card bg-light">
-                    <div class="card-header bg-primary text-light">{{ __('Iniciar sesión') }}</div>
+            <div class="col-11">
+                <div class="card bg-light shadow">
+                    <div class="card-header bg-primary text-light text-center">{{ __('Iniciar sesión') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

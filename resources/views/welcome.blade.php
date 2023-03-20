@@ -74,9 +74,9 @@
         </div>
     
         <div class="container-fluid p-0 mb-5 d-flex justify-content-center bg-light">
-            <div class="container row m-0 justify-content-center container-cards">
+            <div class="container row m-0 justify-content-center container-cards mb-4">
                 @forelse ($ads as $ad)
-                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-4 mb-4 d-flex justify-content-center align-items-center">
+                <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 d-flex justify-content-center">
                     <div class="my-card rounded position-relative">
                         @if ($ad->created_at > $time)
                         <span class="nuevo_articulo rounded text-white bg-danger p-2"><span
@@ -84,7 +84,10 @@
                         @endif
                         <x-card
                             img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                            title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                            title="{{ $ad->title }}" 
+                            price="{{ $ad->price }}" 
+                            body="" 
+                            :ad="$ad">
                         </x-card>
                     </div>
                 </div>

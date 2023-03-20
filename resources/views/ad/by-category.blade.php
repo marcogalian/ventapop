@@ -13,8 +13,11 @@
             @forelse ($ads as $ad)
             <div class="card-xs col-12 col-sm-3 col-md-5 col-lg-4 mt-5 mb-5 d-flex justify-content-center align-items-center">
                 <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                    title="{{ $ad->title }}" 
+                    price="{{ $ad->price }}" 
+                    body="" 
+                    :ad="$ad">
                 </x-card>
             </div>
             @empty

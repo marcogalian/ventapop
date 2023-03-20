@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card bg-light">
-                    <div class="card-header bg-primary text-white">{{ __('Restablecer contraseña') }}</div>
+                    <div class="card-header bg-primary text-white text-center">{{ __('Restablecer contraseña') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('password.update') }}">

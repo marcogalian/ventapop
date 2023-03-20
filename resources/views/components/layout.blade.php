@@ -28,7 +28,7 @@
     @endif    
     
     <div class="main container-fluid p-0 bg-white">
-        <main class="">
+        <main>
             {{ $slot }}   
         </main>
     </div>

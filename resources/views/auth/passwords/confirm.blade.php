@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-light">
-                <div class="card-header bg-primary text-white">{{ __('Confirmar Constraseña') }}</div>
+                <div class="card-header bg-primary text-white text-center">{{ __('Confirmar Constraseña') }}</div>
 
                 <div class="card-body">
                     {{ __('Por favor, confirma tu contraseña antes de continuar.') }}

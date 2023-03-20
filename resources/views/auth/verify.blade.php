@@ -2,8 +2,8 @@
     <div class="container login-register">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card bg-light">
-                    <div class="card-header bg-primary text-white">{{ __('Verifica tu correo electrónico') }}</div>
+                <div class="card bg-light shadow">
+                    <div class="card-header bg-primary text-white text-center">{{ __('Verifica tu correo electrónico') }}</div>
 
                     <div class="card-body">
                         @if (session('resent'))
