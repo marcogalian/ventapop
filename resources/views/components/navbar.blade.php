@@ -116,9 +116,9 @@
     </div>
     <div class="search-container search-bar position-absolute">
         <div class="container-fluid d-flex justify-content-center">
-            <form action="" class="search-container-input d-flex">
-                <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
-                <button class="btn bg-primary search-input btn-search">{{ __('Buscar')}}</button>
+            <form action="{{ route('search')}}" method="GET" role="search" class="search-container-input d-flex">
+                <input class="form-control search-input me-4" name="q" type="search" placeholder="{{ __('¿Qué estás buscando?')}}">
+                <button class="btn bg-primary search-input btn-search" type="submit">{{ __('Buscar')}}</button>
             </form>
         </div>
     </div>

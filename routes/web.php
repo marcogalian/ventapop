@@ -50,3 +50,7 @@ Route::get('revisor/become', [RevisorController::class, 'becomeRevisor'])->middl
 Route::get('revisor/{user}/make', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('revisor.make');
 
 Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set'); 
+
+Route::get('/search', [PublicController::class, 'search'])->name('search');
+
+Route::get('/search-results', [PublicController::class, 'ad.search-results'])->name('search-results');
