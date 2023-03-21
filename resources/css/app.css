@@ -1,10 +1,6 @@
 @import '~flag-icon-css/css/flag-icons';
 
 /* FONTS -------------------------------------------------------------------------------------------- */
-
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
@@ -21,7 +17,6 @@
     --bg-secondary: #05445E !important;
     --bg-warning: #E1C340 !important;
     --bg-light: #F2F2F2 !important;
-
 }
 
 
@@ -134,10 +129,6 @@
     bottom: -20%;
 }
 
-.search-bar {
-    justify-content: end;
-}
-
 .search-container-input {
     width: 70%;
 }
@@ -151,6 +142,17 @@
     -o-border-radius: 20px;
 }
 
+.hr-line {
+    display: none;
+}
+
+.search-bar {
+    width: 100%;
+    position: absolute;
+    left: calc(50% - 35%);
+    bottom: -15%;
+}
+
 .boton_idioma {
     background-color: rgba(242, 242, 242, 0);
     color: var(--text-primary);
@@ -159,7 +161,12 @@
 }
 
 .menu_idioma_ul {
-    min-width: 50px;
+    margin-top: 0 !important;
+    width: fit-content;
+}
+
+.dropdown-categories {
+    max-width: 30%;
 }
 
 /* Main ---------------------------------------------------------------------------------------------- */
@@ -300,12 +307,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Lobster', cursive;
 }
 
 .blur {
@@ -355,7 +360,7 @@ th {
 
 /* Card ----------------------------------------------------------------------------------------------- */
 
-.container-cards{
+.container-cards {
     width: 100%;
     height: 100%;
 }
@@ -367,8 +372,9 @@ th {
 }
 
 .my-card {
-    width: 100%;
+    width: 14rem;
     height: 100%;
+    font-size: .8rem;
 }
 
 .card-text {
@@ -394,11 +400,6 @@ th {
     opacity: 1;
 }
 
-.card-img {
-    width: 16rem;
-    height: 21rem;
-}
-
 .image {
     width: 100%;
     height: 100%;
@@ -407,6 +408,25 @@ th {
     ;
 }
 
+.card-text {
+    text-align: center;
+    width: 14rem;
+    height: 100%;
+}
+
+.card-img {
+    width: 14rem;
+    height: 18rem;
+}
+
+.card-btn {
+    font-size: .9rem;
+    padding: .4rem 1rem;
+}
+
+.container-cards {
+    padding: .4rem;
+}
 
 /* Carrousel indicadores ----------------------------------------------------------------------------- */
 
@@ -477,11 +497,140 @@ th {
 
 
 
+
+
 /* Responsive web design @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* hasta 1024px ######################################################################*/
+@media (max-width: 1024px) {
+
+    /* navbar ----------------------------------------------------------------------*/
+    .logo {
+        font-size: 3rem;
+    }
+
+    .btn-bg {
+        width: 30%;
+        margin: 2rem 0 1rem 0;
+    }
+
+    /* Fin--------------------------------------------------------------------------------------- */
+
+    /* Hero --------------------------------------------------------------------------------------*/
+    .main-hero {
+        overflow: hidden;
+        height: 40vh;
+    }
+
+    .content-hero {
+        justify-content: center;
+        height: 200px;
+    }
+
+    .text-slogan {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 1rem;
+    }
+
+    .slogan {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .slogan-bottom {
+        right: 90px;
+        font-size: 1.5rem;
+    }
+
+    .nav-categories {
+        margin-bottom: .5rem !important;
+    }
+
+    .title-page {
+        margin-top: 4rem;
+        width: 60%;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .title-page-bottom {
+        margin-top: 4rem;
+        width: 60%;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    /* Fin--------------------------------------------------------------------------------- */
+
+    /* footer -------------------------------------------------------------------------*/
+    .footer {
+        height: 200px;
+    }
+
+    .footer-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .65rem;
+    }
+
+    .nav-footer {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .footer-copyright {
+        font-size: 1rem;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
+    /* Vista show ---------------------------------------------------------*/
+
+    .related_ads_show {
+        border-top: #189AB4 solid 2px;
+        border-left: none;
+        width: 90%;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
+    /* Register and login --------------------------------------------------*/
+
+    .container-logo-login {
+        justify-content: center;
+    }
+
+    .logo-login {
+        font-size: 3rem;
+    }
+
+    .login-register {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .container-text-register {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-text-register :nth-child(2) {
+        text-align: center !important;
+    }
+}
+
 /* hasta 768px #######################################################################*/
 @media (max-width: 768px) {
 
     /* navbar ----------------------------------------------------------------------*/
+    .search-bar {
+        position: static;
+    }
 
     .search-container-input {
         width: 100%;
@@ -498,19 +647,20 @@ th {
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .nav-container {
-        margin: 0 .5rem !important;
+        margin: 0 1rem !important;
     }
 
     .btn-bg {
+        width: 30%;
         margin: 2rem 0 1rem 0;
     }
 
     .boton_idioma {
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1rem !important;
     }
 
     /* Fin--------------------------------------------------------------------------------------- */
@@ -522,7 +672,7 @@ th {
 
     .main-hero {
         overflow: hidden;
-        height: 30vh;
+        height: 40vh;
         background: #189ab4;
     }
 
@@ -538,13 +688,13 @@ th {
     }
 
     .slogan {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
     }
 
     .slogan-bottom {
         right: 90px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .categories {
@@ -557,48 +707,48 @@ th {
 
     .title-page {
         margin-top: 4rem;
-        width: 80%;
+        width: 60%;
         height: 35px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .title-page-bottom {
         margin-top: 4rem;
-        width: 90%;
+        width: 60%;
         height: 35px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     /* Fin--------------------------------------------------------------------------------- */
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
-        margin: 2rem .4rem;
+    .card-xs {
+        margin: 2rem .8rem;
         padding: 0;
         width: 45%;
     }
 
     .my-card {
-        width: 100%;
+        width: 14rem;
         height: 100%;
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .9rem !important;
         font-weight: 700;
     }
 
     .card-text {
         text-align: center;
-        width: 100%;
+        width: 14rem;
         height: 100%;
     }
 
     .card-img {
-        width: 100%;
-        height: 17rem;
+        width: 14rem;
+        height: 18rem;
     }
 
     .card-btn {
@@ -630,15 +780,16 @@ th {
     }
 
     .nav-footer {
-        font-size: .8rem;
+        font-size: 1rem;
         display: flex;
         justify-content: center !important;
         padding: 0 !important;
     }
 
     .footer-copyright {
-        font-size: .8rem;
+        font-size: 1rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -648,29 +799,30 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
@@ -704,6 +856,7 @@ th {
     }
 
     .btn-bg {
+        width: 40%;
         margin: 2rem 0 1rem 0;
     }
 
@@ -771,7 +924,7 @@ th {
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
+    .card-xs {
         margin: 2rem .4rem;
         padding: 0;
         width: 45%;
@@ -783,7 +936,7 @@ th {
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .9rem !important;
         font-weight: 700;
     }
@@ -837,6 +990,7 @@ th {
     .footer-copyright {
         font-size: .8rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -846,29 +1000,30 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
@@ -909,6 +1064,7 @@ th {
     }
 
     .btn-bg {
+        width: 100%;
         margin: 2rem 0 1rem 0;
     }
 
@@ -977,7 +1133,7 @@ th {
 
     /* Main y Cards------------------------------------------------------------------------------- */
 
-    .card-xs{
+    .card-xs {
         margin-top: 2rem;
         margin-bottom: 0rem;
         padding: 0;
@@ -990,7 +1146,7 @@ th {
         font-size: .8rem;
     }
 
-    .title-card{
+    .title-card {
         font-size: .7rem !important;
         font-weight: 700;
     }
@@ -1019,7 +1175,7 @@ th {
     .container-cards {
         padding: 0;
     }
-    
+
 
     /* Fin----------------------------------------------------------------------------- */
 
@@ -1046,6 +1202,7 @@ th {
     .footer-copyright {
         font-size: .8rem;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
@@ -1055,30 +1212,29 @@ th {
         border-left: none;
         width: 90%;
     }
+
     /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login{
+    .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login{
+    .logo-login {
         font-size: 3rem;
     }
 
-    .login-register{
+    .login-register {
         margin: 2rem 0 4rem 0;
     }
 
-    .container-text-register{
+    .container-text-register {
         flex-direction: column;
         align-items: center;
     }
 
-    .container-text-register :nth-child(2){
+    .container-text-register :nth-child(2) {
         text-align: center !important;
     }
 }
-
-
