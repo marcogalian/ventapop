@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container p-3">
+    <div class="container p-3 carousel-container">
         <div class="row my-5 justify-content-around">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
                 <div class="carousel slide" id="adImages" data-bs-ride="true">
                     <div class="carousel-indicators">
                         @for($i = 0; $i < $ad->images()->count(); $i++)

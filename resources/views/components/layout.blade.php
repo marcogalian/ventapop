@@ -19,7 +19,7 @@
     {{$style ?? ''}}
 </head>
 <body class="body">
-    <div class="container-fluid p-0 position-sticky top-0 navbar-container ">
+    <div class="container-fluid p-0 fixed-top navbar-container ">
         <x-navbar/>
     </div>
     
@@ -42,5 +42,6 @@
     <!-- Scripts -->
     @livewireScripts
     @vite(['resources/js/app.js'])
+    <script src="https://kit.fontawesome.com/752e643d10.js" crossorigin="anonymous"></script>
 </body>
 </html>

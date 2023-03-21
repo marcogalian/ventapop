@@ -6,11 +6,11 @@
     <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
             <div class="container-fluid row content-hero">
-                <div class="container-img-hero col-3">
+                <div class="container-img-hero col-4 col-md-4">
                     <img class="img-fluid courier-hero" src=" {{ Vite::asset('public/images/courier2.png') }}" alt="">
                 </div>
-                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-8">
-                    <h1 class="slogan ">{{ __('messages.logo')}}</h1>
+                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-8 col-md-8 slogan-container">
+                    <h1 class="slogan">{{ __('messages.logo')}}</h1>
                     <h3 class="slogan-bottom">{{ __('Tu web de compraventa')}}</h3>
                 </div>
             </div>
@@ -23,36 +23,34 @@
                     <a class="nav-link text-primary text-center" href="{{ route('category.ads', $category) }}">
                         @switch( __($category->name))
                             @case( __('Motor'))
-                            <i class="bi bi-car-front-fill mb-2 fs-4"></i>
+                            <i class="bi bi-car-front-fill mb-2"></i>
                             @break
                             @case( __('Electrónica e informática'))
-                            <i class="bi bi-cpu-fill mb-2 fs-4"></i>
+                            <i class="bi bi-cpu-fill mb-2"></i>
                             @break
                             @case( __('Decoración'))
-                            <i class="bi bi-image-fill mb-2 fs-4"></i>
+                            <i class="bi bi-image-fill mb-2"></i>
                             @break
                             @case( __('Juguetes'))
-                            <i class="bi bi-joystick mb-2 fs-4"></i>
+                            <i class="bi bi-joystick mb-2"></i>
                             @break
                             @case( __('Deporte'))
-                            <i class="bi bi-bicycle mb-2 fs-4"></i>
+                            <i class="bi bi-bicycle mb-2"></i>
                             @break
                             @case( __('Herramientas'))
-                            <i class="bi bi-tools mb-2 fs-4"></i>
+                            <i class="bi bi-tools mb-2"></i>
                             @break
                             @case( __('Mascotas'))
-                            <span class="material-symbols-outlined fs-4 mt-2">
-                                pets
-                            </span>
+                            <i class="fa-solid fa-paw"></i>
                             @break
                             @case( __('Muebles'))
-                            <i class="bi bi-house-fill mb-2 fs-4"></i>
+                            <i class="bi bi-house-fill mb-2"></i>
                             @break
                             @case( __('Música y libros'))
-                            <i class="bi bi-book mb-2 fs-4"></i>
+                            <i class="bi bi-book mb-2"></i>
                             @break
                             @case( __('Otros'))
-                            <i class="bi bi-box-fill mb-2 fs-4"></i>
+                            <i class="bi bi-box-fill mb-2"></i>
                             @break
                             @default
                         @endswitch

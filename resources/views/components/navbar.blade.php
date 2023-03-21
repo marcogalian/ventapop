@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light my-navbar position-relative ">
+<nav class="navbar navbar-expand-md navbar-light my-navbar">
 
-    <div class="container-fluid mx-5 nav-container">
+    <div class="container-fluid mx-3 nav-container">
         <a class="navbar-brand logo text-primary me-5" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -12,22 +12,22 @@
             {{-- Desplegable categories ---------------------------------------------------}}
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn btn-bg rounded-5 w-100"
+                    <a class="btn btn-bg rounded-5"
                         href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">{{ __('Categorías')}}</a>
-                    <ul class="dropdown-menu bg-light m-0" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-primary"
-                                href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
+                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
                         @endforeach
                     </ul>
                 </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
+            {{-- Banderas y Login ---------------------------------------------------------------------------}}
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <button class="dropdown-toggle boton_idioma fs-5 me-4" type="button" data-bs-toggle="dropdown"
@@ -46,7 +46,7 @@
                         @default
                         @endswitch
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul">
+                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul bg-light">
                         <li class="menu_idioma_li">
                             <div class="dropdown-item d-flex">
                                 <x-locale lang="en" country="gb" />
@@ -126,15 +126,5 @@
             </div>
         </div>
     </div>
-
-    {{-- Search -------------------------------------------------------------------------------------------}}
-    {{-- <div class="search-container search-bar position-absolute">
-        <div class="container-fluid d-flex justify-content-center">
-            <form action="" class="search-container-input d-flex">
-                <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
-    <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
-    </form>
-    </div>
-    </div> --}}
 
 </nav>
