@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     @livewireStyles
-    @vite(['resources/sass/app.scss', 'resources/css/app.css'])
+    @vite(['resources/css/app.css'])
     {{$style ?? ''}}
 </head>
 <body class="body">

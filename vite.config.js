@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/app.scss',
+                'resources/css/app.css',
                 'resources/js/app.js',
             ],
             refresh: true,
@@ -14,7 +14,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '~flag-icon-css': path.resolve(__dirname, 'node_modules/flag-icon-css')
+            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+            '~flag-icon-css': path.resolve(__dirname, 'node_modules/flag-icon-css'),
         }
-    }
+    },
 });
