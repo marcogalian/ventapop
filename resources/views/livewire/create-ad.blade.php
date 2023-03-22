@@ -74,8 +74,8 @@
         </div>
 
         <div class="mt-2 d-flex justify-content-around">
-            <button class="btn bg-primary text-light" type="submit">{{ __('Subir artículo')}}</button>
-            <a href="{{ route('home') }}" class="btn bg-primary text-light">{{ __('Volver a inicio')}}</a>
+            <button class="btn btn-primary text-light" type="submit">{{ __('Subir artículo')}}</button>
+            <a href="{{ route('home') }}" class="btn btn-primary text-light">{{ __('Volver a inicio')}}</a>
         </div>
 
     </form>

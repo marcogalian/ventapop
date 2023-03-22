@@ -4,7 +4,7 @@
 
         <a class="col-12 col-md-4 col-sm-4 col-lg-4 navbar-brand logo text-light text-center" href="{{ route('home')}}">VentaPop!</a>
 
-        <ul class="nav col-12 col-md-4 col-sm-4 col-lg-4 justify-content-end pe-4 nav-footer">
+        <ul class="nav col-12 col-md-4 col-sm-4 col-lg-4 justify-content-end nav-footer">
             <li class="nav-item"><a href="{{ route('home')}}" class="nav-link px-2 text-light">{{ __('Inicio')}}</a></li>
             <li class="nav-item"><a href="{{ route('about')}}" class="nav-link px-2 text-light">{{ __('Sobre los creadores')}}</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>

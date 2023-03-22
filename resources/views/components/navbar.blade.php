@@ -68,7 +68,7 @@
                     </ul>
                 </li>
 
-
+                <hr class="hr-line">
                 <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))
@@ -86,7 +86,7 @@
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary p-0" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
@@ -115,12 +115,15 @@
                 @endguest
             </ul>
 
+            <hr class="hr-line">
+
             {{-- Search ------------------------------------------------------------------------------------------}}
+            
             <div class="search-container">
                 <div class="container-fluid search-bar mt-4 p-0 ">
                     <form action="" class="search-container-input d-flex">
                         <input class="form-control search-input" type="search" placeholder="{{ __('Buscar')}}">
-                        <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
+                        <button class="btn bg-primary text-light search-input btn-search mx-2">{{ __('Buscar')}}</button>
                     </form>
                 </div>
             </div>

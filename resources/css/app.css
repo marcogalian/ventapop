@@ -73,8 +73,26 @@
     background-color: var(--bg-secondary) !important;
 }
 
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius: 50px !important;
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    -ms-border-radius: 50px !important;
+    -o-border-radius: 50px !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-primary) !important;
+}
+
 
 /* NavBar -------------------------------------------------------------------------------------------- */
+
+.hr-line {
+    display: none;
+}
 
 .logo {
     font-family: 'Dancing Script', cursive;
@@ -121,6 +139,7 @@
 }
 
 .search-container {
+    position: absolute;
     display: flex;
     width: 100%;
     left: calc(50% - 50%);
@@ -138,10 +157,6 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-}
-
-.hr-line {
-    display: none;
 }
 
 .search-bar {
@@ -170,11 +185,6 @@
 
 
 /* Main ---------------------------------------------------------------------------------------------- */
-
-.login-register {
-    margin-top: 10rem !important;
-    margin-bottom: 3rem !important;
-}
 
 .container-create {
     margin-top: 11rem !important;
@@ -301,16 +311,6 @@
 
 /* Welcome -------------------------------------------------------------------------------------------- */
 
-/* .main_welcome {
-    background-image: url(/public/images/logo_ventapopclaro.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .blur {
     backdrop-filter: blur(2px);
@@ -349,6 +349,13 @@ th {
     background-color: #189ab480;
     backdrop-filter: blur(20px);
 }
+
+/* Vista Revisor ------------------------------------------------------*/
+
+.register-container {
+    margin-top: 8rem !important;
+}
+
 
 /* Show ----------------------------------------------------------------------------------------------- */
 
@@ -428,6 +435,10 @@ th {
     padding: .4rem;
 }
 
+.mini-card {
+    max-width: fit-content;
+}
+
 /* Carrousel indicadores ----------------------------------------------------------------------------- */
 
 .btn-prev {
@@ -477,10 +488,16 @@ th {
     height: 150px;
 }
 
-
 .bg_vpop_claro {
     background-color: rgba(85, 162, 161, 0.533);
+}
 
+.nav-footer {
+    padding-right: 2rem;
+}
+
+.footer-copyright {
+    padding-left: 2rem;
 }
 
 /* About -------------------------------------------------------------------------------------------- */
@@ -495,12 +512,171 @@ th {
     justify-self: center;
 }
 
+/* Login & Register ----------------------------------------------------------*/
+
+.login-register {
+    margin-top: 14rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.logo-login {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.container-text-register {
+    margin-right: 2rem;
+}
+
+
 
 
 
 
 /* Responsive web design @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* hasta 1024px ######################################################################*/
+
+/* hasta 1400px ######################################################################*/
+@media (max-width: 1400px) {
+
+    /* navbar ----------------------------------------------------------------------*/
+    .search-container {
+        position: absolute;
+    }
+
+    .nav-categories {
+        margin-left: 1rem;
+    }
+
+    .hr-line {
+        display: none;
+    }
+
+    /* Fin--------------------------------------------------------------------------------------- */
+
+    /* Hero --------------------------------------------------------------------------------------*/
+    .courier-hero {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-hero {
+        height: 42vh;
+    }
+
+    .content-hero {
+        justify-content: center;
+        height: 92%;
+    }
+
+    .courier-hero {
+        width: 80%;
+    }
+
+    .text-slogan {
+        padding: .5rem;
+    }
+
+    .slogan {
+        font-size: 4.5rem;
+        margin-bottom: 1rem;
+        margin-right: 6rem;
+    }
+
+    .slogan-bottom {
+        padding-right: 4rem;
+        font-size: 1.6rem;
+        margin-right: 6rem;
+        padding: 0;
+    }
+
+    .title-page {
+        width: 35%;
+        font-size: 1.3rem;
+    }
+
+    .title-page-bottom {
+        width: 35%;
+        font-size: 1.3rem;
+    }
+
+
+    /* Fin--------------------------------------------------------------------------------- */
+
+    /* Card ----------------------------------------------------------------------------------------------- */
+
+    .container-cards {
+        margin-top: 2rem !important;
+    }
+
+    .my-card {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Main ------------------------------------------------------------------- */
+
+    .categories {
+        height: 50px;
+    }
+
+    .p-category-name {
+        font-size: .7rem;
+    }
+
+    .list-categories {
+        height: 100%;
+    }
+
+    .categories-link a {
+        font-size: 1.1rem !important;
+    }
+
+    /* Fin ----------------------------------------------------------------------------*/
+
+    /* Vista show ---------------------------------------------------------*/
+    .carousel-container {
+        width: 80%;
+    }
+
+    .related_ads_show {
+        border-top: #189AB4 solid 2px;
+        border-left: none;
+        width: 100%;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
+    .logo-login {
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .login {
+        margin-top: 14rem !important;
+    }
+
+    .register {
+        margin-top: 14rem !important;
+    }
+
+    .container-logo-login {
+        justify-content: end;
+    }
+
+    .container-text-register {
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .container-text-register :nth-child(2) {
+        text-align: end !important;
+    }
+
+}
+
+/* hasta 1200px ######################################################################*/
 @media (max-width: 1200px) {
 
     /* navbar ----------------------------------------------------------------------*/
@@ -512,6 +688,10 @@ th {
         margin-left: 1rem;
     }
 
+    .hr-line {
+        display: none;
+    }
+
     /* Fin--------------------------------------------------------------------------------------- */
 
     /* Hero --------------------------------------------------------------------------------------*/
@@ -519,7 +699,6 @@ th {
         overflow: hidden;
         width: 100%;
         height: 100%;
-
     }
 
     .main-hero {
@@ -552,30 +731,30 @@ th {
     }
 
     .title-page {
-        margin-top: 4rem;
         width: 50%;
-        height: 35px;
         font-size: 1.2rem;
     }
 
     .title-page-bottom {
-        margin-top: 4rem;
         width: 50%;
-        height: 35px;
         font-size: 1.2rem;
     }
 
 
     /* Fin--------------------------------------------------------------------------------- */
 
-    /* Main y cards------------------------------------------------------------------- */
+    /* Card ----------------------------------------------------------------------------------------------- */
+
     .container-cards {
         margin-top: 2rem !important;
     }
 
     .my-card {
+        font-size: 1rem;
         margin-bottom: 1rem;
     }
+
+    /* Main ------------------------------------------------------------------- */
 
     .categories {
         height: 50px;
@@ -596,27 +775,15 @@ th {
     /* Fin ----------------------------------------------------------------------------*/
 
     /* footer -------------------------------------------------------------------------*/
-    .footer {
-        height: 200px;
-    }
-
-    .footer-container {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: .65rem;
-    }
 
     .nav-footer {
-        font-size: .8rem;
-        display: flex;
-        justify-content: center !important;
-        padding: 0 !important;
+        font-size: .9rem;
+        padding-right: 2rem;
     }
 
     .footer-copyright {
-        font-size: .8rem;
+        font-size: .9rem;
+        padding-left: 2rem;
     }
 
     /* Fin ----------------------------------------------------------------*/
@@ -631,34 +798,38 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
-    /* Register and login --------------------------------------------------*/
+    .logo-login {
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .login {
+        margin-top: 14rem !important;
+    }
+
+    .register {
+        margin-top: 14rem !important;
+    }
 
     .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login {
-        font-size: 3rem;
-    }
-
-    .login-register {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
-
     .container-text-register {
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        align-items: end;
     }
 
     .container-text-register :nth-child(2) {
-        text-align: center !important;
+        text-align: end !important;
     }
+
 }
 
 
 /* hasta 1024px ######################################################################*/
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
 
     /* navbar ----------------------------------------------------------------------*/
     .search-container {
@@ -671,6 +842,10 @@ th {
 
     .nav-categories {
         margin-left: 1rem;
+    }
+
+    .hr-line {
+        display: none;
     }
 
     /* Fin--------------------------------------------------------------------------------------- */
@@ -713,16 +888,12 @@ th {
     }
 
     .title-page {
-        margin-top: 4rem;
         width: 50%;
-        height: 35px;
         font-size: 1.2rem;
     }
 
     .title-page-bottom {
-        margin-top: 4rem;
         width: 50%;
-        height: 35px;
         font-size: 1.2rem;
     }
 
@@ -794,21 +965,28 @@ th {
 
     /* Register and login --------------------------------------------------*/
 
+    .logo-login {
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .login {
+        margin-top: 12rem !important;
+        margin-bottom: 3rem;
+    }
+
+    .register {
+        margin-top: 10rem !important;
+        margin-bottom: 3rem;
+    }
+
     .container-logo-login {
         justify-content: center;
     }
 
-    .logo-login {
-        font-size: 3rem;
-    }
-
-    .login-register {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
-
     .container-text-register {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -860,6 +1038,14 @@ th {
         margin-bottom: 1rem !important;
     }
 
+    .nav-categories {
+        margin: 0 !important;
+    }
+
+    .hr-line {
+        display: block;
+    }
+
     /* Fin--------------------------------------------------------------------------------------- */
 
     /* Hero --------------------------------------------------------------------------------------*/
@@ -887,11 +1073,15 @@ th {
     .slogan {
         font-size: 3rem;
         margin-bottom: 1rem;
+        margin: 0;
+        padding: 0;
     }
 
     .slogan-bottom {
         right: 90px;
         font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
     }
 
     .categories {
@@ -903,16 +1093,12 @@ th {
     }
 
     .title-page {
-        margin-top: 4rem;
         width: 60%;
-        height: 35px;
         font-size: 1.3rem;
     }
 
     .title-page-bottom {
-        margin-top: 4rem;
         width: 60%;
-        height: 35px;
         font-size: 1.3rem;
     }
 
@@ -989,6 +1175,14 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
+    /* Vista Revisor ------------------------------------------------------*/
+
+    .register-container {
+        margin-top: 6rem !important;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
     /* Vista show ---------------------------------------------------------*/
 
     .related_ads_show {
@@ -1007,11 +1201,16 @@ th {
 
     .logo-login {
         font-size: 3rem;
+        margin: 0;
     }
 
-    .login-register {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+    .login {
+        margin: 8rem 0 2rem 0;
+    }
+
+    .register {
+        margin-top: 8rem !important;
+        margin-bottom: 3rem;
     }
 
     .container-text-register {
@@ -1091,11 +1290,13 @@ th {
     .slogan {
         font-size: 2.5rem;
         margin-bottom: 1rem;
+        padding: 0;
     }
 
     .slogan-bottom {
         right: 90px;
         font-size: 1.2rem;
+        padding: 0;
     }
 
     .categories {
@@ -1107,16 +1308,12 @@ th {
     }
 
     .title-page {
-        margin-top: 4rem;
         width: 80%;
-        height: 35px;
         font-size: 1rem;
     }
 
     .title-page-bottom {
-        margin-top: 4rem;
-        width: 90%;
-        height: 35px;
+        width: 80%;
         font-size: 1rem;
     }
 
@@ -1165,6 +1362,11 @@ th {
         padding: .4rem;
     }
 
+    .mini-card {
+        width: 100%;
+        flex-direction: column;
+    }
+
     /* Fin----------------------------------------------------------------------------- */
 
     /* footer -------------------------------------------------------------------------*/
@@ -1193,6 +1395,14 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
+    /* Vista Revisor ------------------------------------------------------*/
+
+    .register-container {
+        margin-top: 6rem !important;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
     /* Vista show ---------------------------------------------------------*/
 
     .related_ads_show {
@@ -1205,21 +1415,22 @@ th {
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login {
-        justify-content: center;
-    }
-
     .logo-login {
         font-size: 3rem;
+        margin: 0;
     }
 
-    .login-register {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+    .login {
+        margin: 8rem 0 2rem 0;
+    }
+
+    .register {
+        margin: 8rem 0 4rem 0;
     }
 
     .container-text-register {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -1302,12 +1513,15 @@ th {
 
     .slogan {
         font-size: 2rem;
-        margin-bottom: 1rem;
+        margin: 0;
+        padding: 0;
     }
 
     .slogan-bottom {
         right: 90px;
         font-size: 1rem;
+        margin: 0;
+        padding: 0;
     }
 
     .categories {
@@ -1319,16 +1533,12 @@ th {
     }
 
     .title-page {
-        margin-top: 4rem;
         width: 80%;
-        height: 35px;
         font-size: .8rem;
     }
 
     .title-page-bottom {
-        margin-top: 4rem;
-        width: 90%;
-        height: 35px;
+        width: 80%;
         font-size: .7rem;
     }
 
@@ -1379,6 +1589,10 @@ th {
         padding: 0;
     }
 
+    .mini-card {
+        width: 100%;
+        flex-direction: column;
+    }
 
     /* Fin----------------------------------------------------------------------------- */
 
@@ -1408,6 +1622,14 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
+    /* Vista Revisor ------------------------------------------------------*/
+
+    .register-container {
+        margin-top: 6rem !important;
+    }
+
+    /* Fin ----------------------------------------------------------------*/
+
     /* Vista show ---------------------------------------------------------*/
 
     .related_ads_show {
@@ -1420,20 +1642,22 @@ th {
 
     /* Register and login --------------------------------------------------*/
 
-    .container-logo-login {
-        justify-content: center;
-    }
-
     .logo-login {
         font-size: 3rem;
+        margin: 0;
     }
 
-    .login-register {
-        margin: 2rem 0 4rem 0;
+    .login {
+        margin: 8rem 0 2rem 0;
+    }
+
+    .register {
+        margin: 8rem 0 2rem 0;
     }
 
     .container-text-register {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 

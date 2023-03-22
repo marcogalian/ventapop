@@ -1,10 +1,10 @@
 <x-layout>
-    <div class="container login-register">
+    <div class="container-fluid login">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-4 col-4 d-flex container-logo-login">
+            <div class="col-10 col-lg-4 col-xl-4 d-flex container-text-register">
                 <p class="logo logo-login text-primary">VentaPop!</p>
             </div>
-            <div class="col-11">
+            <div class="col-10 col-lg-7 col-xl-6">
                 <div class="card bg-light shadow">
                     <div class="card-header bg-primary text-light text-center">{{ __('Iniciar sesión') }}</div>
 

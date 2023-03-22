@@ -1,22 +1,22 @@
 <x-layout>
     <x-slot name='title'> Ventapop - Revisor Home</x-slot>
     @if ($ad)
-    <div class="container my-5 py-5">
-        <div class="row">
-            <div class="col-12 col-md-8 offset-md-2">
+    <div class="container my-5 py-5 register-container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 m-0 offset-md-2">
                 <div class="card bg-light shadow">
                     <div class="card-header bg-primary text-light">
-                        {{ __('Anuncio')}} #{{ $ad->id }}
+                        {{ __('Anuncio')}} #{{ $ad->id}}
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-12 mb-2">
                                 <b>{{ __('Imágenes')}}</b>
                             </div>
                             <div class="col-md-9">
                                 <div class="row">
                                     @forelse($ad->images as $image)
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 mb-4">
                                         <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="">
                                     </div>
                                     @empty

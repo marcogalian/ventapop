@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container login-register">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-11 col-lg-8 col-xl-6">
                 <div class="card bg-light shadow">
                     <div class="card-header bg-primary text-white text-center">{{ __('Verifica tu correo electrónico') }}</div>
 
