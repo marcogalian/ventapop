@@ -45,6 +45,21 @@
                     </div>
 
                 </div>
+                @guest
+                    
+                @else
+                    @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
+                            @if (!Auth::user()->is_admin)
+                                <h4>{{ __('Anuncio creado por ti.')}}</h4>
+                                
+                            @else
+                                <h4>{{ __('Acciones de administrador')}}</h4>
+                            @endif
+                            <a href="{{ route('ad.destroy', $ad) }}"><button class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
+                            
+                        @endif
+                @endguest
+                
             </div>
 
             <div class="col-3 mt-5 related_ads_show p-1 row">

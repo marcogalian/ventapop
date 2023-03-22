@@ -99,6 +99,11 @@
                             </span>
                         </a>
                         @endif
+                        @if(Auth::user()->is_admin)
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('admin.home')}}">{{ __('Panel de administrador')}}                            
+                        </a>
+                        @endif
                         <a class="dropdown-item text-primary text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

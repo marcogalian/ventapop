@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
 Route::get('/', [PublicController::class, 'index'])->name('home');
 
 Route::get('/about', [PublicController::class, 'about'])->name('about');
@@ -35,9 +35,17 @@ Route::get('/user/{user:name}/ads', [AdController::class, 'adsByUser'])->name('u
 
 Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');
+
+Route::get('/destroy/{ad}', [AdController::class,'destroy'])->name ('ad.destroy');
+
+Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set'); 
+
+Route::get('/search', [PublicController::class, 'search'])->name('search');
+
+Route::get('/search-results', [PublicController::class, 'ad.search-results'])->name('search-results');
+
+// -- Rutas de revisor --------------
 
 Route::get('/revisor', [RevisorController::class, 'index'])->name('revisor.home');
 
@@ -49,8 +57,11 @@ Route::get('revisor/become', [RevisorController::class, 'becomeRevisor'])->middl
 
 Route::get('revisor/{user}/make', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('revisor.make');
 
-Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set'); 
+// -- Rutas de administrador --------------
 
-Route::get('/search', [PublicController::class, 'search'])->name('search');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
 
-Route::get('/search-results', [PublicController::class, 'ad.search-results'])->name('search-results');
+Route::patch('/admin/user/{user}/delete', [AdminController::class, 'deleteRevisor'])->name('deleteRevisor');
+
+Route::get('/admin/{user:name}/adsrevised', [AdminController::class, 'adsByRevisor'])->name('adsByRevisor');
+
