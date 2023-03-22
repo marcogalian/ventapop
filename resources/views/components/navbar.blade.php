@@ -125,42 +125,19 @@
                 @endguest
             </ul>
 
-<<<<<<< HEAD
-            <hr class="bg-secondary">
-=======
             <hr class="hr-line">
->>>>>>> marco
 
             {{-- Search ------------------------------------------------------------------------------------------}}
 
             <div class="search-container">
                 <div class="container-fluid search-bar mt-4 p-0 ">
-<<<<<<< HEAD
                     <form action="{{ route('search')}}" method="GET" role="search" class="search-container-input d-flex">
                         <input class="form-control search-input" type="search" name="q" placeholder="{{ __('Buscar')}}">
-                        <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
-=======
-                    <form action="" class="search-container-input d-flex">
-                        <input class="form-control search-input" type="search" placeholder="{{ __('Buscar')}}">
                         <button class="btn bg-primary text-light search-input btn-search mx-2">{{ __('Buscar')}}</button>
->>>>>>> marco
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-<<<<<<< HEAD
-    {{-- Search -------------------------------------------------------------------------------------------}}
-    {{-- <div class="search-container search-bar position-absolute">
-        <div class="container-fluid d-flex justify-content-center">
-            <form action="" class="search-container-input d-flex">
-                <input class="form-control search-input me-4" type="search" placeholder="{{ __('Buscar')}}">
-                <button class="btn bg-primary search-input btn-search">{{ __('Buscar')}}</button>
-            </form>
-        </div>
-    </div> --}}
-
-=======
->>>>>>> marco
 </nav>
