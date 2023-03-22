@@ -13,26 +13,24 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn btn-bg rounded-5"
-                        href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
+                    <a class="btn btn-bg rounded-5" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
-<<<<<<< HEAD
-                        aria-expanded="false" data-bs-display="static">{{ __('Categorías')}}</a>
+                        HEAD aria-expanded="false" data-bs-display="static">{{ __('Categorías')}}</a>
                     <ul class="dropdown-menu dropdown-menu-end m-0 dropdown-categories">
                         @foreach ($categories as $category)
                         <li>
-                            <a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a>
+                            <a class="dropdown-item text-primary"
+                                href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a>
                         </li>
-=======
-                        aria-expanded="false">{{ __('Categorías')}}</a>
-                    <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
-                        @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
->>>>>>> marco
-                        @endforeach
-                    </ul>
+                        <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
+                            @foreach ($categories as $category)
+                            <li><a class="dropdown-item text-primary"
+                                    href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
+                            >>>>>>> marco
+                            @endforeach
+                        </ul>
                 </li>
             </ul>
 
@@ -100,7 +98,8 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users"
+                        aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
@@ -139,5 +138,4 @@
             </div>
         </div>
     </div>
-
 </nav>
