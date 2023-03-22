@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container p-3">
+    <div class="container p-3 carousel-container">
         <div class="row my-5 justify-content-around">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-7">
                 <div class="carousel slide" id="adImages" data-bs-ride="true">
                     <div class="carousel-indicators">
                         @for($i = 0; $i < $ad->images()->count(); $i++)
@@ -47,22 +47,24 @@
                 </div>
             </div>
 
-            <div class="col-3 mt-5 related_ads_show p-1 row">
-                <h5 class="col-12 text-center my-4">{{ __('Otros articulos relacionados por categoría')}}</h5>
-
-                @forelse ($ads_category_random as $ad)
-                <div class="col-3 container d-flex justify-content-center">
-                    <x-minicard
-                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" 
-                        price="{{ $ad->price }}" 
-                        body="" 
-                        :ad="$ad">
-                    </x-minicard>
+            <div class="mt-5 related_ads_show p-1 row justify-content-center">
+                    <h5 class="col-12 text-center my-4">{{ __('Otros articulos relacionados por categoría')}}</h5>
+                <div class="mini-card col-12 d-flex">
+                    @forelse ($ads_category_random as $ad)
+                    <div class="col-3 container d-flex justify-content-center content-mini-card">
+                        <x-minicard
+                            img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                            title="{{ $ad->title }}" 
+                            price="{{ $ad->price }}" 
+                            body="" 
+                            :ad="$ad">
+                        </x-minicard>
+                    </div>
+                    @empty
+                        <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
+                    @endforelse
                 </div>
-                @empty
-                <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
-                @endforelse
+                
             </div>
 
         </div>

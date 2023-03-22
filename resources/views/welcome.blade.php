@@ -6,12 +6,12 @@
     <div class="container-fluid main-hero m-0 p-0 position-relative">
         <div class="text-slogan">
             <div class="container-fluid row content-hero">
-                <div class="container-img-hero col-3">
+                <div class="container-img-hero col-4 col-md-4 col-lg-4">
                     <img class="img-fluid courier-hero" src=" {{ Vite::asset('public/images/courier2.png') }}" alt="">
                 </div>
-                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-12 col-sm-9">
-                    <h1 class="slogan ">{{ __('messages.logo')}}</h1>
-                    <h3 class="slogan-bottom">{{ __('Tu web de compraventa')}}</h3>
+                <div class="d-flex flex-column justify-content-center m-0 p-0 text-end col-8 col-md-8 col-lg-8 slogan-container">
+                    <p class="slogan">{{ __('messages.logo')}}</p>
+                    <p class="slogan-bottom">{{ __('Tu web de compraventa')}}</p>
                 </div>
             </div>
         </div>
@@ -23,36 +23,34 @@
                     <a class="nav-link text-primary text-center" href="{{ route('category.ads', $category) }}">
                         @switch( __($category->name))
                             @case( __('Motor'))
-                            <i class="bi bi-car-front-fill mb-2 fs-4"></i>
+                            <i class="bi bi-car-front-fill mb-2"></i>
                             @break
                             @case( __('Electrónica e informática'))
-                            <i class="bi bi-cpu-fill mb-2 fs-4"></i>
+                            <i class="bi bi-cpu-fill mb-2"></i>
                             @break
                             @case( __('Decoración'))
-                            <i class="bi bi-image-fill mb-2 fs-4"></i>
+                            <i class="bi bi-image-fill mb-2"></i>
                             @break
                             @case( __('Juguetes'))
-                            <i class="bi bi-joystick mb-2 fs-4"></i>
+                            <i class="bi bi-joystick mb-2"></i>
                             @break
                             @case( __('Deporte'))
-                            <i class="bi bi-bicycle mb-2 fs-4"></i>
+                            <i class="bi bi-bicycle mb-2"></i>
                             @break
                             @case( __('Herramientas'))
-                            <i class="bi bi-tools mb-2 fs-4"></i>
+                            <i class="bi bi-tools mb-2"></i>
                             @break
                             @case( __('Mascotas'))
-                            <span class="material-symbols-outlined fs-4 mt-2">
-                                pets
-                            </span>
+                            <i class="fa-solid fa-paw"></i>
                             @break
                             @case( __('Muebles'))
-                            <i class="bi bi-house-fill mb-2 fs-4"></i>
+                            <i class="bi bi-house-fill mb-2"></i>
                             @break
                             @case( __('Música y libros'))
-                            <i class="bi bi-book mb-2 fs-4"></i>
+                            <i class="bi bi-book mb-2"></i>
                             @break
                             @case( __('Otros'))
-                            <i class="bi bi-box-fill mb-2 fs-4"></i>
+                            <i class="bi bi-box-fill mb-2"></i>
                             @break
                             @default
                         @endswitch
@@ -166,17 +164,17 @@
                     <h2 class="logo">{{ __('¿Aún no eres miembro de la comunidad VentaPop?')}}</h2>
                     <h3 class="logo fs-2">{{ __('Regístrate y comienza a vender y comprar')}}</h3>
                     <p>{{ __('¡Tenemos')}} {{ count($total_ads) }} {{ __(' artículos listos para ser comprados!')}}</p>
-                    <button class="btn btn-primary"><a class="nav-link"
+                    <button class="btn btn-primary shadow"><a class="nav-link"
                             href="{{ route('ad.create') }}">{{ __('¡Regístrate y vende tu primer artículo!')}}</a></button>
                 </div>
                 @else
                 <div class="m-3 rounded text-center text-primary">
                     <h2 class="logo fs-1">{{ __(Auth::user()->name)}} {{ __(' tienes')}} {{ count(Auth::user()->ads)}}
                         {{ __('artículos subidos en VentaPop!')}}</h2>
-                    <button class="btn btn-primary"><a class="nav-link"
+                    <button class="btn btn-primary shadow"><a class="nav-link"
                             href="{{ route('user.ads', $user) }}">{{ __('Revisar tus artículos a la venta')}}</a></button>
                     <h3 class="logo fs-1 mt-5">{{ __('¿Hay algo mas que desées vender?')}}</h3>
-                    <button class="btn btn-primary"><a class="nav-link"
+                    <button class="btn btn-secondary shadow"><a class="nav-link"
                             href="{{ route('ad.create') }}">{{ __('¡Crear un nuevo anuncio!')}}</a></button>
                 </div>
                 @endguest

@@ -47,9 +47,16 @@ window.addEventListener('scroll', navShadow);
 // Mensaje trabaja con nosotros ----------------------------------------------------------####
 
 let trabajaNosotros = document.querySelector('.trabaja-nosotros');
+let mainHero = document.querySelector('.main-hero');
+if (mainHero) {
+    mainHeroMarginOriginal = mainHero.style.marginTop;
+}
 
 if (trabajaNosotros) {
-        setTimeout(() => {
+    mainHero.style.cssText = "margin-top: 0px !important";
+    console.log(mainHero);
+    setTimeout(() => {
         trabajaNosotros.style.display = 'none';
+        mainHero.style.marginTop = mainHeroMarginOriginal;
     }, 5000)
 }

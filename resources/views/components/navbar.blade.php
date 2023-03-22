@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light my-navbar position-relative ">
+<nav class="navbar navbar-expand-md navbar-light my-navbar">
 
-    <div class="container-fluid mx-5 nav-container">
+    <div class="container-fluid mx-3 nav-container">
         <a class="navbar-brand logo text-primary me-5" href="{{ route('home')}}">VentaPop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -10,6 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             {{-- Desplegable categories ---------------------------------------------------}}
+
             <ul class="navbar-nav">
                 <li class="nav-item ">
                     <a class="btn btn-bg rounded-5"
@@ -17,18 +18,26 @@
                 </li>
                 <li class="nav-item dropdown nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
+<<<<<<< HEAD
                         aria-expanded="false" data-bs-display="static">{{ __('Categorías')}}</a>
                     <ul class="dropdown-menu dropdown-menu-end m-0 dropdown-categories">
                         @foreach ($categories as $category)
                         <li>
                             <a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a>
                         </li>
+=======
+                        aria-expanded="false">{{ __('Categorías')}}</a>
+                    <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
+                        @foreach ($categories as $category)
+                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
+>>>>>>> marco
                         @endforeach
                     </ul>
                 </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
+            {{-- Banderas y Login ---------------------------------------------------------------------------}}
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <button class="dropdown-toggle boton_idioma fs-5" type="button" data-bs-toggle="dropdown"
@@ -47,7 +56,7 @@
                         @default
                         @endswitch
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul">
+                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul bg-light">
                         <li class="menu_idioma_li">
                             <div class="dropdown-item">
                                 <x-locale lang="en" country="gb" />
@@ -69,8 +78,7 @@
                     </ul>
                 </li>
 
-                <hr class="bg-secondary">
-
+                <hr class="hr-line">
                 <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))
@@ -88,11 +96,11 @@
 
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle fs-5 text-primary p-0" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
@@ -117,20 +125,32 @@
                 @endguest
             </ul>
 
+<<<<<<< HEAD
             <hr class="bg-secondary">
+=======
+            <hr class="hr-line">
+>>>>>>> marco
 
             {{-- Search ------------------------------------------------------------------------------------------}}
+
             <div class="search-container">
                 <div class="container-fluid search-bar mt-4 p-0 ">
+<<<<<<< HEAD
                     <form action="{{ route('search')}}" method="GET" role="search" class="search-container-input d-flex">
                         <input class="form-control search-input" type="search" name="q" placeholder="{{ __('Buscar')}}">
                         <button class="btn bg-primary text-light search-input btn-search">{{ __('Buscar')}}</button>
+=======
+                    <form action="" class="search-container-input d-flex">
+                        <input class="form-control search-input" type="search" placeholder="{{ __('Buscar')}}">
+                        <button class="btn bg-primary text-light search-input btn-search mx-2">{{ __('Buscar')}}</button>
+>>>>>>> marco
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+<<<<<<< HEAD
     {{-- Search -------------------------------------------------------------------------------------------}}
     {{-- <div class="search-container search-bar position-absolute">
         <div class="container-fluid d-flex justify-content-center">
@@ -141,4 +161,6 @@
         </div>
     </div> --}}
 
+=======
+>>>>>>> marco
 </nav>
