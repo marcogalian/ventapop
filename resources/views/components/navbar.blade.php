@@ -13,24 +13,17 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="btn btn-bg rounded-5" href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
+                    <a class="btn btn-bg rounded-5"
+                        href="{{ route('ad.create') }}">{{ __('Subir productos')}}</a>
                 </li>
                 <li class="nav-item dropdown nav-categories">
                     <a class="nav-link dropdown-toggle text-primary" role="button" href="#" data-bs-toggle="dropdown"
-                        HEAD aria-expanded="false" data-bs-display="static">{{ __('Categorías')}}</a>
-                    <ul class="dropdown-menu dropdown-menu-end m-0 dropdown-categories">
+                        aria-expanded="false">{{ __('Categorías')}}</a>
+                    <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category)
-                        <li>
-                            <a class="dropdown-item text-primary"
-                                href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a>
-                        </li>
-                        <ul class="dropdown-menu  bg-light m-0" aria-labelledby="navbarDropdown">
-                            @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-primary"
-                                    href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
-                            >>>>>>> marco
-                            @endforeach
-                        </ul>
+                        <li><a class="dropdown-item text-primary" href="{{ route('category.ads', $category) }}">{{ __($category->name)}}</a></li>
+                        @endforeach
+                    </ul>
                 </li>
             </ul>
 
@@ -38,7 +31,7 @@
             {{-- Banderas y Login ---------------------------------------------------------------------------}}
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <button class="dropdown-toggle boton_idioma fs-5" type="button" data-bs-toggle="dropdown"
+                    <button class="dropdown-toggle boton_idioma fs-5 me-4" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{-- {{ __('Idioma')}} --}}
                         @switch(App::currentLocale())
@@ -56,19 +49,19 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul bg-light">
                         <li class="menu_idioma_li">
-                            <div class="dropdown-item">
+                            <div class="dropdown-item d-flex">
                                 <x-locale lang="en" country="gb" />
                                 {{-- <p class="mt-2 ms-3"> - EN - </p> --}}
                             </div>
                         </li>
                         <li class="menu_idioma">
-                            <div class="dropdown-item">
+                            <div class="dropdown-item d-flex">
                                 <x-locale lang="it" country="it" />
                                 {{-- <p class="mt-2 ms-3"> - IT - </p> --}}
                             </div>
                         </li>
                         <li class="menu_idioma">
-                            <div class="dropdown-item">
+                            <div class="dropdown-item d-flex">
                                 <x-locale lang="es" country="es" />
                                 {{-- <p class="mt-2 ms-3"> - ES - </p> --}}
                             </div>
@@ -98,8 +91,7 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users"
-                        aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
@@ -138,4 +130,5 @@
             </div>
         </div>
     </div>
+
 </nav>
