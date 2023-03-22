@@ -235,9 +235,9 @@
 }
 
 .slogan {
-    font-size: 4.5rem;
+    font-size: 6rem;
     margin-bottom: 1rem;
-    margin-right: 6rem;
+    margin-right: 7rem;
     color: var(--text-light);
     font-family: 'Dancing Script', cursive;
 }
@@ -246,7 +246,7 @@
     font-family: 'Dancing Script', cursive;
     color: var(--text-light);
     font-size: 2.2rem;
-    margin-right: 6rem;
+    margin-right: 7rem;
     padding: 0;
 
 }
@@ -412,6 +412,8 @@ th {
 .VERY_LIKELY{
     color: red;
 }
+
+
 /* Show ----------------------------------------------------------------------------------------------- */
 
 .related_ads_show {
