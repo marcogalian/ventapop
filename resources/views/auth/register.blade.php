@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container-fluid register p-0">
-        <div class="row justify-content-center">
-            <div class="col-10 col-lg-4 col-xl-4 d-flex container-logo-login">
+    <div class="container-fluid register p-0 ">
+        <div class="row justify-content-center m-0">
+            <div class="col-10 col-lg-4 col-xl-4 d-flex container-logo-login ">
                 <div class="d-flex container-text-register">
                     <p class="logo logo-login text-primary">VentaPop!</p>
                     <p class="d-block text-primary mt-3 text-end">{{ __('¡Compra y vende entre millones de usuarios de todo el mundo!')}}</p>

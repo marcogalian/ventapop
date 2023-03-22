@@ -90,8 +90,17 @@
 
 /* NavBar -------------------------------------------------------------------------------------------- */
 
+.nav-categories {
+    margin-left: 1rem;
+    max-width: fit-content;
+}
+
 .hr-line {
     display: none;
+}
+
+.drop-users {
+    max-width: fit-content;
 }
 
 .logo {
@@ -182,12 +191,29 @@
     max-width: 35%;
 }
 
-
+.trabaja-nosotros {
+    margin-top: 110px !important;
+}
 
 /* Main ---------------------------------------------------------------------------------------------- */
 
+.courier-hero {
+    overflow: hidden;
+    width: 75%;
+    height: 100%;
+}
+
+.main-hero {
+    height: 40vh;
+}
+
+.content-hero {
+    justify-content: center;
+    height: 95%;
+}
+
 .container-create {
-    margin-top: 11rem !important;
+    margin-top: 12rem !important;
 }
 
 .main-hero {
@@ -200,12 +226,6 @@
     justify-content: center;
 }
 
-.courier-hero {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .text-slogan {
     display: flex;
     justify-content: center;
@@ -213,10 +233,10 @@
     margin-bottom: 45px;
 }
 
-
 .slogan {
-    font-size: 6.5rem;
-    margin: 0;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    margin-right: 6rem;
     color: var(--text-light);
     font-family: 'Dancing Script', cursive;
 }
@@ -225,12 +245,9 @@
     font-family: 'Dancing Script', cursive;
     color: var(--text-light);
     font-size: 2.2rem;
+    margin-right: 6rem;
+    padding: 0;
 
-}
-
-.slogan-bottom h3 {
-    color: var(--text-light);
-    font-family: 'Dancing Script', cursive;
 }
 
 .categories {
@@ -246,6 +263,19 @@
     border-bottom: 2px solid var(--bg-primary);
 }
 
+.container-cards {
+    margin-top: 2rem !important;
+}
+
+.card-xs {
+    margin-bottom: 2rem;
+}
+
+
+.categories-link a {
+    font-size: 1.4rem;
+}
+
 .p-category-name {
     font-size: .8rem;
 }
@@ -259,10 +289,10 @@
 }
 
 .title-page {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 5rem;
     background-color: var(--bg-secondary);
-    width: 25%;
+    width: 40%;
     height: 40px;
     border-radius: 40px 40px 0 0;
     -webkit-border-radius: 40px 40px 0 0;
@@ -286,7 +316,7 @@
     font-size: 1.5rem;
     margin-top: 5rem;
     background-color: var(--bg-secondary);
-    width: 50%;
+    width: 40%;
     height: 40px;
     border-radius: 40px 40px 0 0;
     -webkit-border-radius: 40px 40px 0 0;
@@ -360,8 +390,9 @@ th {
 /* Show ----------------------------------------------------------------------------------------------- */
 
 .related_ads_show {
-    color: #189AB4;
-    border-left: #189AB4 solid 2px;
+    border-top: #189AB4 solid 2px;
+    border-left: none;
+    width: 100%;
 }
 
 
@@ -514,21 +545,35 @@ th {
 
 /* Login & Register ----------------------------------------------------------*/
 
-.login-register {
-    margin-top: 14rem !important;
-    margin-bottom: 3rem !important;
-}
-
 .logo-login {
     font-size: 4rem;
-    margin-bottom: 2rem;
+}
+
+
+.login {
+    margin-top: 14rem !important;
+}
+
+.register {
+    margin-top: 14rem !important;
+}
+
+.container-logo-login {
+    max-width: fit-content;
+    justify-content: end;
 }
 
 .container-text-register {
-    margin-right: 2rem;
+    max-width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-right: 1rem;
 }
 
-
+.container-text-register :nth-child(2) {
+    text-align: end !important;
+}
 
 
 
@@ -557,7 +602,7 @@ th {
     .courier-hero {
         overflow: hidden;
         width: 100%;
-        height: 100%;
+        height: 92%;
     }
 
     .main-hero {
@@ -567,10 +612,6 @@ th {
     .content-hero {
         justify-content: center;
         height: 92%;
-    }
-
-    .courier-hero {
-        width: 80%;
     }
 
     .text-slogan {
@@ -635,9 +676,6 @@ th {
     /* Fin ----------------------------------------------------------------------------*/
 
     /* Vista show ---------------------------------------------------------*/
-    .carousel-container {
-        width: 80%;
-    }
 
     .related_ads_show {
         border-top: #189AB4 solid 2px;
@@ -646,6 +684,8 @@ th {
     }
 
     /* Fin ----------------------------------------------------------------*/
+
+    /* Login & Register ----------------------------------------------------*/
 
     .logo-login {
         font-size: 4rem;
@@ -697,7 +737,7 @@ th {
     /* Hero --------------------------------------------------------------------------------------*/
     .courier-hero {
         overflow: hidden;
-        width: 100%;
+        width: 90%;
         height: 100%;
     }
 
@@ -708,10 +748,6 @@ th {
     .content-hero {
         justify-content: center;
         height: 95%;
-    }
-
-    .courier-hero {
-        width: 90%;
     }
 
     .text-slogan {
@@ -788,15 +824,7 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
-    /* Vista show ---------------------------------------------------------*/
-
-    .related_ads_show {
-        border-top: #189AB4 solid 2px;
-        border-left: none;
-        width: 100%;
-    }
-
-    /* Fin ----------------------------------------------------------------*/
+    /* Login & Register ----------------------------------------------------------------*/
 
     .logo-login {
         font-size: 4rem;
@@ -949,16 +977,6 @@ th {
 
     .footer-copyright {
         font-size: .8rem;
-    }
-
-    /* Fin ----------------------------------------------------------------*/
-
-    /* Vista show ---------------------------------------------------------*/
-
-    .related_ads_show {
-        border-top: #189AB4 solid 2px;
-        border-left: none;
-        width: 100%;
     }
 
     /* Fin ----------------------------------------------------------------*/
@@ -1183,16 +1201,6 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
-    /* Vista show ---------------------------------------------------------*/
-
-    .related_ads_show {
-        border-top: #189AB4 solid 2px;
-        border-left: none;
-        width: 90%;
-    }
-
-    /* Fin ----------------------------------------------------------------*/
-
     /* Register and login --------------------------------------------------*/
 
     .container-logo-login {
@@ -1399,16 +1407,6 @@ th {
 
     .register-container {
         margin-top: 6rem !important;
-    }
-
-    /* Fin ----------------------------------------------------------------*/
-
-    /* Vista show ---------------------------------------------------------*/
-
-    .related_ads_show {
-        border-top: #189AB4 solid 2px;
-        border-left: none;
-        width: 90%;
     }
 
     /* Fin ----------------------------------------------------------------*/
@@ -1630,15 +1628,6 @@ th {
 
     /* Fin ----------------------------------------------------------------*/
 
-    /* Vista show ---------------------------------------------------------*/
-
-    .related_ads_show {
-        border-top: #189AB4 solid 2px;
-        border-left: none;
-        width: 90%;
-    }
-
-    /* Fin ----------------------------------------------------------------*/
 
     /* Register and login --------------------------------------------------*/
 

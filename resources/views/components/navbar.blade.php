@@ -10,6 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             {{-- Desplegable categories ---------------------------------------------------}}
+
             <ul class="navbar-nav">
                 <li class="nav-item ">
                     <a class="btn btn-bg rounded-5"
@@ -90,7 +91,7 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users" aria-labelledby="navbarDropdown">
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
@@ -118,7 +119,7 @@
             <hr class="hr-line">
 
             {{-- Search ------------------------------------------------------------------------------------------}}
-            
+
             <div class="search-container">
                 <div class="container-fluid search-bar mt-4 p-0 ">
                     <form action="" class="search-container-input d-flex">

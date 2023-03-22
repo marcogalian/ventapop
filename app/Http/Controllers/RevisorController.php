@@ -43,6 +43,7 @@ class RevisorController extends Controller
 
     public function becomeRevisor ()
     {        
+        
         if(Auth::user()->is_revisor)
         {
             return redirect()->route('home')->withMessage(['type'=>'warning','text'=>'Usted ya es revisor, si tiene alguna duda o problema contacte con el administrador.']);
@@ -50,7 +51,6 @@ class RevisorController extends Controller
             Mail::to('admin@ventapop.com')->send(new BecomeRevisor(Auth::user()));
             return redirect()->route('home')->withMessage(['type'=>'success','text'=>'Solicitud enviada con éxito, le responderemos lo antes posible, gracias.']); 
         }
-        
     }
 
     public function makeRevisor (User $user)
