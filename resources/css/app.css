@@ -1,5 +1,6 @@
 @import '~flag-icon-css/css/flag-icons';
 @import '~bootstrap/dist/css/bootstrap';
+@import '~bootstrap-icons/font/bootstrap-icons';
 
 /* FONTS -------------------------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
@@ -389,10 +390,6 @@ th {
 
 /* Revisor ----------------------------------------------------------------------------------------------- */
 
-.UNKNOWN {
-    color: grey;
-}
-
 .VERY_UNLIKELY{
     color: greenyellow ;
 }
@@ -413,6 +410,9 @@ th {
     color: red;
 }
 
+.UNKNOWN {
+    color: grey;
+}
 
 /* Show ----------------------------------------------------------------------------------------------- */
 

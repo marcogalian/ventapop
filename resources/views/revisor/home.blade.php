@@ -16,24 +16,31 @@
                             <div class="col-md-9">
                                 <div class="row">
                                     @forelse($ad->images as $image)
-                                    <div class="col-md-4 mb-4">
-                                        <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <b>Adult:</b>  <i class="bi bi-circle-fill {{ $image->adult }}"></i> [{{ $image->adult}}] <br>
-                                        <b>Spoof:</b>  <i class="bi bi-circle-fill {{ $image->spoof }}"></i> [{{ $image->spoof}}] <br>
-                                        <b>Medical:</b>  <i class="bi bi-circle-fill {{ $image->medical }}"></i> [{{ $image->medical}}] <br>
-                                        <b>Violence:</b>  <i class="bi bi-circle-fill {{ $image->violence }}"></i> [{{ $image->violence}}] <br>
-                                        <b>Racy:</b>  <i class="bi bi-circle-fill {{ $image->racy }}"></i> [{{ $image->racy}}] <br>
+                                    <div class="row mb-4">
+                                        <div class="col-md-4">
+                                            <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <b>Adult:</b> <i class="bi bi-circle-fill {{ $image->adult }}"></i>
+                                            [{{ $image->adult}}] <br>
+                                            <b>Spoof:</b> <i class="bi bi-circle-fill {{ $image->spoof }}"></i>
+                                            [{{ $image->spoof}}] <br>
+                                            <b>Medical:</b> <i class="bi bi-circle-fill {{ $image->medical }}"></i>
+                                            [{{ $image->medical}}] <br>
+                                            <b>Violence:</b> <i class="bi bi-circle-fill {{ $image->violence }}"></i>
+                                            [{{ $image->violence}}] <br>
+                                            <b>Racy:</b> <i class="bi bi-circle-fill {{ $image->racy }}"></i>
+                                            [{{ $image->racy}}] <br>
 
-                                        <b>{{ __('Etiquetas/labels')}}</b>
-                                        @forelse ($image->getLabels() as $label)
+                                            <b>{{ __('Etiquetas/labels')}}</b>
+                                            @forelse ($image->getLabels() as $label)
                                             <a href="#" class="btn btn-info btn-sm m-1">{{ $label }}</a>
-                                        @endforeach
+                                            @endforeach
 
-                                        id: {{ $image->id}} <br>
-                                        path: {{ $image->path}} <br>
-                                        url: {{ Storage:: url($image->path)}} <br>
+                                            id: {{ $image->id}} <br>
+                                            path: {{ $image->path}} <br>
+                                            url: {{ Storage:: url($image->path)}} <br>
+                                        </div>
                                     </div>
                                     @empty
                                     <div class="col-12">
@@ -102,16 +109,18 @@
             </div>
             <div class="container">
                 <div class="row my-4">
-                        <form action="{{ route('revisor.ad.reject', $ad)}}" method="POST" class="col-6 d-flex justify-content-end">
-                            @method('PATCH')
-                            @csrf
-                            <button type="submit" class="btn btn-danger">{{ __('Rechazar')}}</button>
-                        </form>
-                        <form action="{{ route('revisor.ad.accept', $ad)}}" method="POST" class="col-6 d-flex justify-content-star">
-                            @method('PATCH')
-                            @csrf
-                            <button type="submit" class="btn btn-success">{{ __('Aceptar')}}</button>
-                        </form>
+                    <form action="{{ route('revisor.ad.reject', $ad)}}" method="POST"
+                        class="col-6 d-flex justify-content-end">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">{{ __('Rechazar')}}</button>
+                    </form>
+                    <form action="{{ route('revisor.ad.accept', $ad)}}" method="POST"
+                        class="col-6 d-flex justify-content-star">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit" class="btn btn-success">{{ __('Aceptar')}}</button>
+                    </form>
                 </div>
             </div>
 

@@ -36,27 +36,27 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
             return;
         }
         
-    $image = file_get_contents(storage_path('app/public/'.$i->path));
-    putenv('GOOGLE_APPLICATION_CREDENTIALS='.base_path('google_credentials.json'));
+        $image = file_get_contents(storage_path('app/public/'.$i->path));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS='.base_path('google_credentials.json'));
 
-    $imageAnnotator = new ImageAnnotatorClient();
-    $response = $imageAnnotator->safeSearchDetection($image);
-    $imageAnnotator->close();
-    $safe = $response->getSafeSearchAnnotation();
+        $imageAnnotator = new ImageAnnotatorClient();
+        $response = $imageAnnotator->safeSearchDetection($image);
+        $imageAnnotator->close();
+        $safe = $response->getSafeSearchAnnotation();
 
-    $adult = $safe->getAdult();
-    $medical = $safe->getMedical();
-    $spoof = $safe->getSpoof();
-    $violence = $safe->getViolence();
-    $racy = $safe->getRacy();
+        $adult = $safe->getAdult();
+        $medical = $safe->getMedical();
+        $spoof = $safe->getSpoof();
+        $violence = $safe->getViolence();
+        $racy = $safe->getRacy();
 
-    $likelihoodName = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
+        $likelihoodName = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
 
-    $i->adult = $likelihoodName[$adult];
-    $i->medical = $likelihoodName[$medical];
-    $i->spoof = $likelihoodName[$spoof];
-    $i->violence = $likelihoodName[$violence];
-    $i->racy = $likelihoodName[$racy];
-    $i->save();
+        $i->adult = $likelihoodName[$adult];
+        $i->medical = $likelihoodName[$medical];
+        $i->spoof = $likelihoodName[$spoof];
+        $i->violence = $likelihoodName[$violence];
+        $i->racy = $likelihoodName[$racy];
+        $i->save();
     }
 }
