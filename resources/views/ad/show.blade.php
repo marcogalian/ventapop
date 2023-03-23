@@ -45,6 +45,55 @@
                     </div>
 
                 </div>
+                @guest
+                    
+                @else
+                    @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
+                            @if (!Auth::user()->is_admin)
+                                <h4>{{ __('Anuncio creado por ti.')}}</h4>
+                                
+                            @else
+                                <h4>{{ __('Acciones de administrador')}}</h4>
+                            @endif
+                            <a href="{{ route('ad.destroy', $ad) }}"><button class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
+                    @else
+                        {{-- Meter aqui --}}
+                        
+                    @endif
+                @endguest
+                
+                @if (Auth::user()->id != $ad->user->id)
+                    @forelse (Auth::user()->favoriteAds as $favorite_ad)
+                        @if ($favorite_ad->id == $ad->id)
+                            <p>Anuncio marcado como favorito</p>
+                            <form action="{{ route('favorite.ad.reject', $ad)}}" method="POST" class="col-6 d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">{{ __('Eliminar de tu lista de favoritos')}}</button>
+                            </form>
+                            @break
+                        @else
+                            @if ($favorite_ad == Auth::user()->favoriteAds[(count(Auth::user()->favoriteAds)-1)])
+                                <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="col-6 d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                    <button type="submit" class="btn btn-danger">{{ __('Marcar como favorito')}}</button>
+                                </form>
+                                @break
+                            @endif
+                        
+                        @endif
+                    @empty
+                            Anuncio no está en la lista de deseados
+                        <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="col-6 d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">{{ __('Marcar como favorito')}}</button>
+                        </form>
+                    @endforelse
+                @endif
+                
+                
             </div>
 
             <div class="mt-5 related_ads_show p-1 row justify-content-center">

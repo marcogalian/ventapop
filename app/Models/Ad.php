@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
 
 class Ad extends Model
@@ -35,10 +36,20 @@ class Ad extends Model
     {
         return Ad::where('is_accepted', null)->count();
     }
+
+    static public function favoritedCount()
+    {
+        return Auth::user()->favoriteAds->count();
+    }
     
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class);
     }
 
     public function toSearchableArray()

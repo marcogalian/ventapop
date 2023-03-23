@@ -30,6 +30,9 @@ class RevisorController extends Controller
     public function acceptAd (Ad $ad)
     {
         $ad->setAccepted(true);
+        $ad->accepted_by = Auth::user()->name;
+        $ad->accepted_by_id = Auth::user()->id;
+        $ad->save();
         
         return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Anuncio aceptado']);
     }

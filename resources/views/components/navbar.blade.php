@@ -91,13 +91,24 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-light m-0 drop-users" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('favorite.ad')}}">{{ __('Listado de favoritos')}}
+                            <span class="badge rounded-pill bg-success">
+                                {{ \App\Models\Ad::favoritedCount() }}
+                            </span>
+                        </a>
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
                             <span class="badge rounded-pill bg-danger">
                                 {{ \App\Models\Ad::ToBeRevisionedCount() }}
                             </span>
+                        </a>
+                        @endif
+                        @if(Auth::user()->is_admin)
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('admin.home')}}">{{ __('Panel de administrador')}}                            
                         </a>
                         @endif
                         <a class="dropdown-item text-primary text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
