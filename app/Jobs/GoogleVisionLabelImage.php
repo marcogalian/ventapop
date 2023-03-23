@@ -52,6 +52,6 @@ class GoogleVisionLabelImage implements ShouldQueue
 
     $i->labels = $result;
     $i->save();
-    //dd(gettype(Image::find($i->id)->labels));
+    // dd(gettype(Image::find($i->id)->labels));
     }
 }
