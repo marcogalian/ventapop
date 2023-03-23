@@ -39,6 +39,12 @@ Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');
 
 Route::get('/destroy/{ad}', [AdController::class,'destroy'])->name ('ad.destroy');
 
+Route::get('/favorite/ads', [AdController::class,'adsByFavorite'])->name('favorite.ad');
+
+Route::patch('/favorite/ad/{ad}/accept', [AdController::class, 'acceptAdFavorite'])->name('favorite.ad.accept');
+
+Route::patch('/favorite/ad/{ad}/reject', [AdController::class, 'rejectAdFavorite'])->name('favorite.ad.reject');
+
 Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set'); 
 
 Route::get('/search', [PublicController::class, 'search'])->name('search');

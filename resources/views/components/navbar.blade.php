@@ -91,6 +91,12 @@
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light m-0" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-primary"
+                            href="{{ route('favorite.ad')}}">{{ __('Listado de favoritos')}}
+                            <span class="badge rounded-pill bg-success">
+                                {{ \App\Models\Ad::favoritedCount() }}
+                            </span>
+                        </a>
                         @if(Auth::user()->is_revisor)
                         <a class="dropdown-item text-primary"
                             href="{{ route('revisor.home')}}">{{ __('Revisión de artículos')}}
