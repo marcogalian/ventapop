@@ -29,6 +29,8 @@
 
             <!-- Right Side Of Navbar -->
             {{-- Banderas y Login ---------------------------------------------------------------------------}}
+            
+
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <button class="dropdown-toggle boton_idioma fs-5 me-4" type="button" data-bs-toggle="dropdown"

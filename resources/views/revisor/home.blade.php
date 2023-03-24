@@ -47,57 +47,59 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Usuario')}}</b>
+                        <div class="text-ad p-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Usuario')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    #{{ $ad->user?->id}} - {{ $ad->user?->name }} - {{ $ad->user?->email }}
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                #{{ $ad->user?->id}} - {{ $ad->user?->name }} - {{ $ad->user?->email }}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Título')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ $ad->title }}
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Título')}}</b>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Precio')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ $ad->price }}
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                {{ $ad->title }}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Descripción')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ $ad->body}}
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Precio')}}</b>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Categoría')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ $ad->category->name }}
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                {{ $ad->price }}
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Descripción')}}</b>
-                            </div>
-                            <div class="col-md-9">
-                                {{ $ad->body}}
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Categoría')}}</b>
-                            </div>
-                            <div class="col-md-9">
-                                {{ $ad->category->name }}
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <b>{{ __('Fecha de creación')}}</b>
-                            </div>
-                            <div class="col-md-9">
-                                {{ $ad->created_at }}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>{{ __('Fecha de creación')}}</b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ $ad->created_at }}
+                                </div>
                             </div>
                         </div>
                     </div>
