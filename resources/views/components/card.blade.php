@@ -17,7 +17,7 @@
                     <small>{{ $ad->user->name }}</small>
                 </div>
                 <div class="d-flex justify-content-center mt-auto">
-                    <a href="{{ route('ads.show', $ad )}}" class="btn card-btn btn-primary rounded-1">{{ __('Mostrar')}}</a>
+                    <a href="{{ route('ad.show', $ad )}}" class="btn card-btn btn-primary rounded-1">{{ __('Mostrar')}}</a>
                 </div>
             </div>
         </div>

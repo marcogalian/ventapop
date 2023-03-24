@@ -52,4 +52,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Ad::class);
     }
+
+
+    // Agregar al carrito ------------------//
+
+    public function cartAds()
+    {
+        return $this->belongsToMany(Ad::class, 'ad_user_cart');
+    }
 }

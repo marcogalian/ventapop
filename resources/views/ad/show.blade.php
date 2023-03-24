@@ -14,8 +14,10 @@
                     </div>
                     <div class="carousel-indicators">
                         @for($i = 0; $i < $ad->images()->count(); $i++)
-                            <button type="button" data-bs-target="#adImages" data-bs-slide-to="{{$i}}" class="@if($i == 0) active @endif" aria-current="true" aria-label="Slide {{$i + 1}}"></button>
-                        @endfor
+                            <button type="button" data-bs-target="#adImages" data-bs-slide-to="{{$i}}"
+                                class="@if($i == 0) active @endif" aria-current="true"
+                                aria-label="Slide {{$i + 1}}"></button>
+                            @endfor
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
@@ -30,7 +32,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                        
+
                     </div>
 
                 </div>
@@ -44,7 +46,12 @@
                         <div class="mb-3"><a class="text-decoration-none text-primary"
                                 href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a>
                         </div>
-                        <div><a href="#" class="btn btn-primary rounded-5 text-light">{{ __('Comprar')}}</a></div>
+                        <form action="{{ route('cart.ad.add', $ad)}}" method="post">
+                            @csrf
+                            @method("patch")
+                            <button type="submit"
+                                class="btn btn-primary rounded-5 text-light">{{ __('Añadir al Carrito')}}</button>
+                        </form>
                     </div>
                 </div>
 
@@ -91,7 +98,6 @@
 
                 @endif
                 @empty
-                Anuncio no está en la lista de deseados
                 <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST"
                     class="col-6 d-flex justify-content-end">
                     @method('PATCH')
@@ -117,7 +123,18 @@
                     <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
                     @endforelse
                 </div>
-
+            </div>  
+            <div class="mt-5 related_ads_show p-1 row justify-content-center">
+                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    @foreach ($addcart as $ad)
+                    <div class="col-3 container d-flex justify-content-center content-mini-card">
+                        <x-minicard
+                            img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                            title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                        </x-minicard>
+                    </div>
+                    @endforeach
+                </div> --}}
             </div>
 
         </div>

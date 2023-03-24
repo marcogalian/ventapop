@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class minicard extends Component
+class Minicard extends Component
 {
     /**
      * Create a new component instance.

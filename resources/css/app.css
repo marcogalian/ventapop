@@ -92,6 +92,13 @@
 
 /* NavBar -------------------------------------------------------------------------------------------- */
 
+.cart-count-item{
+    top: 7px;
+    left: 16px;
+    font-size: .6rem;
+    font-weight: 800;
+}
+
 .nav-categories {
     margin-left: 1rem;
     max-width: fit-content;
@@ -205,10 +212,6 @@
     height: 100%;
 }
 
-.main-hero {
-    height: 40vh;
-}
-
 .content-hero {
     justify-content: center;
     height: 95%;
@@ -220,7 +223,7 @@
 
 .main-hero {
     width: 100% !important;
-    height: 50vh;
+    height: 45vh;
     margin-top: 109px !important;
     background-image: radial-gradient(circle at left, #189ab400, #189ab4);
     display: flex;
@@ -236,7 +239,7 @@
 }
 
 .slogan {
-    font-size: 6rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
     margin-right: 7rem;
     color: var(--text-light);

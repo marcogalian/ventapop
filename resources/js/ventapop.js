@@ -48,13 +48,13 @@ window.addEventListener('scroll', navShadow);
 
 let trabajaNosotros = document.querySelector('.trabaja-nosotros');
 let mainHero = document.querySelector('.main-hero');
+let mainHeroMarginOriginal;
 if (mainHero) {
     mainHeroMarginOriginal = mainHero.style.marginTop;
 }
 
 if (trabajaNosotros) {
     mainHero.style.cssText = "margin-top: 0px !important";
-    console.log(mainHero);
     setTimeout(() => {
         trabajaNosotros.style.display = 'none';
         mainHero.style.marginTop = mainHeroMarginOriginal;

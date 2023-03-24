@@ -59,4 +59,16 @@ class Ad extends Model
             'body'=> $this->body
         ];
     }
+
+    // Agregar al carrito ------------------//
+
+    public function cartUsers()
+    {
+        return $this->belongsToMany(User::class, 'ad_user_cart');
+    }
+
+    static public function itemToCartCount()
+    {
+        return Auth::user()->cartAds->count();
+    }
 }

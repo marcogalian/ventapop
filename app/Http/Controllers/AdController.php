@@ -85,4 +85,24 @@ class AdController extends Controller
         return redirect()->back()->withMessage(['type'=>'danger', 'text'=>'Eliminado de favoritos']);
     }
 
+
+
+
+    // ------------------------------- Agregar al carrito ------------------//
+
+    public function userAddCart(Ad $ad)
+    {
+        $user = Auth::user();
+
+        $user->cartAds()->attach($ad);
+        return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Articulo agregado al carrito']);
+    }
+
+    public function showInNavbar(User $user)
+    {
+        $addcart = Auth::user()->favoriteAds;
+        return view('ad.by-favorite', compact('user','addcart'));
+        // return view('navbar.show', compact('addcart', $addcart));
+    }
+
 }
