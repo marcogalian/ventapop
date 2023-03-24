@@ -101,8 +101,7 @@ class AdController extends Controller
     public function showInNavbar(User $user)
     {
         $addcart = Auth::user()->cartAds;
-        return view('ad.show', compact('user','addcart'));
-        // return view('navbar.show', compact('addcart', $addcart));
+        return view('navbar.show', compact('addcart', 'user'));
     }
 
 }
