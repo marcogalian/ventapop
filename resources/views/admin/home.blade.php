@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name='title'> Ventapop - Admin Home</x-slot>
-    <h3 class="titulo_barra text-center">Listado de revisores</h3>
+    <h3 class="titulo_barra text-center">{{ __('Listado de revisores')}}</h3>
     <div class="d-flex justify-content-center">
         
         <table class="table w-50 text-center tabla_revisores">
