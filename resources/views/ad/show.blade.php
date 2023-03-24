@@ -51,6 +51,54 @@
                             @method("patch")
                             <button type="submit"
                                 class="btn btn-primary rounded-5 text-light">{{ __('Añadir al Carrito')}}</button>
+                        <div><a href="#" class="btn btn-primary rounded-5 text-light">{{ __('Comprar')}}</a></div>
+                    </div>
+
+                </div>
+                @guest
+                    
+                @else
+                    @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
+                            @if (!Auth::user()->is_admin)
+                                <h4>{{ __('Anuncio creado por ti.')}}</h4>
+                                
+                            @else
+                                <h4>{{ __('Acciones de administrador')}}</h4>
+                            @endif
+                            <a href="{{ route('ad.destroy', $ad) }}"><button class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
+                    @else
+                        {{-- Meter aqui --}}
+                        
+                    @endif
+                @endguest
+                
+                @if (Auth::user()->id != $ad->user->id)
+                    @forelse (Auth::user()->favoriteAds as $favorite_ad)
+                        @if ($favorite_ad->id == $ad->id)
+                            <p class="d-flex justify-content-end text-danger"><i class="bi bi-heart-fill me-1"></i>  {{ __('Anuncio marcado como favorito')}}  <i class="bi bi-heart-fill ms-1"></i></p>
+                            <form action="{{ route('favorite.ad.reject', $ad)}}" method="POST" class="d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">{{ __('Eliminar de tu lista de favoritos')}}</button>
+                            </form>
+                            @break
+                        @else
+                            @if ($favorite_ad == Auth::user()->favoriteAds[(count(Auth::user()->favoriteAds)-1)])
+                                <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                    <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart"></i></button>
+                                </form>
+                                @break
+                            @endif
+                        
+                        @endif
+                    @empty
+                            
+                        <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart-fill"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart-fill"></i></button>
                         </form>
                     </div>
                 </div>

@@ -58,6 +58,27 @@
                     </div> --}}
                 </div>
             </div>
+                    <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul bg-light">
+                        <li>
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="en" country="gb" />
+                                {{-- <p class="mt-2 ms-3"> - EN - </p> --}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="it" country="it" />
+                                {{-- <p class="mt-2 ms-3"> - IT - </p> --}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item d-flex">
+                                <x-locale lang="es" country="es" />
+                                {{-- <p class="mt-2 ms-3"> - ES - </p> --}}
+                            </div>
+                        </li>
+                    </ul>
+                </li>
 
             {{-- Banderas ------------------------------------------------------------------------------------}}
             <li class="nav-item dropdown d-flex align-items-center">

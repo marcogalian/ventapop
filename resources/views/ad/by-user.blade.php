@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Ventapop - {{ __('Anuncios por usuario')}}</x-slot>
 
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+    <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
         <h3 class="m-0">Anuncios de: {{ __($user->name) }}</h3>
     </div>
     <div class="container line-title">
@@ -11,7 +11,7 @@
         
         <div class="row mt-5">
             @forelse ($ads_user as $ad)
-            <div class="container col-12 col-md-4 d-flex justify-content-center">
+            <div class="container col-12 col-md-4 d-flex justify-content-center mb-4">
                 <x-card
                         img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">

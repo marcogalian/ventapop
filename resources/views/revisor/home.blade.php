@@ -20,11 +20,11 @@
                                         <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="">
                                     </div>
                                     <div class="col-md-8">
-                                        <b>Adult:</b>  <i class="bi bi-circle-fill {{ $image->adult }}"></i> [{{ $image->adult}}] <br>
-                                        <b>Spoof:</b>  <i class="bi bi-circle-fill {{ $image->spoof }}"></i> [{{ $image->spoof}}] <br>
-                                        <b>Medical:</b>  <i class="bi bi-circle-fill {{ $image->medical }}"></i> [{{ $image->medical}}] <br>
-                                        <b>Violence:</b>  <i class="bi bi-circle-fill {{ $image->violence }}"></i> [{{ $image->violence}}] <br>
-                                        <b>Racy:</b>  <i class="bi bi-circle-fill {{ $image->racy }}"></i> [{{ $image->racy}}] <br>
+                                        <b>{{ __('Contenido adulto')}}:</b>  <i class="bi bi-circle-fill {{ $image->adult }}"></i> [{{ $image->adult}}] <br>
+                                        <b>{{ __('Suplantación de identidad')}}:</b>  <i class="bi bi-circle-fill {{ $image->spoof }}"></i> [{{ $image->spoof}}] <br>
+                                        <b>{{ __('Médico')}}:</b>  <i class="bi bi-circle-fill {{ $image->medical }}"></i> [{{ $image->medical}}] <br>
+                                        <b>{{ __('Violento')}}:</b>  <i class="bi bi-circle-fill {{ $image->violence }}"></i> [{{ $image->violence}}] <br>
+                                        <b>{{ __('Erótico')}}:</b>  <i class="bi bi-circle-fill {{ $image->racy }}"></i> [{{ $image->racy}}] <br>
 
                                         <b>{{ __('Etiquetas/labels')}}</b>
                                         @forelse ($image->getLabels() as $label)

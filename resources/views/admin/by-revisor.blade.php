@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Ventapop - {{ __('Anuncios aceptados en revision')}}</x-slot>
 
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+    <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
         <h4 class="m-0 p-3">{{ __('Anuncios aceptados en revisión por:')}} {{ __($user->name) }}</h4>
     </div>
     <div class="container line-title">
