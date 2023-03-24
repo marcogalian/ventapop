@@ -72,7 +72,7 @@
         </div>
     
         <div class="container-fluid p-0 mb-5 d-flex justify-content-center bg-light">
-            <div class="container-fluid row m-0 justify-content-center container-cards mb-4">
+            <div class="container-fluid container-lg row m-0 justify-content-center container-cards mb-4">
                 @forelse ($ads as $ad)
                 <div class="card-xs col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center">
                     <div class="my-card rounded position-relative">

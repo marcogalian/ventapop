@@ -29,11 +29,14 @@
                                         <b>{{ __('Etiquetas/labels')}}</b>
                                         @forelse ($image->getLabels() as $label)
                                             <a href="#" class="btn btn-info btn-sm m-1">{{ $label }}</a>
-                                        @endforeach
+                                        @empty
+                                            <p>{{ __('No hay etiquetas')}}</p>
+                                        @endforelse
 
-                                        id: {{ $image->id}} <br>
-                                        path: {{ $image->path}} <br>
-                                        url: {{ Storage:: url($image->path)}} <br>
+                                            id: {{ $image->id}} <br>
+                                            path: {{ $image->path}} <br>
+                                            url: {{ Storage:: url($image->path)}} <br>
+                                        </div>
                                     </div>
                                     @empty
                                     <div class="col-12">
@@ -49,7 +52,7 @@
                                 <b>{{ __('Usuario')}}</b>
                             </div>
                             <div class="col-md-9">
-                                #{{ $ad->user->id}} - {{ $ad->user->name }} - {{ $ad->user->email }}
+                                #{{ $ad->user?->id}} - {{ $ad->user?->name }} - {{ $ad->user?->email }}
                             </div>
                         </div>
                         <hr>
