@@ -125,7 +125,7 @@
                 </div>
             </div>  
             <div class="mt-5 related_ads_show p-1 row justify-content-center">
-                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @foreach ($addcart as $ad)
                     <div class="col-3 container d-flex justify-content-center content-mini-card">
                         <x-minicard
@@ -134,7 +134,7 @@
                         </x-minicard>
                     </div>
                     @endforeach
-                </div> --}}
+                </div>
             </div>
 
         </div>
