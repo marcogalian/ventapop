@@ -165,7 +165,7 @@
                     <h3 class="logo fs-2">{{ __('Regístrate y comienza a vender y comprar')}}</h3>
                     <p>{{ __('¡Tenemos')}} {{ count($total_ads) }} {{ __(' artículos listos para ser comprados!')}}</p>
                     <button class="btn btn-primary shadow"><a class="nav-link"
-                            href="{{ route('ad.create') }}">{{ __('¡Regístrate y vende tu primer artículo!')}}</a></button>
+                            href="{{ route('ad.create') }}">{{ __('Regístrate y vende tu primer artículo')}}</a></button>
                 </div>
                 @else
                 <div class="m-3 rounded text-center text-primary">

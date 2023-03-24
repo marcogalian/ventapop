@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Ventapop - {{ $category->name }}</x-slot>
 
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+    <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
         <p class="m-0">Ventapop - {{ __('Categoría')}} : {{ __($category->name) }}</p>
     </div>
     <div class="container line-title">

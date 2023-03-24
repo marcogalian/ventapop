@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Ventapop - búsqueda por {{ $q }}</x-slot>
 
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
+    <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
         <h3 class="m-0">Ventapop - {{ __('Búsqueda por')}} : {{ $q }}</h3>
     </div>
     <div class="container line-title">

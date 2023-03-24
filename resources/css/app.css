@@ -185,11 +185,11 @@
 
 .menu_idioma_ul {
     margin-top: 0 !important;
-    width: fit-content;
+    min-width: 30px !important;
 }
 
 .dropdown-categories {
-    max-width: 35%;
+    min-width: 35%;
 }
 
 .trabaja-nosotros {
@@ -413,6 +413,17 @@ th {
     color: red;
 }
 
+/* Vistas Favoritos ------------------------------------------------------------------------------------ */
+
+.titulo_barra{
+    margin-top: 175px;
+}
+
+/* Vistas Administrador -------------------------------------------------------------------------------- */
+
+.tabla_revisores{
+    margin-top: 50px;
+}
 
 /* Show ----------------------------------------------------------------------------------------------- */
 

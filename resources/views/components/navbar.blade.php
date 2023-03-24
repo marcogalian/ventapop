@@ -48,19 +48,19 @@
                         @endswitch
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end menu_idioma_ul bg-light">
-                        <li class="menu_idioma_li">
+                        <li>
                             <div class="dropdown-item d-flex">
                                 <x-locale lang="en" country="gb" />
                                 {{-- <p class="mt-2 ms-3"> - EN - </p> --}}
                             </div>
                         </li>
-                        <li class="menu_idioma">
+                        <li>
                             <div class="dropdown-item d-flex">
                                 <x-locale lang="it" country="it" />
                                 {{-- <p class="mt-2 ms-3"> - IT - </p> --}}
                             </div>
                         </li>
-                        <li class="menu_idioma">
+                        <li>
                             <div class="dropdown-item d-flex">
                                 <x-locale lang="es" country="es" />
                                 {{-- <p class="mt-2 ms-3"> - ES - </p> --}}

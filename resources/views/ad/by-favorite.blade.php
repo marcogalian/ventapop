@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot name="title">Ventapop - {{ __('Anuncios por usuario')}}</x-slot>
 
-    <div class="container title-page d-flex justify-content-center align-items-center text-light">
-        <h3 class="m-0">Anuncios FAVORITOS de: {{ __(Auth::user()->name) }}</h3>
+    <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
+        <h3 class="m-0">{{ __('Anuncios favoritos de')}}: {{ __(Auth::user()->name) }}</h3>
     </div>
     <div class="container line-title">
     </div>
