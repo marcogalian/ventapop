@@ -1,4 +1,5 @@
 <x-layout>
+{{-- Codigo Carusel Imagenes anuncio --------------------------------------------------------------------}}
     <div class="container p-3 carousel-container">
         <div class="row my-5 justify-content-around">
             <div class="col-12 col-md-7">
@@ -8,7 +9,7 @@
                             <button type="button" data-bs-target="#adImages" data-bs-slide-to="{{$i}}"
                                 class="@if($i == 0) active @endif" aria-current="ture"
                                 aria-label="Slide {{$i + 1}}"></button>
-                            @endfor
+                        @endfor
                     </div>
                     <div class="carousel-inner rounded">
                         @foreach ($ad->images as $image )
@@ -47,25 +48,25 @@
                             <button type="submit" class="btn btn-primary rounded-5 text-light">{{ __('Añadir al carrito')}}</button>
                         </form>
                     </div>
-
                 </div>
+
+{{-- Funciones eliminar anuncio como admin ---------------------------------------------------------------------}}
                 @guest
-                    
                 @else
                     @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
-                            @if (!Auth::user()->is_admin)
-                                <h4>{{ __('Anuncio creado por ti.')}}</h4>
-                                
-                            @else
-                                <h4>{{ __('Acciones de administrador')}}</h4>
-                            @endif
+                        @if (!Auth::user()->is_admin)
+                            <h4>{{ __('Anuncio creado por ti.')}}</h4>
+                        @else
+                            <h4>{{ __('Acciones de administrador')}}</h4>
+                        @endif
                             <a href="{{ route('ad.destroy', $ad) }}"><button class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
                     @else
                         {{-- Meter aqui --}}
                         
                     @endif
                 @endguest
-                
+
+{{-- Funciones Favoritos --------------------------------------------------------------------------------------}}
                 @if (Auth::user()->id != $ad->user->id)
                     @forelse (Auth::user()->favoriteAds as $favorite_ad)
                         @if ($favorite_ad->id == $ad->id)
@@ -85,21 +86,19 @@
                                 </form>
                                 @break
                             @endif
-                        
                         @endif
+
                     @empty
-                            
                         <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
-                                @method('PATCH')
-                                @csrf
-                                <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart-fill"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart-fill"></i></button>
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart-fill"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart-fill"></i></button>
                         </form>
                     @endforelse
-                @endif
-                
-                
+                @endif    
             </div>
 
+{{-- Codigo de otros articulos relacionados ---------------------------------------------------------------------------------}}
             <div class="mt-5 related_ads_show p-1 row justify-content-center">
                     <h5 class="col-12 text-center my-4">{{ __('Otros articulos relacionados por categoría')}}</h5>
                 <div class="mini-card col-12 d-flex">
@@ -117,9 +116,7 @@
                         <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
                     @endforelse
                 </div>
-                
             </div>
-
         </div>
     </div>
 </x-layout>

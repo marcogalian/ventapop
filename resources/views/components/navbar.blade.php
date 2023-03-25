@@ -36,7 +36,7 @@
                 <div class="dropdown dropstart d-flex align-items-center m-0 p-0">
                     <button wire:click="showInNavbar()" class="boton_idioma me-4" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        @if (\App\Models\Ad::itemToCartCount() <= 0)
+                        @if (\App\Models\Ad::itemToCartCount() == 0)
                         <img src="{{ Vite::asset('/public/images/shopping-cart.png') }}" style="height: 2em">
                         <span class="d-none"></span>
                         @else
@@ -120,7 +120,7 @@
         @guest
         @if (Route::has('login'))
         <li class="nav-item">
-            <a class="nav-link text-white text-primary py-0 me-3" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+            <a class="nav-link text-white text-primary py-0" href="{{ route('login') }}">{{ __('Entrar') }}</a>
         </li>
         @endif
 

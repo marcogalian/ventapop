@@ -14,7 +14,10 @@
             <div class="container col-12 col-md-4 d-flex justify-content-center">
                 <x-card
                     img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                    title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    title="{{ $ad->title }}" 
+                    price="{{ $ad->price }}" 
+                    body="" 
+                    :ad="$ad">
                 </x-card>
             </div>
             @empty
