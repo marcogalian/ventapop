@@ -46,7 +46,8 @@ Route::get('/favorite/ads', [AdController::class,'adsByFavorite'])->name('favori
 Route::patch('/favorite/ad/{ad}/accept', [AdController::class, 'acceptAdFavorite'])->name('favorite.ad.accept');
 Route::patch('/favorite/ad/{ad}/reject', [AdController::class, 'rejectAdFavorite'])->name('favorite.ad.reject');
 Route::patch('/cart/ad/{ad}/add', [AdController::class, 'userAddCart'])->name('cart.ad.add');
-// Route::get('/livewire/cart-dropdown', CartDropdown::class)->name('cart.dropdown');
+Route::patch('/cart/ad/{ad}/reject', [AdController::class, 'removeAdCart'])->name('cart.ad.reject');
+
 
 
 // -- Rutas de revisor --------------

@@ -98,4 +98,11 @@ class AdController extends Controller
         return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Articulo agregado al carrito']);
     }
 
+    public function removeAdCart(Ad $ad)
+    {
+        $user = Auth::user();
+        $user->cartAds()->detach($ad->id);
+        return redirect()->back()->withMessage(['type'=>'danger', 'text'=>'Articulo eliminado del carrito']);;
+    }
+
 }

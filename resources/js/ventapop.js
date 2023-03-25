@@ -53,7 +53,7 @@ if (mainHero) {
     mainHeroMarginOriginal = mainHero.style.marginTop;
 }
 
-if (trabajaNosotros) {
+if (trabajaNosotros && mainHero) {
     mainHero.style.cssText = "margin-top: 0px !important";
     setTimeout(() => {
         trabajaNosotros.style.display = 'none';

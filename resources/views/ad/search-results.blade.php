@@ -2,19 +2,21 @@
     <x-slot name="title">Ventapop - búsqueda por {{ $q }}</x-slot>
 
     <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
-        <h3 class="m-0">Ventapop - {{ __('Búsqueda por')}} : {{ $q }}</h3>
+        <p class="m-0">Ventapop - {{ __('Búsqueda por')}} : {{ $q }}</p>
     </div>
     <div class="container line-title">
     </div>
 
     <div class="container">
-        
         <div class="row mt-5">
             @forelse ($ads as $ad)
-            <div class="container col-12 col-md-4 d-flex justify-content-center">
+            <div class="container col-8 col-sm-6 d-flex justify-content-center">
                 <x-card
-                        img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                        title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
+                    img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
+                    title="{{ $ad->title }}" 
+                    price="{{ $ad->price }}" 
+                    body="" 
+                    :ad="$ad">
                 </x-card>
             </div>
             @empty

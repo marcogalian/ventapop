@@ -1,5 +1,5 @@
 <x-layout>
-{{-- Codigo Carusel Imagenes anuncio --------------------------------------------------------------------}}
+    {{-- Codigo Carusel Imagenes anuncio --------------------------------------------------------------------}}
     <div class="container p-3 carousel-container">
         <div class="row my-5 justify-content-around">
             <div class="col-12 col-md-7">
@@ -9,7 +9,7 @@
                             <button type="button" data-bs-target="#adImages" data-bs-slide-to="{{$i}}"
                                 class="@if($i == 0) active @endif" aria-current="ture"
                                 aria-label="Slide {{$i + 1}}"></button>
-                        @endfor
+                            @endfor
                     </div>
                     <div class="carousel-inner rounded">
                         @foreach ($ad->images as $image )
@@ -42,78 +42,89 @@
                         <div class="mb-3"><a class="text-decoration-none text-primary"
                                 href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a>
                         </div>
-                        <form action="{{ route('cart.ad.add', $ad)}}" method="POST">
-                            @method('patch')
-                            @csrf
-                            <button type="submit" class="btn btn-primary rounded-5 text-light">{{ __('Añadir al carrito')}}</button>
-                        </form>
+                        @if (auth()->user()->cartAds->contains($ad->id))
+                            <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
+                            </form>
+                        @else
+                            <form action="{{ route('cart.ad.add', $ad) }}" method="POST">
+                                @method('PATCH')
+                                @csrf
+                                <button type="submit" class="btn btn-primary rounded-5 text-light">{{ __('Añadir al carrito')}}</button>
+                            </form>
+                        @endif
                     </div>
                 </div>
 
-{{-- Funciones eliminar anuncio como admin ---------------------------------------------------------------------}}
+                {{-- Funciones eliminar anuncio como admin ---------------------------------------------------------------------}}
                 @guest
                 @else
-                    @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
-                        @if (!Auth::user()->is_admin)
-                            <h4>{{ __('Anuncio creado por ti.')}}</h4>
-                        @else
-                            <h4>{{ __('Acciones de administrador')}}</h4>
-                        @endif
-                            <a href="{{ route('ad.destroy', $ad) }}"><button class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
-                    @else
-                        {{-- Meter aqui --}}
-                        
-                    @endif
+                @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
+                @if (!Auth::user()->is_admin)
+                <h4>{{ __('Anuncio creado por ti.')}}</h4>
+                @else
+                <h4>{{ __('Acciones de administrador')}}</h4>
+                @endif
+                <a href="{{ route('ad.destroy', $ad) }}"><button
+                        class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
+                @else
+                {{-- Meter aqui --}}
+
+                @endif
                 @endguest
 
-{{-- Funciones Favoritos --------------------------------------------------------------------------------------}}
+                {{-- Funciones Favoritos --------------------------------------------------------------------------------------}}
                 @if (Auth::user()->id != $ad->user->id)
-                    @forelse (Auth::user()->favoriteAds as $favorite_ad)
-                        @if ($favorite_ad->id == $ad->id)
-                            <p class="d-flex justify-content-end text-danger"><i class="bi bi-heart-fill me-1"></i>  {{ __('Anuncio marcado como favorito')}}  <i class="bi bi-heart-fill ms-1"></i></p>
-                            <form action="{{ route('favorite.ad.reject', $ad)}}" method="POST" class="d-flex justify-content-end">
-                                @method('PATCH')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">{{ __('Eliminar de tu lista de favoritos')}}</button>
-                            </form>
-                            @break
-                        @else
-                            @if ($favorite_ad == Auth::user()->favoriteAds[(count(Auth::user()->favoriteAds)-1)])
-                                <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
-                                @method('PATCH')
-                                @csrf
-                                    <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart"></i></button>
-                                </form>
-                                @break
-                            @endif
-                        @endif
+                @forelse (Auth::user()->favoriteAds as $favorite_ad)
+                @if ($favorite_ad->id == $ad->id)
+                <p class="d-flex justify-content-end text-danger"><i class="bi bi-heart-fill me-1"></i>
+                    {{ __('Anuncio marcado como favorito')}} <i class="bi bi-heart-fill ms-1"></i></p>
+                <form action="{{ route('favorite.ad.reject', $ad)}}" method="POST" class="d-flex justify-content-end">
+                    @method('PATCH')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">{{ __('Eliminar de tu lista de favoritos')}}</button>
+                </form>
+                @break
+                @else
+                @if ($favorite_ad == Auth::user()->favoriteAds[(count(Auth::user()->favoriteAds)-1)])
+                <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
+                    @method('PATCH')
+                    @csrf
+                    <button type="submit" class="btn btn-white text-danger border-danger rounded"><i
+                            class="bi bi-heart"></i> {{ __('Marcar como favorito')}} <i
+                            class="bi bi-heart"></i></button>
+                </form>
+                @break
+                @endif
+                @endif
 
-                    @empty
-                        <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
-                            @method('PATCH')
-                            @csrf
-                            <button type="submit" class="btn btn-white text-danger border-danger rounded"><i class="bi bi-heart-fill"></i> {{ __('Marcar como favorito')}} <i class="bi bi-heart-fill"></i></button>
-                        </form>
-                    @endforelse
-                @endif    
+                @empty
+                <form action="{{ route('favorite.ad.accept', $ad)}}" method="POST" class="d-flex justify-content-end">
+                    @method('PATCH')
+                    @csrf
+                    <button type="submit" class="btn btn-white text-danger border-danger rounded"><i
+                            class="bi bi-heart-fill"></i> {{ __('Marcar como favorito')}} <i
+                            class="bi bi-heart-fill"></i></button>
+                </form>
+                @endforelse
+                @endif
             </div>
 
-{{-- Codigo de otros articulos relacionados ---------------------------------------------------------------------------------}}
+            {{-- Codigo de otros articulos relacionados ---------------------------------------------------------------------------------}}
             <div class="mt-5 related_ads_show p-1 row justify-content-center">
-                    <h5 class="col-12 text-center my-4">{{ __('Otros articulos relacionados por categoría')}}</h5>
+                <h5 class="col-12 text-center my-4">{{ __('Otros articulos relacionados por categoría')}}</h5>
                 <div class="mini-card col-12 d-flex">
                     @forelse ($ads_category_random as $ad)
                     <div class="col-3 container d-flex justify-content-center content-mini-card">
                         <x-minicard
                             img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
-                            title="{{ $ad->title }}" 
-                            price="{{ $ad->price }}" 
-                            body="" 
-                            :ad="$ad">
+                            title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">
                         </x-minicard>
                     </div>
                     @empty
-                        <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
+                    <h5>{{ __('Parece que no hay nada más de esta categoría...')}}</h5>
                     @endforelse
                 </div>
             </div>

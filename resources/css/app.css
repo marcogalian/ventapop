@@ -19,6 +19,7 @@
     --bg-secondary: #05445E !important;
     --bg-warning: #E1C340 !important;
     --bg-light: #F2F2F2 !important;
+    --bg-danger: #DC3545 !important;
 }
 
 
@@ -32,7 +33,7 @@
     min-height: 100vh;
     font-size: 1rem;
     font-family: 'Oswald', sans-serif;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 li {
@@ -67,6 +68,10 @@ li {
     background-color: #F2F2F2 !important;
 }
 
+.bg-danger {
+    background-color: #DC3545 !important;
+}
+
 .btn-primary {
     background-color: var(--bg-primary);
     border: none;
@@ -95,17 +100,40 @@ li {
     background-color: var(--bg-primary) !important;
 }
 
+.btn-danger{
+    background-color: var(--bg-danger);
+    border: none;
+    color: var(--bg-light);
+    border-radius: 50px !important;
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    -ms-border-radius: 50px !important;
+    -o-border-radius: 50px !important;
+}
+
+.btn-danger:hover {
+    background-color: #be5b65 !important;
+}
+
 
 /* NavBar -------------------------------------------------------------------------------------------- */
-.title-cart{
+.navbar-nav {
+    align-items: center;
+}
+
+.container-cart {
+    max-width: fit-content;
+}
+
+.title-cart {
     font-size: .7rem;
 }
 
-.price-cart{
+.price-cart {
     font-size: .7rem;
 }
 
-.cart-count-item{
+.cart-count-item {
     top: 7px;
     left: 24px;
     font-size: .6rem;
@@ -406,35 +434,35 @@ th {
 
 /* Revisor ----------------------------------------------------------------------------------------------- */
 
-.VERY_UNLIKELY{
-    color: greenyellow ;
+.VERY_UNLIKELY {
+    color: greenyellow;
 }
 
-.UNLIKELY{
-    color: green ;
+.UNLIKELY {
+    color: green;
 }
 
-.POSSIBLE{
-    color: orange ;
+.POSSIBLE {
+    color: orange;
 }
 
-.LIKELY{
-    color: orangered ;
+.LIKELY {
+    color: orangered;
 }
 
-.VERY_LIKELY{
+.VERY_LIKELY {
     color: red;
 }
 
 /* Vistas Favoritos ------------------------------------------------------------------------------------ */
 
-.titulo_barra{
+.titulo_barra {
     margin-top: 175px;
 }
 
 /* Vistas Administrador -------------------------------------------------------------------------------- */
 
-.tabla_revisores{
+.tabla_revisores {
     margin-top: 50px;
 }
 
@@ -927,6 +955,7 @@ th {
         display: none;
     }
 
+
     /* Fin--------------------------------------------------------------------------------------- */
 
     /* Hero --------------------------------------------------------------------------------------*/
@@ -1068,6 +1097,16 @@ th {
 @media (max-width: 768px) {
 
     /* navbar ----------------------------------------------------------------------*/
+
+    .cart-icon {
+        margin: 0 !important
+    }
+
+    .cart-count-item {
+        top: 7px;
+        left: 16px;
+    }
+
     .search-container {
         position: static;
     }
@@ -1113,6 +1152,10 @@ th {
 
     .hr-line {
         display: block;
+    }
+
+    .navbar-nav {
+        align-items: stretch;
     }
 
     /* Fin--------------------------------------------------------------------------------------- */
@@ -1320,6 +1363,10 @@ th {
 
     .boton_idioma {
         margin-bottom: 1.5rem !important;
+    }
+
+    .navbar-nav {
+        align-items: stretch;
     }
 
     /* Fin--------------------------------------------------------------------------------------- */
@@ -1533,6 +1580,10 @@ th {
 
     .boton_idioma {
         margin-bottom: 1.5rem !important;
+    }
+
+    .navbar-nav {
+        align-items: stretch;
     }
 
 
