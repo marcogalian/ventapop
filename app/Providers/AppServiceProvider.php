@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\CartDropdown;
 use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
+
 
 
 class AppServiceProvider extends ServiceProvider
@@ -31,5 +35,6 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Paginator::useBootstrapFive();
+        Livewire::component('cart-dropdown', CartDropdown::class);
     }
 }

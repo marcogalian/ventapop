@@ -6,7 +6,6 @@
             <p class="card-title mt-3">{{ $title}}</p>
             <p class="text-center text-success">{{ $price}} &#8364</p>            
           </a>
-          
         </div>
-      </div>
+    </div>
 </div>

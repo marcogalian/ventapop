@@ -25,12 +25,18 @@
 
 /* Body y reemplazo de clases de bootstrap --------------------------------------------------- */
 
+
 .body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-size: 1rem;
     font-family: 'Oswald', sans-serif;
+    overflow: scroll;
+}
+
+li {
+    list-style-type: none;
 }
 
 .text-light {
@@ -91,10 +97,17 @@
 
 
 /* NavBar -------------------------------------------------------------------------------------------- */
+.title-cart{
+    font-size: .7rem;
+}
+
+.price-cart{
+    font-size: .7rem;
+}
 
 .cart-count-item{
     top: 7px;
-    left: 16px;
+    left: 24px;
     font-size: .6rem;
     font-weight: 800;
 }

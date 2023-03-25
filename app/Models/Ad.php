@@ -69,6 +69,8 @@ class Ad extends Model
 
     static public function itemToCartCount()
     {
-        return Auth::user()->cartAds->count();
+        if (auth()->check()) {
+            return Auth::user()->cartAds->count();
+        }
     }
 }

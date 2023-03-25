@@ -98,10 +98,4 @@ class AdController extends Controller
         return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Articulo agregado al carrito']);
     }
 
-    public function showInNavbar(User $user)
-    {
-        $addcart = Auth::user()->cartAds;
-        return view('navbar.show', compact('addcart', 'user'));
-    }
-
 }

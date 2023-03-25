@@ -4,8 +4,10 @@ use App\Http\Controllers\AdController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Livewire\CartDropdown;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -37,16 +39,14 @@ Route::get('/search-results', [PublicController::class, 'ad.search-results'])->n
 
 // -- Rutas de Anuncios -------------
 Route::get('/user/{user:name}/ads', [AdController::class, 'adsByUser'])->name('user.ads');
-Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ad.show');
+Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 Route::get('/ad/create', [AdController::class, 'create'])->name('ad.create');
 Route::get('/destroy/{ad}', [AdController::class,'destroy'])->name ('ad.destroy');
 Route::get('/favorite/ads', [AdController::class,'adsByFavorite'])->name('favorite.ad');
 Route::patch('/favorite/ad/{ad}/accept', [AdController::class, 'acceptAdFavorite'])->name('favorite.ad.accept');
 Route::patch('/favorite/ad/{ad}/reject', [AdController::class, 'rejectAdFavorite'])->name('favorite.ad.reject');
 Route::patch('/cart/ad/{ad}/add', [AdController::class, 'userAddCart'])->name('cart.ad.add');
-// Route::get('/components/navbar', [AdController::class, 'showInNavbar'])->name('navbar.show');
-Route::get('/ad/show', [AdController::class, 'showInNavbar'])->name('navbar.show');
-
+// Route::get('/livewire/cart-dropdown', CartDropdown::class)->name('cart.dropdown');
 
 
 // -- Rutas de revisor --------------
