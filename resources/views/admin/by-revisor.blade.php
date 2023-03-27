@@ -60,7 +60,7 @@
 
         <div class="row mt-5">
             @forelse ($ads as $ad)
-            <div class="container col-12 col-md-4 d-flex justify-content-center">
+            <div class="container col-12 col-md-4 d-flex justify-content-center my-2">
                 <x-card
                         img="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150'}}"
                         title="{{ $ad->title }}" price="{{ $ad->price }}" body="" :ad="$ad">

@@ -123,7 +123,10 @@
         </div>
     </div>
     @else
-    <h3 class="text-center mt-5">{{ __('No hay anuncios para revisar, vuelve mas tarde, gracias')}}</h3>
+    <div class="titulo_barra">
+        <h3 class="text-center mt-5">{{ __('No hay anuncios para revisar, vuelve mas tarde, gracias')}}</h3>
+    </div>
+    
     @endif
 
 </x-layout>
