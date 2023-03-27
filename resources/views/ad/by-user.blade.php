@@ -2,7 +2,7 @@
     <x-slot name="title">Ventapop - {{ __('Anuncios por usuario')}}</x-slot>
 
     <div class="container title-page d-flex justify-content-center align-items-center text-light titulo_barra">
-        <h3 class="m-0">Anuncios de: {{ __($user->name) }}</h3>
+        <h3 class="m-0">{{ __('Anuncios de')}}: {{ __($user->name) }}</h3>
     </div>
     <div class="container line-title">
     </div>

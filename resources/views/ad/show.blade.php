@@ -98,8 +98,25 @@
                 @else
                 <h4>{{ __('Acciones de administrador')}}</h4>
                 @endif
-                <a href="{{ route('ad.destroy', $ad) }}"><button
-                        class="btn bg-danger text-white">{{ __('Eliminar anuncio')}}</button></a>
+                
+                    <button class="btn bg-danger text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">{{ __('Eliminar anuncio')}}</button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{ __('Eliminar anuncio')}}</h5>                              
+                            </div>
+                            <div class="modal-body">
+                              {{ __('¿Desea eliminar definitivamente su anuncio:')}} {{$ad->title}} ?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Cancelar')}}</button>
+                              <a href="{{ route('ad.destroy', $ad) }}"><button type="button" class="btn btn-primary">{{ __('Si, eliminar')}}</button></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 @else
                 {{-- Meter aqui --}}
 
