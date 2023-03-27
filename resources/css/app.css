@@ -610,6 +610,13 @@ th {
     padding-left: 2rem;
 }
 
+.fotografia_about{
+    border-radius: 40px 0 40px 0;
+    -webkit-border-radius: 40px 0 40px 0;
+    -moz-border-radius: 40px 0 40px 0;
+    -ms-border-radius: 40px 0 40px 0;
+    -o-border-radius: 40px 0 40px 0;
+}
 /* About -------------------------------------------------------------------------------------------- */
 
 .nombre_about {
