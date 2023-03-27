@@ -14,7 +14,7 @@
             <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST" class="d-flex justify-content-center mb-3">
                 @method('PATCH')
                 @csrf
-                <button type="submit" class="badge rounded-pill bg-danger border-0 fs-5"><span class="fa-solid fa-trash-can"></span></button>
+                <button type="submit" class="btn-danger border-0 w-50 shadow">Eliminar</button>
             </form>
         </div>
     </div>

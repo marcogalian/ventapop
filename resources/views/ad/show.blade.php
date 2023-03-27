@@ -42,26 +42,57 @@
                         <div class="mb-3"><a class="text-decoration-none text-primary"
                                 href="{{ route('category.ads', $ad->category) }}">#{{ __($ad->category->name)}}</a>
                         </div>
-                        @if (auth()->user()->cartAds->contains($ad->id))
-                            <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
-                                @method('PATCH')
-                                @csrf
-                                <button type="submit" class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
-                            </form>
+
+                        {{-- Funciones agregar al carrito o eliminar del carrito --------------------------------------------------}}
+
+                        @if (Auth::user() && auth()->user()->cartAds->contains($ad->id))
+                        <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit"
+                                class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
+                        </form>
                         @else
-                            <form action="{{ route('cart.ad.add', $ad) }}" method="POST">
-                                @method('PATCH')
-                                @csrf
-                                <button type="submit" class="btn btn-primary rounded-5 text-light">{{ __('Añadir al carrito')}}</button>
-                            </form>
+                        <form action="{{ route('cart.ad.add', $ad) }}" method="POST">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit"
+                                class="btn btn-primary rounded-5 text-light">{{ __('Añadir al carrito')}}</button>
+                        </form>
                         @endif
+                    </div>
+                </div>
+
+                {{-- Modal confirmar eliminar vista show solamente -------------------------------------------------------------}}
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+                    style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a vertically centered modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
+                                    @method('PATCH')
+                                    @csrf
+                                    <button type="submit"
+                                        class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {{-- Funciones eliminar anuncio como admin ---------------------------------------------------------------------}}
                 @guest
                 @else
-                @if (Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
+                @if (Auth::user() && Auth::user()->id == $ad->user->id || Auth::user()->is_admin)
                 @if (!Auth::user()->is_admin)
                 <h4>{{ __('Anuncio creado por ti.')}}</h4>
                 @else
@@ -76,7 +107,7 @@
                 @endguest
 
                 {{-- Funciones Favoritos --------------------------------------------------------------------------------------}}
-                @if (Auth::user()->id != $ad->user->id)
+                @if (Auth::user() && Auth::user()->id != $ad->user->id)
                 @forelse (Auth::user()->favoriteAds as $favorite_ad)
                 @if ($favorite_ad->id == $ad->id)
                 <p class="d-flex justify-content-end text-danger"><i class="bi bi-heart-fill me-1"></i>
