@@ -46,12 +46,16 @@
                         {{-- Funciones agregar al carrito o eliminar del carrito --------------------------------------------------}}
 
                         @if (Auth::user() && auth()->user()->cartAds->contains($ad->id))
-                        <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
-                            @method('PATCH')
-                            @csrf
-                            <button type="submit"
-                                class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
-                        </form>
+                        {{-- <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit"
+                            class="btn btn-danger rounded-5 text-light">{{ __('Eliminar del carrito')}}</button>
+                        </form> --}}
+                        <button type="button" class="btn btn-danger rounded-5 text-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">
+                            Eliminar
+                        </button>
                         @else
                         <form action="{{ route('cart.ad.add', $ad) }}" method="POST">
                             @method('PATCH')
@@ -69,15 +73,15 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Eliminar: {{$ad->title}}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>This is a vertically centered modal.</p>
+                                <p>Usted va a eliminar este articulo del carrito de compra.</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
                                 <form action="{{ route('cart.ad.reject', $ad->id ) }}" method="POST">
                                     @method('PATCH')
                                     @csrf
