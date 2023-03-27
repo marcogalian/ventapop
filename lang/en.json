@@ -150,5 +150,16 @@
     "Suplantación de identidad": "Spoof",
     "Médico": "Medical",
     "Violento": "Violence",
-    "Erótico": "Racy"                       
+    "Erótico": "Racy",
+    "Otros articulos relacionados por categoría": "Other ads related by category",
+    "¿Desea eliminar definitivamente su anuncio:": "Are you sure to delete ad: ",
+    "Cancelar": "Cancel",
+    "Si, eliminar": "Yes, delete",
+    "Fecha inicio como revisor": "Start date as revisor",
+    "Fecha último anuncio revisado": "Last ad checked",
+    "¿Desea retirar definitivamente la función de revisor?": "Remove permanently revisor function?",
+    "No tienes ningún artículo a la venta": "You don't have any items to sell",
+    "Vender un artículo": "Sell your first item!",
+    "Anuncios de": "Ads by"
+                           
 }

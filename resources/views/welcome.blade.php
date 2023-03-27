@@ -161,20 +161,20 @@
             <div class="col-12 col-md-6">
                 @guest
                 <div class="m-3 text-center text-primary">
-                    <h2 class="logo">{{ __('¿Aún no eres miembro de la comunidad VentaPop?')}}</h2>
-                    <h3 class="logo fs-2">{{ __('Regístrate y comienza a vender y comprar')}}</h3>
-                    <p>{{ __('¡Tenemos')}} {{ count($total_ads) }} {{ __(' artículos listos para ser comprados!')}}</p>
-                    <button class="btn btn-primary shadow"><a class="nav-link"
+                    <h2 class="m-5">{{ __('¿Aún no eres miembro de la comunidad VentaPop?')}}</h2>
+                    <h3 class="fs-2">{{ __('Regístrate y comienza a vender y comprar')}}</h3>
+                    <p class="fs-5 m-2">{{ __('¡Tenemos')}} {{ count($total_ads) }} {{ __(' artículos listos para ser comprados!')}}</p>
+                    <button class="btn btn-primary shadow m-2"><a class="nav-link"
                             href="{{ route('ad.create') }}">{{ __('Regístrate y vende tu primer artículo')}}</a></button>
                 </div>
                 @else
                 <div class="m-3 rounded text-center text-primary">
-                    <h2 class="logo fs-1">{{ __(Auth::user()->name)}} {{ __(' tienes')}} {{ count(Auth::user()->ads)}}
+                    <h2 class="fs-2 m-5">{{ __(Auth::user()->name)}}{{ __(' tienes')}} {{ count(Auth::user()->ads)}}
                         {{ __('artículos subidos en VentaPop!')}}</h2>
-                    <button class="btn btn-primary shadow"><a class="nav-link"
+                    <button class="btn btn-primary shadow m-1"><a class="nav-link"
                             href="{{ route('user.ads', $user) }}">{{ __('Revisar tus artículos a la venta')}}</a></button>
-                    <h3 class="logo fs-1 mt-5">{{ __('¿Hay algo mas que desées vender?')}}</h3>
-                    <button class="btn btn-secondary shadow"><a class="nav-link"
+                    <h3 class="fs-2 mt-5">{{ __('¿Hay algo mas que desées vender?')}}</h3>
+                    <button class="btn btn-secondary shadow mt-4"><a class="nav-link"
                             href="{{ route('ad.create') }}">{{ __('¡Crear un nuevo anuncio!')}}</a></button>
                 </div>
                 @endguest

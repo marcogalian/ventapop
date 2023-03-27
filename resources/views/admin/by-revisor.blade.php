@@ -9,6 +9,55 @@
 
     <div class="container">
         
+        <table class="table text-center tabla_revisores">
+            <thead>
+                <tr>
+                    <th scope="col">{{ __('Id')}}</th>
+                    <th scope="col">{{ __('Nombre')}}</th>
+                    <th scope="col">{{ __('Número de anuncios revisados')}} </th>
+                    <th scope="col">{{ __('Fecha inicio como revisor')}} </th>
+                    <th scope="col">{{ __('Fecha último anuncio revisado')}}</th>
+                    <th scope="col">{{ __('Desactivar revisor')}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>{{ $user->id}}</td>
+                    <td>{{ $user->name}}</td>
+                    <td>{{ count($ads)}}</td>
+                    <td>{{ $user->updated_at}}</td>
+                    <td>{{ $last_date}}</td>
+                    <td>
+                        <button class="btn bg-danger text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">{{ __('Eliminar Revisor')}}</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Eliminar Revisor')}}</h5>                              
+                                </div>
+                                <div class="modal-body">
+                                  {{ __('¿Desea retirar definitivamente la función de revisor?')}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Cancelar')}}</button>
+                                    <form action="{{ route('deleteRevisor', $user)}}" method="POST" class="text-center">
+                                        @method('PATCH')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">{{ __('Eliminar Revisor')}}</button>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        
+                    </td>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+
         <div class="row mt-5">
             @forelse ($ads as $ad)
             <div class="container col-12 col-md-4 d-flex justify-content-center">
