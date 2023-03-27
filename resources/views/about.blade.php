@@ -18,12 +18,10 @@
             <div class="col-12 col-md-6 mt-2">                
                     <h2 class="text-center nombre_about mb-5">Chechu Giménez</h2>
                     <div class="d-flex justify-content-center">
-                       <img src="{{ asset('images/logo_ventapopnegro.png')}}" alt="Fotografía creador Chechu"
+                       <img src="{{ asset('images/Foto_Chechu.png')}}" alt="Fotografía creador Chechu"
                         class="m-3 rounded fotografia_about"> 
                     </div>                    
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque similique adipisci quas facere
-                        delectus, fuga tenetur maxime eaque, consequuntur voluptatibus, consequatur quo? A est natus
-                        enim velit odio sequi sint.</p>
+                    <p>¡Hola! Soy Jesús Giménez, pero todos me conocen como Chechu. Soy ingeniero químico, pero decidí iniciar mi carrera como programador Full Stack Developer junior en septiembre de 2022 en el Botcamp de Aulab. Cuento con conocimientos de front y backend: HTML5, CSS3, JavaScript, PHP y Laravel 10. </p>
             </div>
 
         </div>
