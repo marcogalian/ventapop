@@ -115,7 +115,7 @@
                         <form action="{{ route('revisor.ad.accept', $ad)}}" method="POST" class="col-6 d-flex justify-content-star">
                             @method('PATCH')
                             @csrf
-                            <button type="submit" class="btn btn-success">{{ __('Aceptar')}}</button>
+                            <button type="submit" class="btn btn-success rounded-5">{{ __('Aceptar')}}</button>
                         </form>
                 </div>
             </div>
